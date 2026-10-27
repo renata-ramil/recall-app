@@ -1,0 +1,47 @@
+item_id,checked_at,checker,checker_answer,key,agrees,ambiguous,level_ok,notes,action
+T01-01,2026-10-24,blind second model,B,B,True,False,True,"'Avoids distorting the age distribution the least' is a garbled double negative (literally means distorts most); reword to 'distorts the distribution least', and note median imputation still shrinks variance.",fixed: reworded stem
+T01-02,2026-10-24,blind second model,B,B,True,False,True,,kept
+T01-03,2026-10-24,blind second model,B,B,True,False,True,,kept
+T01-04,2026-10-24,blind second model,B,B,True,False,True,,kept
+T02-01,2026-10-24,blind second model,B,B,True,False,True,,kept
+T02-02,2026-10-24,blind second model,B,B,True,False,True,Mean above median suggests right skew but does not prove it; 'suggests' would be more precise than 'says'.,fixed: 'says' to 'suggests'
+T02-03,2026-10-24,blind second model,B,B,True,False,True,,kept
+T02-04,2026-10-24,blind second model,B,B,True,False,True,,kept
+T03-01,2026-10-24,blind second model,C,C,True,False,True,Checked: PPV = 0.00099 / (0.00099 + 0.04995) is about 1.9 percent.,kept
+T03-02,2026-10-24,blind second model,B,B,True,False,True,,kept
+T03-03,2026-10-24,blind second model,B,B,True,False,True,,kept
+T03-04,2026-10-24,blind second model,B,B,True,False,True,"Units are missing (2 what?), and 'pays 100' should say whether that is gross or net of the ticket price.",fixed: added dollar units
+T04-01,2026-10-24,blind second model,B,B,True,False,True,,kept
+T04-02,2026-10-24,blind second model,B,B,True,False,True,,kept
+T04-03,2026-10-24,blind second model,B,B,True,False,True,"'Most likely explanation' overstates it; the key point is that 2 hits is what chance alone would produce, so the result can't tell real effects from noise.",fixed: stem asks for the best reading
+T04-04,2026-10-24,blind second model,B,B,True,False,True,,kept
+T05-01,2026-10-24,blind second model,A,A,True,False,True,"No units are given for spend or income, which makes 'more spend' vague.",kept
+T05-02,2026-10-24,blind second model,A,A,True,False,True,,kept
+T05-03,2026-10-24,blind second model,B,B,True,False,False,"This is concept recall, so it fits level 1 better than level 2.",fixed: level 2 to 1
+T05-04,2026-10-24,blind second model,B,B,True,False,True,Checked: exp(0.69) is about 1.99.,kept
+T06-01,2026-10-24,blind second model,B,B,True,False,True,,kept
+T06-02,2026-10-24,blind second model,B,B,True,False,True,,kept
+T06-03,2026-10-24,blind second model,B,B,True,False,True,"The parallel-trends assumption could be mentioned, but the item is sound.",kept
+T06-04,2026-10-24,blind second model,B,B,True,False,True,,kept
+T07-01,2026-10-24,blind second model,B,B,True,False,True,,kept
+T07-02,2026-10-24,blind second model,B,B,True,False,True,,kept
+T07-03,2026-10-24,blind second model,B,B,True,False,True,"Precision is undefined here (no positive predictions); the explanation should say that, so option C reads as wrong for the right reason.",fixed: explanation says precision is undefined
+T07-04,2026-10-24,blind second model,B,B,True,False,False,"This is concept recall with no output to read or situation to apply, so it fits level 1 better.",fixed: level 2 to 1
+T08-01,2026-10-24,blind second model,A,A,True,False,True,,kept
+T08-02,2026-10-24,blind second model,B,B,True,False,True,,kept
+T08-03,2026-10-24,blind second model,B,B,True,False,True,,kept
+T08-04,2026-10-24,blind second model,A,A,True,False,True,,kept
+T09-01,2026-10-24,blind second model,A,A,True,False,True,,kept
+T09-02,2026-10-24,blind second model,B,B,True,False,True,"GROUP BY c.name merges different customers who share a name, so the result is per name, not per customer; group by c.id, c.name instead.","fixed: GROUP BY c.id, c.name"
+T09-03,2026-10-24,blind second model,A,A,True,False,True,,kept
+T09-04,2026-10-24,blind second model,A,A,True,False,True,The key could also mention unset random seeds and different package versions as common causes.,kept
+T10-01,2026-10-24,blind second model,B,B,True,False,True,'Lifted conversion' asserts an effect whose interval includes zero; 'an estimated lift of about 0.5 points' would be more honest.,fixed: option B states an estimated lift
+T10-02,2026-10-24,blind second model,B,B,True,False,True,,kept
+T10-03,2026-10-24,blind second model,B,B,True,False,True,,kept
+T10-04,2026-10-24,blind second model,B,B,True,False,True,,kept
+S01-step1,2026-10-24,blind second model,C,C,True,False,True,"Checked: z is about 1.73 and p about 0.08, with a 95 percent CI of about -0.07 to 1.07 points, which matches option C.",kept
+S01-step2,2026-10-24,blind second model,A,A,True,True,True,"Option A tells you to stop as soon as the interval excludes zero, which is optional stopping (peeking) and inflates the false-positive rate; B is also defensible given step 1's 'decide based on the cost of a wrong call', and no cost information is given.",fixed: prompt states cost is unknown; option A fixes the extension in advance
+S02-step1,2026-10-24,blind second model,B,B,True,False,True,,kept
+S02-step2,2026-10-24,blind second model,A,A,True,False,True,"A join fan-out does not change the count of distinct order ids, so the check should compare row count after the join to distinct order ids; only the sum comparison in A actually detects the problem.",fixed: option A compares joined rows to distinct orders
+S03-step1,2026-10-24,blind second model,B,B,True,False,True,,kept
+S03-step2,2026-10-24,blind second model,A,A,True,False,True,,kept

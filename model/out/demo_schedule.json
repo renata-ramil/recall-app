@@ -1,0 +1,109 @@
+{
+  "user_id": 0,
+  "mu": 4.245319033060028,
+  "user_offset": 0.2100141111606648,
+  "generated": "2026-10-16",
+  "note": "Schedule for a demo user from the skill-decay model (synthetic data, 4 chains x 2000 draws). Days since practice are a fixed demo spread. Topics map to the data science module.",
+  "topics": [
+    {
+      "topic": "T07",
+      "halflife_days": 19.9,
+      "halflife_sd_log2": 0.24,
+      "days_since_practice": 16,
+      "recall_today": 0.57,
+      "days_until_fade": 0.0,
+      "job_weight": 0.8,
+      "priority": 0.342
+    },
+    {
+      "topic": "T04",
+      "halflife_days": 20.3,
+      "halflife_sd_log2": 0.24,
+      "days_since_practice": 14,
+      "recall_today": 0.62,
+      "days_until_fade": 1.0,
+      "job_weight": 0.8,
+      "priority": 0.304
+    },
+    {
+      "topic": "T10",
+      "halflife_days": 26.5,
+      "halflife_sd_log2": 0.24,
+      "days_since_practice": 18,
+      "recall_today": 0.62,
+      "days_until_fade": 1.5,
+      "job_weight": 0.8,
+      "priority": 0.3
+    },
+    {
+      "topic": "T02",
+      "halflife_days": 34.3,
+      "halflife_sd_log2": 0.24,
+      "days_since_practice": 27,
+      "recall_today": 0.58,
+      "days_until_fade": 0.0,
+      "job_weight": 0.7,
+      "priority": 0.294
+    },
+    {
+      "topic": "T03",
+      "halflife_days": 30.6,
+      "halflife_sd_log2": 0.24,
+      "days_since_practice": 35,
+      "recall_today": 0.45,
+      "days_until_fade": 0.0,
+      "job_weight": 0.5,
+      "priority": 0.274
+    },
+    {
+      "topic": "T06",
+      "halflife_days": 16.2,
+      "halflife_sd_log2": 0.24,
+      "days_since_practice": 12,
+      "recall_today": 0.6,
+      "days_until_fade": 0.0,
+      "job_weight": 0.6,
+      "priority": 0.241
+    },
+    {
+      "topic": "T01",
+      "halflife_days": 22.5,
+      "halflife_sd_log2": 0.24,
+      "days_since_practice": 9,
+      "recall_today": 0.76,
+      "days_until_fade": 7.6,
+      "job_weight": 0.9,
+      "priority": 0.218
+    },
+    {
+      "topic": "T05",
+      "halflife_days": 38.2,
+      "halflife_sd_log2": 0.24,
+      "days_since_practice": 20,
+      "recall_today": 0.7,
+      "days_until_fade": 8.1,
+      "job_weight": 0.7,
+      "priority": 0.213
+    },
+    {
+      "topic": "T09",
+      "halflife_days": 15.6,
+      "halflife_sd_log2": 0.24,
+      "days_since_practice": 4,
+      "recall_today": 0.84,
+      "days_until_fade": 7.5,
+      "job_weight": 1.0,
+      "priority": 0.163
+    },
+    {
+      "topic": "T08",
+      "halflife_days": 42.5,
+      "halflife_sd_log2": 0.24,
+      "days_since_practice": 7,
+      "recall_today": 0.89,
+      "days_until_fade": 24.3,
+      "job_weight": 0.4,
+      "priority": 0.043
+    }
+  ]
+}

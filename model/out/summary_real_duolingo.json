@@ -1,0 +1,33 @@
+{
+  "data": "real Duolingo HLR traces: English speakers learning Spanish, 52,298 rows (300 users, 150 words) from the first 3,000,000 rows",
+  "brier_logloss": {
+    "hierarchical": [
+      0.08035090631467334,
+      0.31630910258271966
+    ],
+    "global_halflife": [
+      0.09079915748462927,
+      0.634454429294616
+    ],
+    "constant_mean": [
+      0.08117569197317848,
+      0.3206038491551402
+    ]
+  },
+  "baseline_mae": 0.10862911078904323,
+  "mean_baseline_mae": 0.18191970994964785,
+  "hierarchical_mae": 0.1710890250188256,
+  "global_halflife_days": 365.0,
+  "rhat_max": 1.0025993531475572,
+  "ess_bulk_min": 1214.2154603156528,
+  "divergences": 0,
+  "ceiling": 0.9177363538083525,
+  "b_right": 0.21312301205767945,
+  "b_wrong": -0.7515249960917831,
+  "calibration_gap": 0.07192761121574691,
+  "halflife_range_days": [
+    5.717641283477895,
+    3970.688777174094
+  ],
+  "date": "2026-10-24"
+}

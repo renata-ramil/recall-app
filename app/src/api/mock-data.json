@@ -1,0 +1,561 @@
+{
+  "_note": "Mock data that reproduces every designed screen exactly. Recall values are fractions 0..1; the UI shows them as whole percentages. Two questions (q-t04-01, q-t10-02) were added from the capstone item bank so the session has 3; verdicts.rightNotSure uses the SPEC section 8 default.",
+  "user": {
+    "firstName": "Renata",
+    "survey": {
+      "targetRole": "Data scientist",
+      "targetRoleOptions": [
+        "Data analyst",
+        "Data scientist",
+        "ML engineer",
+        "Product analyst",
+        "Other"
+      ],
+      "finishedMonth": "May",
+      "finishedYear": 2026,
+      "mainGoal": "Interview prep",
+      "mainGoalOptions": [
+        "Interview prep",
+        "Current job",
+        "Keep for later"
+      ],
+      "skillsToKeep": "Experiment design, regression, SQL",
+      "timePerDay": "5 minutes",
+      "timePerDayOptions": [
+        "5 minutes",
+        "10 minutes",
+        "Reminders only"
+      ],
+      "reminderTime": "12:30",
+      "reminderTimeOptions": [
+        "8:00",
+        "12:30",
+        "19:00",
+        "Off"
+      ]
+    }
+  },
+  "transcript": {
+    "fileDeleted": true,
+    "courses": [
+      {
+        "name": "Intro to Statistics",
+        "grade": 4.0,
+        "matches": true
+      },
+      {
+        "name": "Statistical Modeling",
+        "grade": 3.7,
+        "matches": true
+      },
+      {
+        "name": "Machine Learning",
+        "grade": 3.3,
+        "matches": true
+      },
+      {
+        "name": "Data Analysis with Python",
+        "grade": 3.3,
+        "matches": true
+      },
+      {
+        "name": "Linear Algebra",
+        "grade": 3.7,
+        "matches": false
+      },
+      {
+        "name": "Microeconomics",
+        "grade": 3.0,
+        "matches": false
+      }
+    ],
+    "summary": {
+      "read": 6,
+      "matching": 4,
+      "averageGrade": 3.5,
+      "gradeScaleMax": 4
+    }
+  },
+  "topics": [
+    {
+      "id": "cleaning",
+      "name": "Data cleaning and preparation",
+      "ticked": true,
+      "confidence": 4
+    },
+    {
+      "id": "exploring",
+      "name": "Exploring and plotting data",
+      "ticked": true,
+      "confidence": 3
+    },
+    {
+      "id": "probability",
+      "name": "Probability",
+      "ticked": true,
+      "confidence": 2
+    },
+    {
+      "id": "inference",
+      "name": "Statistical inference",
+      "ticked": true,
+      "confidence": 3
+    },
+    {
+      "id": "regression",
+      "name": "Regression",
+      "ticked": true,
+      "confidence": 4
+    },
+    {
+      "id": "causal",
+      "name": "Causal thinking",
+      "ticked": true,
+      "confidence": 2
+    },
+    {
+      "id": "ml",
+      "name": "Machine learning basics",
+      "ticked": true,
+      "confidence": 3
+    },
+    {
+      "id": "bayesian",
+      "name": "Bayesian modeling",
+      "ticked": false,
+      "confidence": null
+    },
+    {
+      "id": "pythonsql",
+      "name": "Python and SQL for data",
+      "ticked": false,
+      "confidence": null
+    },
+    {
+      "id": "communicating",
+      "name": "Communicating results",
+      "ticked": true,
+      "confidence": 4
+    }
+  ],
+  "fadeThreshold": 0.6,
+  "priorityRule": "priority = jobWeight * (1 - recall); ties broken by fewer daysUntilFade. This reproduces the Your plan order exactly.",
+  "skills": [
+    {
+      "id": "ml",
+      "name": "Machine learning basics",
+      "recall": 0.57,
+      "jobWeight": 0.8,
+      "state": "faded",
+      "daysUntilFade": 0
+    },
+    {
+      "id": "inference",
+      "name": "Statistical inference",
+      "recall": 0.62,
+      "jobWeight": 0.8,
+      "state": "fadingSoon",
+      "daysUntilFade": 1,
+      "halfLifeDays": 20
+    },
+    {
+      "id": "communicating",
+      "name": "Communicating results",
+      "recall": 0.62,
+      "jobWeight": 0.8,
+      "state": "fadingSoon",
+      "daysUntilFade": 2
+    },
+    {
+      "id": "exploring",
+      "name": "Exploring and plotting data",
+      "recall": 0.58,
+      "jobWeight": 0.7,
+      "state": "faded",
+      "daysUntilFade": 0
+    },
+    {
+      "id": "probability",
+      "name": "Probability",
+      "recall": 0.45,
+      "jobWeight": 0.5,
+      "state": "faded",
+      "daysUntilFade": 0
+    },
+    {
+      "id": "causal",
+      "name": "Causal thinking",
+      "recall": 0.6,
+      "jobWeight": 0.6,
+      "state": "fadingSoon",
+      "daysUntilFade": 0
+    },
+    {
+      "id": "cleaning",
+      "name": "Data cleaning and preparation",
+      "recall": 0.76,
+      "jobWeight": 0.9,
+      "state": "solid",
+      "daysUntilFade": 8
+    },
+    {
+      "id": "regression",
+      "name": "Regression",
+      "recall": 0.7,
+      "jobWeight": 0.7,
+      "state": "solid",
+      "daysUntilFade": 8
+    }
+  ],
+  "today": {
+    "greeting": "Good afternoon",
+    "session": {
+      "skillIds": [
+        "ml",
+        "inference",
+        "communicating"
+      ],
+      "scenarioId": "checkout",
+      "estimatedMinutes": 5
+    },
+    "streakDays": 4,
+    "week": [
+      {
+        "letter": "M",
+        "date": 12,
+        "status": "done"
+      },
+      {
+        "letter": "T",
+        "date": 13,
+        "status": "done"
+      },
+      {
+        "letter": "W",
+        "date": 14,
+        "status": "done"
+      },
+      {
+        "letter": "T",
+        "date": 15,
+        "status": "done"
+      },
+      {
+        "letter": "F",
+        "date": 16,
+        "status": "today"
+      },
+      {
+        "letter": "S",
+        "date": 17,
+        "status": "future"
+      },
+      {
+        "letter": "S",
+        "date": 18,
+        "status": "future"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "q-ml-rf",
+      "skillId": "ml",
+      "prompt": "Why does a random forest usually generalize better than a single deep decision tree?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It uses fewer features."
+        },
+        {
+          "id": "B",
+          "text": "Averaging many trees trained on bootstrapped samples and random feature subsets lowers variance."
+        },
+        {
+          "id": "C",
+          "text": "Each tree is deeper."
+        },
+        {
+          "id": "D",
+          "text": "It fits the training data more exactly.",
+          "misconception": "A forest usually fits training data slightly less exactly than one unpruned tree. The gain comes from averaging."
+        }
+      ],
+      "correctId": "B",
+      "explanation": "Single deep trees have high variance. Averaging many trees makes their errors less correlated, so the average is more stable.",
+      "nextReviewIfRight": "Next review in 20 days.",
+      "nextReviewIfWrong": "You'll see this again tomorrow."
+    },
+    {
+      "id": "q-t04-01",
+      "skillId": "inference",
+      "prompt": "A 95 percent confidence interval (the classical, frequentist kind) for a mean is [4.1, 5.3]. Which statement is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "95 percent of individual observations fall between 4.1 and 5.3.",
+          "misconception": "Confuses an interval for the mean with a range for individual values."
+        },
+        {
+          "id": "B",
+          "text": "If the study were repeated many times, about 95 percent of the intervals built this way would contain the true mean."
+        },
+        {
+          "id": "C",
+          "text": "Given this one interval, the probability is 0.95 that the true mean lies inside it.",
+          "misconception": "Treats the fixed true mean as random; that reading belongs to a Bayesian credible interval."
+        },
+        {
+          "id": "D",
+          "text": "The sample mean is between 4.1 and 5.3 with probability 0.95.",
+          "misconception": "The sample mean is a known number that sits at the interval's center."
+        }
+      ],
+      "correctId": "B",
+      "explanation": "The 95 percent describes the long-run behavior of the procedure across repeated samples. Any single interval either contains the true mean or does not.",
+      "nextReviewIfRight": "Next review in 14 days.",
+      "nextReviewIfWrong": "You'll see this again tomorrow."
+    },
+    {
+      "id": "q-t10-02",
+      "skillId": "communicating",
+      "prompt": "A stakeholder asks: 'So is the effect real or not?' Your interval is [-0.1, 1.2] points. The best answer is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No, it is not significant, so there is no effect.",
+          "misconception": "Non-significant is not 'no effect'."
+        },
+        {
+          "id": "B",
+          "text": "The best estimate is a lift of about 0.5 points, and the data are consistent with anything from a slight loss to a 1.2-point gain. If a wrong call is cheap, ship and monitor; if it is costly, run the test longer."
+        },
+        {
+          "id": "C",
+          "text": "Yes, the effect is 0.5 points.",
+          "misconception": "Drops the uncertainty the stakeholder needs."
+        },
+        {
+          "id": "D",
+          "text": "Statistics cannot answer that.",
+          "misconception": "Statistics does answer it, with a range and a recommendation."
+        }
+      ],
+      "correctId": "B",
+      "explanation": "Translate the interval into the decision's terms: the point estimate, the range, and what the uncertainty means for the choice in front of them.",
+      "nextReviewIfRight": "Next review in 14 days.",
+      "nextReviewIfWrong": "You'll see this again tomorrow."
+    }
+  ],
+  "verdicts": {
+    "rightSure": "Right, and you knew it.",
+    "rightNotSure": "Right. Now you know it.",
+    "wrongSure": "Not this time.",
+    "wrongNotSure": "Not this time.",
+    "dontKnow": "No problem. Here's the answer."
+  },
+  "scenarios": [
+    {
+      "id": "checkout",
+      "title": "Ship the checkout page?",
+      "context": "Your manager shares an A/B test of a new checkout page. The old page converted 4.1% and the new one 4.6%, with 10,000 users in each group. The p-value is 0.08. She wants to ship today.",
+      "figures": [
+        {
+          "value": "4.1%",
+          "label": "Old page"
+        },
+        {
+          "value": "4.6%",
+          "label": "New page"
+        },
+        {
+          "value": "0.08",
+          "label": "p-value"
+        }
+      ],
+      "steps": [
+        {
+          "type": "choice",
+          "prompt": "What do you tell her?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Ship it. The new page won."
+            },
+            {
+              "id": "b",
+              "text": "Do not ship. The test failed."
+            },
+            {
+              "id": "c",
+              "text": "The result is inconclusive at the 5% level. The lift could be anywhere from slightly negative to about 1 point. Extend the test, or decide based on the cost of a wrong call."
+            },
+            {
+              "id": "d",
+              "text": "Rerun until p drops below 0.05."
+            }
+          ],
+          "correctId": "c"
+        },
+        {
+          "type": "choice",
+          "prompt": "Nobody knows yet what a wrong call would cost. What should happen next?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Extend the test for a fixed two more weeks, set now, then decide."
+            },
+            {
+              "id": "b",
+              "text": "Ship now, and roll back if conversion drops over the next week."
+            },
+            {
+              "id": "c",
+              "text": "Keep the old page and close the test."
+            },
+            {
+              "id": "d",
+              "text": "Rerun the analysis with a one-sided test to get p under 0.05."
+            }
+          ],
+          "correctId": "a"
+        },
+        {
+          "type": "explain",
+          "prompt": "Explain the decision to your manager in one or two lines.",
+          "sampleUserAnswer": "The lift is 0.5 points but p is 0.08, so I would extend the test before shipping.",
+          "modelAnswer": "The 0.5 point lift could range from slightly negative to about 1 point. Extend the test, or ship only if a wrong call is cheap.",
+          "checkpoints": [
+            {
+              "text": "States the estimate and that the range includes zero",
+              "sampleRating": "Matched"
+            },
+            {
+              "text": "Ties the call to the cost of being wrong",
+              "sampleRating": "Partly"
+            },
+            {
+              "text": "Gives a concrete next step",
+              "sampleRating": "Missed"
+            }
+          ],
+          "ratingOptions": [
+            "Matched",
+            "Partly",
+            "Missed"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "recalled": 2,
+    "recallTotal": 3,
+    "scenarioPoints": 3,
+    "scenarioTotal": 3,
+    "duration": "4:52",
+    "changes": [
+      {
+        "skillId": "ml",
+        "before": 0.57,
+        "after": 0.72,
+        "next": "Next in 20 days",
+        "improved": true
+      },
+      {
+        "skillId": "inference",
+        "before": 0.62,
+        "after": 0.77,
+        "next": "Next in 14 days",
+        "improved": true
+      },
+      {
+        "skillId": "communicating",
+        "before": 0.62,
+        "after": 0.52,
+        "next": "Again tomorrow",
+        "improved": false
+      }
+    ],
+    "useThisWeekOptions": [
+      "Interview",
+      "Project",
+      "Meeting",
+      "Not this week"
+    ]
+  },
+  "skillDetail": {
+    "skillId": "inference",
+    "recallToday": 0.62,
+    "halfLifeDays": 20,
+    "jobWeight": 0.8,
+    "jobWeightNote": "Data scientist and product analyst roles ask for this often.",
+    "nextPractice": "tomorrow",
+    "curve": {
+      "model": "Between practices, recall(t) = start * 2^(-(t - practiceDay) / halfLife). Each practice jumps recall up to a new start and lengthens the half-life.",
+      "axisDays": 60,
+      "todayDay": 51,
+      "segments": [
+        {
+          "fromDay": 0,
+          "toDay": 7,
+          "start": 1.0,
+          "halfLife": 9.8
+        },
+        {
+          "fromDay": 7,
+          "toDay": 15,
+          "start": 0.9,
+          "halfLife": 14
+        },
+        {
+          "fromDay": 15,
+          "toDay": 26,
+          "start": 0.92,
+          "halfLife": 18
+        },
+        {
+          "fromDay": 26,
+          "toDay": 39,
+          "start": 0.94,
+          "halfLife": 20
+        },
+        {
+          "fromDay": 39,
+          "toDay": 60,
+          "start": 0.94,
+          "halfLife": 20
+        }
+      ],
+      "practiceDays": [
+        7,
+        15,
+        26,
+        39
+      ],
+      "projectionFromDay": 51
+    },
+    "recentAnswers": [
+      {
+        "topic": "Reading a p-value",
+        "correct": true,
+        "daysAgo": 12
+      },
+      {
+        "topic": "Confidence intervals",
+        "correct": true,
+        "daysAgo": 25
+      },
+      {
+        "topic": "Type I and type II errors",
+        "correct": false,
+        "daysAgo": 36
+      },
+      {
+        "topic": "Null hypothesis",
+        "correct": true,
+        "daysAgo": 44
+      }
+    ]
+  }
+}

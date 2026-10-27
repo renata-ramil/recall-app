@@ -1,0 +1,29 @@
+{
+  "chains": 4,
+  "draws": 2000,
+  "tune": 1000,
+  "date": "2026-10-16",
+  "part1_data": "synthetic stand-in (real file not reachable from this machine)",
+  "part1": {
+    "baseline_mae": 0.2479947295915741,
+    "hierarchical_mae": 0.2026212123610525,
+    "global_halflife_days": 3.188274511402986,
+    "rhat_max": 1.0166164276078016,
+    "ess_bulk_min": 309.77867862205545,
+    "divergences": 0,
+    "calibration_gap": 0.01851515336309724,
+    "halflife_range_days": [
+      0.680471814482942,
+      10.749403971606352
+    ]
+  },
+  "part2": {
+    "hierarchical_mae": 0.15651066534089864,
+    "user_offset_corr": 0.959855525810119,
+    "skill_offset_corr": 0.9934004937582367,
+    "rhat_max": 1.0039137192276288,
+    "ess_bulk_min": 590.6499937666453,
+    "divergences": 0,
+    "calibration_gap": 0.02203386135731076
+  }
+}
