@@ -268,23 +268,23 @@
       "options": [
         {
           "id": "A",
-          "text": "It uses fewer features."
+          "text": "Averaging trees built on resampled data and random features lowers the variance."
         },
         {
           "id": "B",
-          "text": "Averaging many trees trained on bootstrapped samples and random feature subsets lowers variance."
+          "text": "It uses fewer features overall, so each tree is simpler and has less noise in it."
         },
         {
           "id": "C",
-          "text": "Each tree is deeper."
+          "text": "Each tree in the forest is grown deeper, so it captures more of the signal."
         },
         {
           "id": "D",
-          "text": "It fits the training data more exactly.",
+          "text": "It fits the training data more exactly than any single tree is ever able to.",
           "misconception": "A forest usually fits training data slightly less exactly than one unpruned tree. The gain comes from averaging."
         }
       ],
-      "correctId": "B",
+      "correctId": "A",
       "explanation": "Single deep trees have high variance. Averaging many trees makes their errors less correlated, so the average is more stable.",
       "nextReviewIfRight": "Back in your plan when it starts to fade.",
       "nextReviewIfWrong": "You'll see this again tomorrow."
@@ -296,25 +296,25 @@
       "options": [
         {
           "id": "A",
-          "text": "95 percent of individual observations fall between 4.1 and 5.3.",
+          "text": "About 95 percent of the individual observations in this data fall between 4.1 and 5.3.",
           "misconception": "Confuses an interval for the mean with a range for individual values."
         },
         {
           "id": "B",
-          "text": "If the study were repeated many times, about 95 percent of the intervals built this way would contain the true mean."
-        },
-        {
-          "id": "C",
           "text": "Given this one interval, the probability is 0.95 that the true mean lies inside it.",
           "misconception": "Treats the fixed true mean as random; that reading belongs to a Bayesian credible interval."
         },
         {
+          "id": "C",
+          "text": "Over many repeated studies, about 95 percent of such intervals would contain the true mean."
+        },
+        {
           "id": "D",
-          "text": "The sample mean is between 4.1 and 5.3 with probability 0.95.",
+          "text": "The sample mean falls between 4.1 and 5.3 with probability 0.95 in this particular study.",
           "misconception": "The sample mean is a known number that sits at the interval's center."
         }
       ],
-      "correctId": "B",
+      "correctId": "C",
       "explanation": "The 95 percent describes the long-run behavior of the procedure across repeated samples. Any single interval either contains the true mean or does not.",
       "nextReviewIfRight": "Back in your plan when it starts to fade.",
       "nextReviewIfWrong": "You'll see this again tomorrow."
@@ -326,25 +326,25 @@
       "options": [
         {
           "id": "A",
-          "text": "No, it is not significant, so there is no effect.",
+          "text": "No. It is not statistically significant, so we can say there is no effect at all.",
           "misconception": "Non-significant is not 'no effect'."
         },
         {
           "id": "B",
-          "text": "The best estimate is a lift of about 0.5 points, and the data are consistent with anything from a slight loss to a 1.2-point gain. If a wrong call is cheap, ship and monitor; if it is costly, run the test longer."
+          "text": "Statistics cannot answer that question, since an interval never says whether an effect is real.",
+          "misconception": "Statistics does answer it, with a range and a recommendation."
         },
         {
           "id": "C",
-          "text": "Yes, the effect is 0.5 points.",
+          "text": "Yes. The effect is 0.5 points, which is our best estimate, so we can treat it as real.",
           "misconception": "Drops the uncertainty the stakeholder needs."
         },
         {
           "id": "D",
-          "text": "Statistics cannot answer that.",
-          "misconception": "Statistics does answer it, with a range and a recommendation."
+          "text": "Best guess is +0.5 points, but a small loss up to +1.2 also fits. Ship if a wrong call is cheap."
         }
       ],
-      "correctId": "B",
+      "correctId": "D",
       "explanation": "Translate the interval into the decision's terms: the point estimate, the range, and what the uncertainty means for the choice in front of them.",
       "nextReviewIfRight": "Back in your plan when it starts to fade.",
       "nextReviewIfWrong": "You'll see this again tomorrow."
@@ -391,12 +391,12 @@
         },
         {
           "id": "B",
-          "text": "A line chart with months on the x-axis."
+          "text": "A scatter plot of revenue against itself.",
+          "misconception": "Plotting a variable against itself shows a diagonal and nothing else."
         },
         {
           "id": "C",
-          "text": "A scatter plot of revenue against itself.",
-          "misconception": "Plotting a variable against itself shows a diagonal and nothing else."
+          "text": "A line chart with months on the x-axis."
         },
         {
           "id": "D",
@@ -404,7 +404,7 @@
           "misconception": "Sorting by value destroys the time order, so the trend disappears."
         }
       ],
-      "correctId": "B",
+      "correctId": "C",
       "explanation": "A single quantity over evenly spaced time is a line chart. The eye reads slope and seasonality directly.",
       "nextReviewIfRight": "Back in your plan when it starts to fade.",
       "nextReviewIfWrong": "You'll see this again tomorrow."
@@ -416,12 +416,12 @@
       "options": [
         {
           "id": "A",
-          "text": "P(A)",
-          "misconception": "Dividing by P(A) cancels the prior and leaves P(B | A), the wrong direction."
+          "text": "P(B)"
         },
         {
           "id": "B",
-          "text": "P(B)"
+          "text": "P(A)",
+          "misconception": "Dividing by P(A) cancels the prior and leaves P(B | A), the wrong direction."
         },
         {
           "id": "C",
@@ -434,7 +434,7 @@
           "misconception": "1 - P(B) is the probability of not B and has no place in the rule."
         }
       ],
-      "correctId": "B",
+      "correctId": "A",
       "explanation": "Bayes' rule divides the joint probability P(B | A) P(A) by the marginal P(B), which normalizes it to a probability of A given B.",
       "nextReviewIfRight": "Back in your plan when it starts to fade.",
       "nextReviewIfWrong": "You'll see this again tomorrow."
@@ -446,7 +446,8 @@
       "options": [
         {
           "id": "A",
-          "text": "Residuals against fitted values"
+          "text": "Correlation matrix of predictors",
+          "misconception": "Shows collinearity among predictors, a different assumption."
         },
         {
           "id": "B",
@@ -460,11 +461,10 @@
         },
         {
           "id": "D",
-          "text": "Correlation matrix of predictors",
-          "misconception": "Shows collinearity among predictors, a different assumption."
+          "text": "Residuals against fitted values"
         }
       ],
-      "correctId": "A",
+      "correctId": "D",
       "explanation": "A funnel shape in residuals versus fitted values signals non-constant variance (heteroscedasticity). A flat band is what you want.",
       "nextReviewIfRight": "Back in your plan when it starts to fade.",
       "nextReviewIfWrong": "You'll see this again tomorrow."
@@ -476,12 +476,12 @@
       "options": [
         {
           "id": "A",
-          "text": "Ice cream causes drowning.",
+          "text": "Eating ice cream causes drowning.",
           "misconception": "Mistakes correlation for causation."
         },
         {
           "id": "B",
-          "text": "A common cause, hot weather, raises both."
+          "text": "Hot weather raises both of them."
         },
         {
           "id": "C",
@@ -515,7 +515,7 @@
         },
         {
           "id": "C",
-          "text": "sample size",
+          "text": "mean",
           "misconception": "Sample size enters through the likelihood, not as a separate factor."
         },
         {
@@ -536,25 +536,25 @@
       "options": [
         {
           "id": "A",
-          "text": "Cells were run out of order, so the state depends on the run history."
+          "text": "pandas rounds decimal numbers differently on other operating systems.",
+          "misconception": "Same version, same arithmetic."
         },
         {
           "id": "B",
-          "text": "Their laptop is slower.",
+          "text": "Their laptop is slower, so long-running cells time out before finishing.",
           "misconception": "Speed changes time, not results."
         },
         {
           "id": "C",
-          "text": "pandas rounds differently on other machines.",
-          "misconception": "Same version, same arithmetic."
+          "text": "Cells were run out of order, so the results depend on the run history."
         },
         {
           "id": "D",
-          "text": "Notebooks cannot be shared.",
+          "text": "Notebooks cannot be shared reliably, so outputs change when they are opened.",
           "misconception": "Notebooks share fine when they run clean from the top."
         }
       ],
-      "correctId": "A",
+      "correctId": "C",
       "explanation": "Notebook state is whatever ran last, in whatever order. Restart the kernel and run all cells top to bottom before sharing, and pin package versions.",
       "nextReviewIfRight": "Back in your plan when it starts to fade.",
       "nextReviewIfWrong": "You'll see this again tomorrow."
@@ -593,22 +593,22 @@
           "options": [
             {
               "id": "a",
-              "text": "Ship it. The new page won."
+              "text": "The new page raises conversion by 0.5 points, so ship it now."
             },
             {
               "id": "b",
-              "text": "Do not ship. The test failed."
+              "text": "Inconclusive: the lift may be slightly negative or up to 1 point."
             },
             {
               "id": "c",
-              "text": "The result is inconclusive at the 5% level. The lift could be anywhere from slightly negative to about 1 point. Extend the test, or decide based on the cost of a wrong call."
+              "text": "There is a 92 percent chance that the new page is the better one."
             },
             {
               "id": "d",
-              "text": "Rerun until p drops below 0.05."
+              "text": "The test failed, so the two pages perform about the same."
             }
           ],
-          "correctId": "c"
+          "correctId": "b"
         },
         {
           "type": "choice",
@@ -616,22 +616,22 @@
           "options": [
             {
               "id": "a",
-              "text": "Extend the test for a fixed two more weeks, set now, then decide."
-            },
-            {
-              "id": "b",
               "text": "Ship now, and roll back if conversion drops over the next week."
             },
             {
+              "id": "b",
+              "text": "Keep the old page, close the test and move on to other work."
+            },
+            {
               "id": "c",
-              "text": "Keep the old page and close the test."
+              "text": "Rerun the analysis with a one-sided test to get p under 0.05."
             },
             {
               "id": "d",
-              "text": "Rerun the analysis with a one-sided test to get p under 0.05."
+              "text": "Extend the test for a fixed two more weeks, set now, then decide."
             }
           ],
-          "correctId": "a"
+          "correctId": "d"
         },
         {
           "type": "explain",

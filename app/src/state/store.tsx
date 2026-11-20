@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
-import { api } from '../api'
+import { api, setFocus } from '../api'
 import { PILOT } from '../pilot/config'
+import { appKey, currentAccount } from '../auth/account'
 
 export type Sure = 'sure' | 'notSure' | 'dontKnow'
 export interface AnswerRecord { questionId: string; optionId: string; sure: Sure; right: boolean }
@@ -35,6 +36,7 @@ export interface SurveyAnswers {
   skillsToKeep: string
   timePerDay: string | null
   reminderTime: string | null
+  focus?: string | null
 }
 
 export interface AppState {
@@ -50,7 +52,7 @@ export interface AppState {
 }
 
 //v2: several target roles and optional grades; a new key so old saved setups start fresh
-const KEY = PILOT ? 'recall.pilot.app' : 'recall.v2'
+const storeKey = () => (PILOT ? 'recall.pilot.app' : appKey(currentAccount()?.id))
 
 const emptySession: SessionState = {
   startedAt: null, questionIndex: 0, phase: 'ask', sure: null, picked: null, answers: [],
@@ -83,7 +85,7 @@ function initial(): AppState {
 
 function load(): AppState {
   try {
-    const raw = localStorage.getItem(KEY)
+    const raw = localStorage.getItem(storeKey())
     if (raw) return { ...initial(), ...JSON.parse(raw) }
   } catch { /* storage unavailable: start fresh */ }
   return initial()
@@ -101,15 +103,17 @@ const Ctx = createContext<Store | null>(null)
 
 export function StoreProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<AppState>(load)
+  //priority reads the person's focus, so it is set before any screen sorts skills
+  if (!PILOT) setFocus(state.survey.focus)
   useEffect(() => {
-    try { localStorage.setItem(KEY, JSON.stringify(state)) } catch { /* ignore */ }
+    try { localStorage.setItem(storeKey(), JSON.stringify(state)) } catch { /* ignore */ }
   }, [state])
   const store = useMemo<Store>(() => ({
     state,
     set: patch => setState(s => ({ ...s, ...(typeof patch === 'function' ? patch(s) : patch) })),
     setSession: patch => setState(s => ({ ...s, session: { ...s.session, ...(typeof patch === 'function' ? patch(s.session) : patch) } })),
     resetSession: () => setState(s => ({ ...s, session: { ...emptySession } })),
-    resetAll: () => { try { localStorage.removeItem(KEY) } catch { /* ignore */ } setState(initial()) },
+    resetAll: () => { try { localStorage.removeItem(storeKey()) } catch { /* ignore */ } setState(initial()) },
   }), [state])
   return <Ctx.Provider value={store}>{children}</Ctx.Provider>
 }

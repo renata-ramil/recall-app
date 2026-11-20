@@ -1,5 +1,5 @@
 //sends one row per event to the project's Google Sheet through an Apps Script web app; rows wait in a queue until sent
-import { APP_VERSION, LOG_URL } from './config'
+import { APP_VERSION, LOG_URL, PILOT } from './config'
 
 const QKEY = 'recall.pilot.queue'
 type Row = Record<string, string | number>
@@ -21,14 +21,15 @@ export function logEvent(event: string, fields: Row = {}) {
   void flush()
 }
 
-//the sheet address can also sit in docs/pilot/log-url.txt, so it can be set on GitHub without rebuilding the app
+//the sheet address can also sit in docs/pilot/log-url.txt, so it can be set on GitHub without rebuilding the app;
+//the main app reads the same file, so its feedback goes to the same Sheet
 let url = LOG_URL
 let looked = false
 async function endpoint(): Promise<string> {
   if (url || looked) return url
   looked = true
   try {
-    const r = await fetch(`${import.meta.env.BASE_URL}log-url.txt`, { cache: 'no-store' })
+    const r = await fetch(`${import.meta.env.BASE_URL}${PILOT ? '' : 'pilot/'}log-url.txt`, { cache: 'no-store' })
     const t = r.ok ? (await r.text()).trim() : ''
     if (t.startsWith('https://script.google.com/') || t.startsWith('http://localhost')) url = t
   } catch { /* stays on the device */ }

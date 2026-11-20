@@ -1,5 +1,7 @@
+import { useAuth } from '../auth/AuthContext'
+import { FeedbackPill } from './Feedback'
 import { useNavigate } from 'react-router-dom'
-import { api, FADE_THRESHOLD, fadeLabel, sortByPriority, skillState } from '../api'
+import { api, FADE_THRESHOLD, fadeLabel, sortByPriority, skillState, whyToday } from '../api'
 import { todayKey, useStore } from '../state/store'
 import { Btn, Nav } from '../components/ui'
 import { PILOT } from '../pilot/config'
@@ -19,27 +21,27 @@ function currentWeek(now = new Date(Date.now())) {
     const d = new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + i)
     const offset = i - ((now.getDay() + 6) % 7)
     //pilot: only days with a finished session count as done
-    const past = PILOT ? pilot().doneDays.includes(dayNumber(d)) : offset < 0
-    return { date: String(d.getDate()), letter: 'MTWTFSS'[i], status: offset === 0 ? (PILOT && past ? 'done' : 'today') : offset < 0 ? (past ? 'done' : 'future') : 'future' }
+    const past = pilot().doneDays.includes(dayNumber(d))
+    return { date: String(d.getDate()), letter: 'MTWTFSS'[i], status: offset === 0 ? (past ? 'done' : 'today') : offset < 0 ? (past ? 'done' : 'future') : 'future' }
   })
 }
 
 export function Today() {
   const nav = useNavigate()
   const { state, resetSession, setSession } = useStore()
-  const user = api.user()
+  const { account } = useAuth()
   const today = api.today()
   const skills = sortByPriority(api.skills(state.survey.targetRoles).filter(s => state.topics[s.id]?.ticked ?? true))
   const plan = sessionPlan(state)
-  const sessionSkills = PILOT ? plan.skillIds.map(id => skills.find(s => s.id === id)).filter((s): s is NonNullable<typeof s> => Boolean(s)) : skills.slice(0, 3)
+  const sessionSkills = plan.skillIds.map(id => skills.find(s => s.id === id)).filter((s): s is NonNullable<typeof s> => Boolean(s))
   const scenario = plan.scenario
   //fade banner target: the next skill still above the threshold; one sitting at 60% today is already fading
   const soonest = skills.filter(s => skillState(s) !== 'faded' && s.recall > FADE_THRESHOLD && s.daysUntilFade > 0).sort((a, b) => a.daysUntilFade - b.daysUntilFade)[0]
   const showCountdown = Boolean(soonest) && soonest.daysUntilFade <= 2
-  const done = state.session.completedOn === todayKey() || (PILOT && pilot().doneDays.includes(dayNumber()))
-  const nothingDue = PILOT && !done && sessionSkills.length === 0
+  const done = state.session.completedOn === todayKey() || pilot().doneDays.includes(dayNumber())
+  const nothingDue = !done && sessionSkills.length === 0
   useEffect(() => { if (nothingDue) markRestDay() }, [nothingDue])
-  const streakDays = PILOT ? streak() : today.streakDays + (done ? 1 : 0)
+  const streakDays = streak()
 
   const start = () => {
     resetSession()
@@ -56,7 +58,10 @@ export function Today() {
       ) : <div className="safe-top" style={{ paddingTop: 48 }} />}
 
       <div style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', gap: 16, padding: '16px 24px 0 24px' }}>
-        <h1 className="greet">{PILOT ? greeting() : `${greeting()}, ${user.firstName}`}</h1>
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12 }}>
+          <h1 className="greet">{PILOT ? greeting() : (account ? `${greeting()}, ${account.name}` : greeting())}</h1>
+          <FeedbackPill />
+        </div>
 
         <div style={{ background: 'var(--navy)', borderRadius: 32, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -66,8 +71,12 @@ export function Today() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
             {sessionSkills.map(s => (
-              <div key={s.id} style={{ height: 44, borderRadius: 16, background: 'var(--paper)', padding: '0 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span className="body-b">{s.name}</span><span className="small-b">{fadeLabel(s)}</span>
+              <div key={s.id} style={{ minHeight: 44, borderRadius: 16, background: 'var(--paper)', padding: '8px 16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+                  <span className="body-b">{s.name}</span><span className="small-b">{fadeLabel(s)}</span>
+                </div>
+                {/* why this skill today: its state and how often postings for the person's roles ask for it */}
+                {!PILOT && <span className="cap muted">{whyToday(s, state.survey.targetRoles, (pilot().history[s.id] ?? []).length > 0)}</span>}
               </div>
             ))}
           </div>

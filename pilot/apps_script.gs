@@ -1,6 +1,6 @@
 // Recall pilot: receives answer rows from the app and writes them to this Google Sheet.
 // Paste this into Extensions > Apps Script of a new Google Sheet, then deploy as a web app (PILOT_SETUP.md, step 2).
-// Each event type gets its own tab (consent, split, setup, answer, scenario, session_done, rest_day, use_this_week, reminder, delete_request).
+// Each event type gets its own tab (consent, split, setup, answer, scenario, session_done, rest_day, use_this_week, reminder, delete_request, feedback).
 
 function doPost(e) {
   var lock = LockService.getScriptLock();

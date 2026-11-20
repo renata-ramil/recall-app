@@ -48,8 +48,8 @@
       "options": {
         "A": "Convert to float first, then strip the symbols.",
         "B": "Strip '$' and ',' first, then convert to float.",
-        "C": "Drop every row that contains a '$'.",
-        "D": "Keep it as text and sort alphabetically."
+        "C": "Drop every row that contains a '$' or a comma.",
+        "D": "Keep it as text and sort the values alphabetically."
       },
       "key": "B",
       "explanation": "The symbols stop the type conversion, so they are removed first. Then the clean strings convert to numbers.",
@@ -70,7 +70,7 @@
       "code": null,
       "options": {
         "A": "The join dropped the orders that had no matching customer in the customers table.",
-        "B": "Some customer_id values repeat in the customers table, so matching orders were duplicated.",
+        "B": "Some customer_id values repeat in the customers table, so orders got duplicated.",
         "C": "pandas added extra rows to fill in the missing order dates during the join.",
         "D": "The orders table had hidden or filtered rows that the join brought back into view."
       },
@@ -162,7 +162,7 @@
       "code": null,
       "options": {
         "A": "Bar charts cannot show percentages, so the rates should be drawn as a pie chart.",
-        "B": "The truncated axis makes a 0.3-point gap look like a fourfold difference.",
+        "B": "The truncated axis makes a 0.3-point gap look like a fourfold difference here.",
         "C": "Conversion rates should always use a log scale so small rates are easy to see.",
         "D": "There is no problem, since truncated axes are standard practice for bar charts."
       },
@@ -299,10 +299,10 @@
       "stem": "A 95 percent confidence interval (the classical, frequentist kind) for a mean is [4.1, 5.3]. Which statement is correct?",
       "code": null,
       "options": {
-        "A": "About 95 percent of the individual observations in the data fall between 4.1 and 5.3.",
-        "B": "If the study were repeated many times, about 95 percent of such intervals would contain the true mean.",
+        "A": "About 95 percent of the individual observations in this data fall between 4.1 and 5.3.",
+        "B": "Over many repeated studies, about 95 percent of such intervals would contain the true mean.",
         "C": "Given this one interval, the probability is 0.95 that the true mean lies inside it.",
-        "D": "The sample mean falls between 4.1 and 5.3 with probability 0.95 in this study."
+        "D": "The sample mean falls between 4.1 and 5.3 with probability 0.95 in this particular study."
       },
       "key": "B",
       "explanation": "The 95 percent describes the long-run behavior of the procedure across repeated samples. Any single interval either contains the true mean or does not.",
@@ -324,7 +324,7 @@
       "options": {
         "A": "There is a 3 percent chance that the null hypothesis is true, given the data we observed.",
         "B": "If the null were true, data at least this extreme would appear about 3 percent of the time.",
-        "C": "The effect is large and practically important, since the p-value is below 0.05.",
+        "C": "The effect is large and practically important, since the p-value is below the 0.05 cutoff.",
         "D": "There is a 97 percent chance that the alternative hypothesis is true for this effect."
       },
       "key": "B",
@@ -439,7 +439,7 @@
       "options": {
         "A": "It sets most of the coefficients exactly to zero, keeping only a few predictors.",
         "B": "It shrinks coefficients toward zero to reduce variance, at the cost of some bias.",
-        "C": "It removes the intercept so that the model passes through the origin.",
+        "C": "It removes the intercept so that the fitted line always passes through the origin.",
         "D": "It makes the model fit the training data more closely than plain least squares."
       },
       "key": "B",
@@ -462,7 +462,7 @@
       "options": {
         "A": "Customers with a ticket are twice as likely to churn in probability terms, whatever the baseline.",
         "B": "The odds of churn are about twice as high for ticket holders, holding other predictors fixed.",
-        "C": "About 69 percent of customers who had a support ticket went on to churn.",
+        "C": "About 69 percent of the customers who had a support ticket went on to churn later on.",
         "D": "Having a ticket adds 0.69 to a customer's churn probability, holding other predictors fixed."
       },
       "key": "B",
@@ -484,7 +484,7 @@
       "code": null,
       "options": {
         "A": "Eating ice cream causes drowning.",
-        "B": "Hot weather raises both.",
+        "B": "Hot weather raises both of them.",
         "C": "Drowning causes ice cream sales.",
         "D": "It is a coincidence in every city."
       },
@@ -529,8 +529,8 @@
       "stem": "A company rolled out a new onboarding flow in March. You have monthly retention for this company and for five similar companies that did not change anything. Which design fits best?",
       "code": null,
       "options": {
-        "A": "A before-after comparison of this company's retention alone",
-        "B": "Difference-in-differences using the other companies as the comparison",
+        "A": "A before-after comparison of this company's retention on its own",
+        "B": "Difference-in-differences, using the other firms as the comparison",
         "C": "A simple correlation between the new onboarding flow and retention",
         "D": "A randomized A/B test run on the data that was already collected"
       },
@@ -599,7 +599,7 @@
       "code": null,
       "options": {
         "A": "To train the model k times faster by splitting the data into smaller pieces.",
-        "B": "To estimate out-of-sample performance while every row gets used for validation once.",
+        "B": "To estimate performance on new data, using every row for validation once.",
         "C": "To find and remove outliers by checking which folds give unusual errors.",
         "D": "To increase the size of the training set by a factor of k through resampling."
       },
@@ -644,10 +644,10 @@
       "stem": "Why does a random forest usually generalize better than a single deep decision tree?",
       "code": null,
       "options": {
-        "A": "It uses fewer features overall, so each tree is simpler and less noisy.",
-        "B": "Averaging many trees built on resampled data and random features lowers variance.",
+        "A": "It uses fewer features overall, so each tree is simpler and has less noise in it.",
+        "B": "Averaging trees built on resampled data and random features lowers the variance.",
         "C": "Each tree in the forest is grown deeper, so it captures more of the signal.",
-        "D": "It fits the training data more exactly than any single tree is able to."
+        "D": "It fits the training data more exactly than any single tree is ever able to."
       },
       "key": "B",
       "explanation": "Single deep trees have high variance. Bagging and feature randomness make the trees' errors less correlated, so their average is more stable.",
@@ -669,7 +669,7 @@
       "options": {
         "A": "prior",
         "B": "p-value",
-        "C": "sample size",
+        "C": "mean",
         "D": "evidence"
       },
       "key": "A",
@@ -693,7 +693,7 @@
         "A": "Leaves it at the raw mean, since that is what the school's own data show.",
         "B": "Shrinks it toward the overall mean, more than for a school with 500 students.",
         "C": "Sets it to the overall mean exactly, since 5 students carry no information.",
-        "D": "Drops the school from the model as an outlier with too few students."
+        "D": "Drops the school from the model as an outlier, since it has too few students."
       },
       "key": "B",
       "explanation": "Partial pooling shrinks noisy small-group estimates toward the population mean in proportion to their uncertainty. Large groups move little.",
@@ -716,7 +716,7 @@
         "A": "Report the estimate as it is, since an R-hat of 1.21 is close enough to 1.",
         "B": "Treat the chains as not converged: run longer, check modes or reparameterize.",
         "C": "Delete the worst chain and report the estimate from the remaining chains.",
-        "D": "Increase the prior variance so the sampler can move around more freely."
+        "D": "Increase the prior variance so that the sampler can move around more freely."
       },
       "key": "B",
       "explanation": "R-hat compares between-chain and within-chain variance; values above about 1.01 mean the chains disagree, so the posterior summary is not trustworthy yet.",
@@ -736,10 +736,10 @@
       "stem": "A 95 percent Bayesian credible interval for an effect is [0.2, 0.9]. Which reading is correct?",
       "code": null,
       "options": {
-        "A": "Given the model and data, the effect lies between 0.2 and 0.9 with 95 percent probability.",
+        "A": "Given the model and data, the effect lies in this range with 95 percent probability.",
         "B": "95 percent of repeated samples would give an estimated effect inside this range.",
         "C": "The effect is exactly 0.55, the midpoint of the interval, with 95 percent certainty.",
-        "D": "The p-value for the effect is 0.05, so it is just barely significant."
+        "D": "The p-value for the effect is 0.05, so the result is only just barely significant."
       },
       "key": "A",
       "explanation": "A credible interval is a direct probability statement about the parameter, conditional on the prior and the data. That is the reading a confidence interval does not allow.",
@@ -759,7 +759,7 @@
       "stem": "This should print the average order total per city but prints a method object. Fix it.",
       "code": "df[\"total\"] = df[\"price\"] * df[\"qty\"]\nresult = df.groupby(\"city\")[\"total\"].mean\nprint(result)",
       "options": {
-        "A": "Change .mean to .mean()",
+        "A": "Add () so .mean becomes .mean()",
         "B": "Change groupby to sort_values",
         "C": "Remove the brackets around 'total'",
         "D": "Replace print with return"
@@ -784,8 +784,8 @@
       "options": {
         "A": "Every customer, with order counts and 0 for customers with no orders.",
         "B": "Only customers who have at least one order, with their order counts.",
-        "C": "Every order with the customer's name repeated.",
-        "D": "An error, because COUNT needs a WHERE clause."
+        "C": "Every order row, with the customer's name repeated on each one.",
+        "D": "An error, because COUNT needs a WHERE clause to run on joined data."
       },
       "key": "B",
       "explanation": "An inner JOIN keeps only customers with a matching order row. Customers with no orders are absent; a LEFT JOIN would keep them with a count of 0.",
@@ -852,7 +852,7 @@
       "code": null,
       "options": {
         "A": "We ran a logistic regression with L2 regularization on 14 features from the checkout logs.",
-        "B": "The new checkout showed about a 0.5-point lift, but the interval includes zero, so test two more weeks.",
+        "B": "Checkout lifted about 0.5 points, but the interval includes zero, so test two more weeks.",
         "C": "Data was collected between March and May from all checkout sessions on web and mobile.",
         "D": "Please see the attached notebook for the full model output, charts and test details."
       },
@@ -875,7 +875,7 @@
       "code": null,
       "options": {
         "A": "No. It is not statistically significant, so we can say there is no effect at all.",
-        "B": "Best guess is +0.5 points, but anything from a small loss to +1.2 fits. Ship if a wrong call is cheap.",
+        "B": "Best guess is +0.5 points, but a small loss up to +1.2 also fits. Ship if a wrong call is cheap.",
         "C": "Yes. The effect is 0.5 points, which is our best estimate, so we can treat it as real.",
         "D": "Statistics cannot answer that question, since an interval never says whether an effect is real."
       },
@@ -920,10 +920,10 @@
       "stem": "You must report that the model's forecast error doubled last month. Which phrasing is both honest and useful?",
       "code": null,
       "options": {
-        "A": "The model is broken and its forecasts should not be used until further notice.",
-        "B": "Error rose from 4 to 8 percent in September, after the pricing change. We are retraining this week.",
+        "A": "The model is broken, and its forecasts should not be used by anyone until further notice.",
+        "B": "Error rose from 4 to 8 percent in September, after the pricing change. Retraining now.",
         "C": "There were some fluctuations in model performance last month, which we are monitoring.",
-        "D": "Error went up last month, but it is probably fine and should settle on its own soon."
+        "D": "Error went up last month, but it is probably fine and should settle down on its own soon."
       },
       "key": "B",
       "explanation": "State the number, the likely cause, and the action. That is what a reader needs to trust the report and to decide whether to intervene.",
@@ -947,16 +947,16 @@
           "kind": "interpret",
           "prompt": "What do you tell her about the result?",
           "options": {
-            "A": "The new page raises conversion by 0.5 points; ship it.",
-            "B": "There is a 92 percent chance the new page is better.",
-            "C": "The result is inconclusive at the 5 percent level. The lift could be anywhere from slightly negative to about 1 point. Extend the test, or decide based on the cost of a wrong call.",
-            "D": "The test failed, so the two pages perform the same."
+            "A": "The new page raises conversion by 0.5 points, so ship it now.",
+            "B": "Inconclusive: the lift may be slightly negative or up to 1 point.",
+            "C": "There is a 92 percent chance that the new page is the better one.",
+            "D": "The test failed, so the two pages perform about the same."
           },
-          "key": "C",
+          "key": "B",
           "explanation": "The 95 percent interval for the difference runs from about -0.07 to 1.07 points, so the data do not settle the question at the 5 percent level, and the right move depends on the cost of being wrong.",
           "misconceptions": {
             "A": "Treats the observed lift as certain.",
-            "B": "Reads the p-value as the probability the hypothesis is true.",
+            "C": "Reads the p-value as the probability the hypothesis is true.",
             "D": "Treats 'not significant' as 'no difference'."
           }
         },
@@ -964,17 +964,17 @@
           "kind": "act",
           "prompt": "Nobody knows yet what a wrong call would cost. What should happen next?",
           "options": {
-            "A": "Extend the test for a fixed two more weeks, set now, then decide.",
-            "B": "Ship now, and roll back if conversion drops over the next week.",
-            "C": "Keep the old page and close the test.",
-            "D": "Rerun the analysis with a one-sided test to get p under 0.05."
+            "A": "Ship now, and roll back if conversion drops over the next week.",
+            "B": "Keep the old page, close the test and move on to other work.",
+            "C": "Rerun the analysis with a one-sided test to get p under 0.05.",
+            "D": "Extend the test for a fixed two more weeks, set now, then decide."
           },
-          "key": "A",
+          "key": "D",
           "explanation": "Extending the test for a period fixed in advance is the default when the cost of a wrong call is unknown; stopping the moment the interval clears zero would inflate false positives. B is defensible when shipping is cheap to reverse and the downside is small. C discards a likely positive effect. D changes the test after seeing the data, which inflates false positives.",
           "misconceptions": {
-            "B": "Defensible only when rollback is cheap and the downside is small; say that out loud if you pick it.",
-            "C": "Throws away a result whose best estimate is positive.",
-            "D": "Choosing the test after seeing the data is p-hacking."
+            "A": "Defensible only when rollback is cheap and the downside is small; say that out loud if you pick it.",
+            "B": "Throws away a result whose best estimate is positive.",
+            "C": "Choosing the test after seeing the data is p-hacking."
           }
         },
         {
@@ -1000,16 +1000,16 @@
           "kind": "interpret",
           "prompt": "What is the most likely cause of the jump?",
           "options": {
-            "A": "Sales really rose 38 percent.",
-            "B": "Orders with several shipments appear several times after the join, so their totals are summed more than once.",
-            "C": "The currency changed.",
-            "D": "The dashboard caches old data."
+            "A": "Sales really rose 38 percent in September across all regions.",
+            "B": "The currency changed partway through the month for some orders.",
+            "C": "The join repeats orders with several shipments, inflating the sum.",
+            "D": "The dashboard is showing cached data from an earlier, busier month."
           },
-          "key": "B",
+          "key": "C",
           "explanation": "A one-to-many join on orders to shipments duplicates each multi-package order once per package. Summing order totals afterward counts those orders several times. September likely had more split shipments.",
           "misconceptions": {
             "A": "An unexplained 38 percent jump that coincides with a pipeline detail deserves a check before it is believed.",
-            "C": "A currency change would shift every month, not one.",
+            "B": "A currency change would shift every month, not one.",
             "D": "Caching shows old numbers, not inflated ones."
           }
         },
@@ -1017,15 +1017,15 @@
           "kind": "act",
           "prompt": "What do you do first?",
           "options": {
-            "A": "Compare the row count after the join with the number of distinct order ids, and compare the summed total with a sum computed on the orders table alone.",
-            "B": "Tell leadership that revenue is up 38 percent.",
-            "C": "Delete the shipments table.",
-            "D": "Divide September revenue by 1.38."
+            "A": "Tell leadership right away that revenue is up 38 percent.",
+            "B": "Check join row counts against distinct orders and a direct sum.",
+            "C": "Delete the shipments table so the join cannot repeat orders.",
+            "D": "Divide the September revenue figure by 1.38 to correct it."
           },
-          "key": "A",
+          "key": "B",
           "explanation": "Verify the diagnosis by comparing rows to distinct orders and checking a reference sum before touching the pipeline or the message. The fix is to aggregate shipments per order before the join, or sum on the orders table.",
           "misconceptions": {
-            "B": "Reporting an unverified number is the costly mistake here.",
+            "A": "Reporting an unverified number is the costly mistake here.",
             "C": "The table is fine; the join order is the bug.",
             "D": "Guessing a correction factor hides the real error."
           }
@@ -1053,33 +1053,33 @@
           "kind": "interpret",
           "prompt": "What is going on?",
           "options": {
-            "A": "The model is excellent and should go to production.",
-            "B": "The feature leaks the label: it is computed after churn happens, so it encodes the answer.",
-            "C": "The validation set is too small.",
-            "D": "Accuracy is the wrong metric, so the model is actually bad."
+            "A": "The model is excellent and should go straight to production.",
+            "B": "The validation set is too small to trust the accuracy number.",
+            "C": "Accuracy is the wrong metric, so the model is actually bad.",
+            "D": "The feature leaks the label, since it is computed after churn."
           },
-          "key": "B",
+          "key": "D",
           "explanation": "Days since last login measured at the end of the window is large for every churned customer, because churn means they stopped logging in. The feature is a consequence of the label, not a predictor available at decision time.",
           "misconceptions": {
             "A": "Near-perfect scores on a hard problem are a warning sign, not a success.",
-            "C": "Sample size does not create leakage.",
-            "D": "Metric choice matters, but the number here comes from leakage."
+            "B": "Sample size does not create leakage.",
+            "C": "Metric choice matters, but the number here comes from leakage."
           }
         },
         {
           "kind": "act",
           "prompt": "What should the fix be?",
           "options": {
-            "A": "Compute every feature as of a cutoff date before the churn window, and evaluate on customers whose churn status is observed after that date.",
-            "B": "Remove the feature and keep everything else as is.",
-            "C": "Use F1 instead of accuracy.",
-            "D": "Add more features."
+            "A": "Remove that one feature and keep everything else as it is.",
+            "B": "Switch the metric from accuracy to F1 and report that instead.",
+            "C": "Build features only from data before a cutoff, then retest.",
+            "D": "Add more features so the model relies less on the leaky one."
           },
-          "key": "A",
+          "key": "C",
           "explanation": "The fix is temporal: features must use only information available at the moment the prediction would be made. Removing one feature leaves any other leaking feature in place.",
           "misconceptions": {
-            "B": "Other features computed at the end of the window may leak too.",
-            "C": "Changing the metric does not stop the leak.",
+            "A": "Other features computed at the end of the window may leak too.",
+            "B": "Changing the metric does not stop the leak.",
             "D": "More features built the same way add more leakage."
           }
         },

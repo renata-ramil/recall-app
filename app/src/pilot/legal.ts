@@ -9,6 +9,7 @@ export const PRIVACY: Section[] = [
     'Your study code. I keep the list that links codes to people separately from the answers, and I delete it when the pilot ends.',
     'Your setup answers: target roles, the month and year you finished your program, your main goal, the skills you most want to keep, time per day, reminder time, and the topics you picked with how confident you feel.',
     'Your answers in the app: which option you picked, whether it was right, how sure you were, and when you answered.',
+    'Feedback you choose to send: its type, your message and the screen you sent it from.',
     'Course titles you type stay on your device. They are not sent to me.',
   ] },
   { h: 'What I do not collect', p: ['No name, email, transcript, grades, location, or tracking cookies. The pilot version has no transcript upload.'] },

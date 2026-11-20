@@ -1,3 +1,4 @@
+import { FeedbackPill } from './Feedback'
 import { useNavigate } from 'react-router-dom'
 import { api, recallWord } from '../api'
 import type { ChoiceStep, ExplainStep } from '../api/types'
@@ -18,7 +19,8 @@ const LETTERS = 'ABCDEFGH'
 function finish(setSession: ReturnType<typeof useStore>['setSession'], startedAt: number | null, nav: (p: string) => void) {
   const now = Date.now()
   setSession({ finishedAt: now, completedOn: todayKey() })
-  if (PILOT) { markDayDone(); logEvent('session_done', { seconds: startedAt ? Math.round((now - startedAt) / 1000) : '' }) }
+  markDayDone()
+  if (PILOT) { logEvent('session_done', { seconds: startedAt ? Math.round((now - startedAt) / 1000) : '' }) }
   nav('/session/summary')
 }
 
@@ -43,7 +45,6 @@ export function Question() {
 
   //pilot: every answer updates the history and goes to the sheet; before and after feed the summary
   const record = (picked: string, sure: Sure, isRight: boolean) => {
-    if (!PILOT) return
     const c = recordAnswer(q as PilotQuestion, picked, sure, isRight, plan.checkin)
     setSession(ss => ({ changes: { ...(ss.changes ?? {}), [q.skillId]: ss.changes?.[q.skillId] ?? c } }))
   }
@@ -116,6 +117,7 @@ export function Question() {
             {!right && picked?.misconception && <p className="body-m">{picked.misconception}</p>}
             <p className="body">{q.explanation}</p>
             <p className="title" style={right ? { marginTop: 8 } : undefined}>{right ? q.nextReviewIfRight : q.nextReviewIfWrong}</p>
+            <div><FeedbackPill question={q.id} /></div>
             <div className="safe-bottom sticky-bottom" style={{ marginTop: 'auto', background: right ? 'var(--mint)' : 'var(--sand)', paddingBottom: 0 }}>
               <Btn onClick={next}>{last ? (plan.scenario ? 'Start scenario' : 'Finish session') : 'Next question'}</Btn>
             </div>
@@ -251,15 +253,13 @@ export function SummaryScreen() {
   const scenarioTotal = plan.scenario ? plan.scenario.steps.length : 0
   const secs = s.startedAt && s.finishedAt ? Math.max(0, Math.round((s.finishedAt - s.startedAt) / 1000)) : null
   const duration = secs === null ? mock.duration : `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`
-  //before and after values come from the model via the api module (mock for now)
+  //before and after values come from the forgetting model
   const rightById = Object.fromEntries(qs.map(q => [q.skillId, s.answers.some(a => a.questionId === q.id && a.right)]))
-  const changes = (PILOT
-    ? ids.filter(id => s.changes?.[id]).map(id => {
+  const changes = (ids.filter(id => s.changes?.[id]).map(id => {
         const c = s.changes![id]
         //after = the estimate for tomorrow; plain words, no review dates
         return { skillId: id, before: c.before, after: c.after, improved: rightById[id] ?? false, next: rightById[id] ? 'Stronger now' : 'Comes back soon' }
-      })
-    : api.changesFor(ids, rightById)).map(c => ({ ...c, name: api.skill(c.skillId)?.name ?? c.skillId }))
+      })).map(c => ({ ...c, name: api.skill(c.skillId)?.name ?? c.skillId }))
   return (
     <div className="screen">
       <div className="safe-top" style={{ background: 'var(--navy)', padding: '48px 24px 24px 24px', display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -268,7 +268,7 @@ export function SummaryScreen() {
           <span className="num-xl on-dark">{recalled} of {total}</span><span className="title on-dark">recalled</span>
         </div>
         <div style={{ display: 'flex', gap: 32 }}>
-          {(!PILOT || scenarioTotal > 0) && <div style={{ display: 'flex', flexDirection: 'column' }}><span className="num-l on-dark">{points} of {PILOT ? scenarioTotal : mock.scenarioTotal}</span><span className="small on-dark-2">scenario points</span></div>}
+          {scenarioTotal > 0 && <div style={{ display: 'flex', flexDirection: 'column' }}><span className="num-l on-dark">{points} of {scenarioTotal}</span><span className="small on-dark-2">scenario points</span></div>}
           <div style={{ display: 'flex', flexDirection: 'column' }}><span className="num-l on-dark">{duration}</span><span className="small on-dark-2">minutes</span></div>
         </div>
       </div>
@@ -298,7 +298,13 @@ export function SkillsTab() {
   return (
     <div className="screen">
       <div className="safe-top" style={{ padding: '48px 24px 0 24px', display: 'flex', flexDirection: 'column', gap: 8 }}>
-        <h1 className="h1">Your skills</h1>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+          <h1 className="h1">Your skills</h1>
+          <div style={{ display: 'flex', gap: 8 }}>
+            {!PILOT && <button type="button" className="cap" onClick={() => nav('/progress')} style={{ height: 32, padding: '0 12px', borderRadius: 999, background: 'var(--navy)', color: 'var(--cream)', whiteSpace: 'nowrap' }}>Progress</button>}
+            <FeedbackPill />
+          </div>
+        </div>
         <p className="small muted">Sorted by priority, recall today on the right</p>
       </div>
       <div style={{ flex: 1, minHeight: 0, paddingTop: 12 }}>

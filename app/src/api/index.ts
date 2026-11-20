@@ -36,7 +36,23 @@ export function jobWeightNotes(skillId: string, roles: string[]): string[] {
   })
 }
 
+//what matters most to the person, from setup: it tilts the priority toward job match or toward weak spots
+export const FOCUS_OPTIONS = ['Job match', 'Both equally', 'Weak spots'] as const
+let focus: string = 'Both equally'
+export function setFocus(f: string | null | undefined) { focus = f ?? 'Both equally' }
+
+//why a skill is in today's session, in one plain line: its state and how often job postings ask for it
+export function whyToday(s: Skill, roles: string[], practiced: boolean): string {
+  const state = practiced ? fadeLabel(s).toLowerCase() : 'first practice'
+  const notes = jobWeightNotes(s.id, roles)
+  const top = notes.map(n => ({ n, v: Number(n.match(/(\d+)%/)?.[1] ?? 0) })).sort((a, b) => b.v - a.v)[0]
+  return top ? `${state.charAt(0).toUpperCase()}${state.slice(1)}. ${top.n}.` : `${state.charAt(0).toUpperCase()}${state.slice(1)}.`
+}
+
 export function priority(s: Pick<Skill, 'recall' | 'jobWeight'>): number {
+  //the square root softens one factor, so the other one decides more of the order
+  if (focus === 'Job match') return s.jobWeight * Math.sqrt(1 - s.recall)
+  if (focus === 'Weak spots') return Math.sqrt(s.jobWeight) * (1 - s.recall)
   return s.jobWeight * (1 - s.recall)
 }
 
@@ -69,9 +85,8 @@ export function recallWord(r: number): string {
 
 const withWeight = (roles: string[]) => (s: Omit<Skill, 'jobWeight'>): Skill => ({ ...s, jobWeight: jobWeight(s.id, roles) })
 
-//pilot: every skill from the content bank, with recall and fade from the person's own practice history
+//every skill from the content bank, with recall and fade from the person's own practice history
 function baseSkills(): Omit<Skill, 'jobWeight'>[] {
-  if (!PILOT) return data.skills
   return SKILL_IDS.map(id => ({
     id, name: data.topics.find(t => t.id === id)?.name ?? id,
     recall: pRecall(id), daysUntilFade: pDaysUntilFade(id), halfLifeDays: Math.round(pHalf(id)),

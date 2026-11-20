@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { api, fadeLabel, sortByPriority, skillState, stateFill } from '../api'
+import { api, FOCUS_OPTIONS, fadeLabel, sortByPriority, skillState, stateFill } from '../api'
 import { useStore } from '../state/store'
 import { Btn, BottomBar, Check, Note, Opt, StepHeader } from '../components/ui'
 import { PILOT } from '../pilot/config'
 import { assignGroups, setProfile } from '../pilot/engine'
 import { logEvent } from '../pilot/log'
+import { coursesFor, courseSkills, topicGrades } from '../content/courses'
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const YEARS = [2022, 2023, 2024, 2025, 2026, 2027]
@@ -26,8 +27,14 @@ export function Welcome() {
       <div className="safe-bottom" style={{ background: 'var(--paper)', borderRadius: '32px 32px 0 0', padding: '32px 24px 32px 24px', display: 'flex', flexDirection: 'column', gap: 16 }}>
         <p className="title" style={{ fontWeight: 500 }}>Skills are like muscles: they weaken without training. Recall finds the ones from your program that are fading and matter for the job you want, and trains them in five minutes a day.</p>
         <Note>Uploading a transcript is optional. If you do, it is read once to find your courses, then deleted. You can stop anytime.</Note>
-        {/* starting setup clears any earlier run, so every visit from the welcome screen begins from scratch */}
-        <Btn onClick={() => { resetAll(); nav('/setup/survey') }}>Start setup</Btn>
+        {PILOT
+          //starting setup clears any earlier run, so every visit from the welcome screen begins from scratch
+          ? <Btn onClick={() => { resetAll(); nav('/setup/survey') }}>Start setup</Btn>
+          : <>
+              <Btn onClick={() => nav('/signup')}>Create account</Btn>
+              <Btn className="btn-soft" onClick={() => nav('/login')}>Log in</Btn>
+              <p className="small muted" style={{ textAlign: 'center' }}><a href="#" onClick={e => { e.preventDefault(); nav('/legal/privacy') }}>Privacy</a> · <a href="#" onClick={e => { e.preventDefault(); nav('/legal/terms') }}>Terms</a> · <a href="#" onClick={e => { e.preventDefault(); nav('/help') }}>Help</a></p>
+            </>}
       </div>
     </div>
   )
@@ -83,6 +90,13 @@ export function SetupSurvey() {
             {opts.mainGoalOptions.map(o => <Opt key={o} selected={s.mainGoal === o} onClick={() => up({ mainGoal: o })}>{o}</Opt>)}
           </div>
         </Group>
+        {!PILOT && (
+          <Group label="What matters most to you?">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 8 }}>
+              {FOCUS_OPTIONS.map(o => <Opt key={o} selected={(s.focus ?? 'Both equally') === o} onClick={() => up({ focus: o })}>{o}</Opt>)}
+            </div>
+          </Group>
+        )}
         <Group label="Which skills do you most want to keep?" htmlFor="keep">
           <div className="field" style={{ height: 56, display: 'flex', alignItems: 'center' }}>
             <input id="keep" className="body" style={{ width: '100%', cursor: 'text' }} value={s.skillsToKeep} onChange={e => up({ skillsToKeep: e.target.value })} />
@@ -158,12 +172,12 @@ export function CourseRecord() {
             {t.courses.map(c => (
               <div key={c.name} style={{ height: 32, borderRadius: 12, background: c.matches ? 'var(--mint)' : 'var(--cream-2)', padding: '0 12px', display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span className={c.matches ? 'small' : 'small muted'} style={{ flex: 1 }}>{c.name}</span>
-                {c.matches && <span className="cap">Match</span>}
+                {courseSkills(c.name).length > 0 && <span className="cap">{courseSkills(c.name).length} {courseSkills(c.name).length === 1 ? 'skill' : 'skills'}</span>}
                 {state.includeGrades && <span className={c.matches ? 'small-b' : 'small-b muted'} style={{ width: 28, textAlign: 'right' }}>{c.grade.toFixed(1)}</span>}
               </div>
             ))}
           </div>
-          <Note margin="12px 24px 0 24px">Course names are enough. Grades are optional. Leave out syllabi and lesson plans.</Note>
+          <Note margin="12px 24px 0 24px">{state.includeGrades ? 'Each skill starts from the grades of its own courses, not one average.' : 'Course names are enough. Grades are optional. Leave out syllabi and lesson plans.'}</Note>
         </div>
       ) : phase === 'typed' ? (
         <div style={{ flex: 1, minHeight: 0, padding: '12px 24px 0 24px', display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -234,6 +248,10 @@ export function TopicPicker() {
               <button type="button" style={{ flex: 1, minHeight: 44, display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'left' }} onClick={() => toggle(tp.id)}>
                 <span className={t.ticked ? 'small-b' : 'small muted'}>{tp.name}</span>
                 <span className="cap muted" style={{ fontWeight: 400 }}>{tp.plain}</span>
+                {/* grades by topic: the courses behind this skill, each with its own grade when shared */}
+                {!PILOT && coursesFor(state, tp.id).length > 0 && (
+                  <span className="cap" style={{ fontWeight: 500 }}>From {coursesFor(state, tp.id).map(c => c.grade === null ? c.name : `${c.name} (${c.grade.toFixed(1)})`).join(', ')}</span>
+                )}
               </button>
               <div className={`rate${t.ticked ? ' rate-on-pale' : ''}`} role={t.ticked ? 'group' : 'img'} aria-label={t.ticked ? `Confidence ${t.confidence} of 5` : 'Confidence not set'}>
                 {[1, 2, 3, 4, 5].map(n => t.ticked
@@ -280,10 +298,10 @@ export function YourPlan() {
   const s = state.survey
   const m = MONTHS.indexOf(s.finishedMonth ?? '')
   const finished = s.finishedYear && m >= 0 ? `${s.finishedYear}-${String(m + 1).padStart(2, '0')}-15` : null
-  if (PILOT) setProfile(Object.fromEntries(ticked.map(([id, t]) => [id, t.confidence ?? 3])), finished)
+  setProfile(Object.fromEntries(ticked.map(([id, t]) => [id, t.confidence ?? 3])), finished, PILOT ? {} : topicGrades(state))
   const start = () => {
+    assignGroups(ticked.map(([id]) => id), Object.fromEntries(ticked.map(([id, t]) => [id, t.confidence ?? 3])), finished)
     if (PILOT) {
-      assignGroups(ticked.map(([id]) => id), Object.fromEntries(ticked.map(([id, t]) => [id, t.confidence ?? 3])), finished)
       //setup answers only; typed course titles never leave the device
       const s = state.survey
       logEvent('setup', { roles: s.targetRoles.join('|'), finished: finished ?? '', goal: s.mainGoal ?? '', time_per_day: s.timePerDay ?? '',

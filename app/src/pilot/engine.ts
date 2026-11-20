@@ -1,11 +1,11 @@
 //pilot engine: study code, the per-person skill split, practice history, the two schedules and the forgetting estimate.
 //Everything lives in localStorage under its own key; every answer is also sent to the project's Google Sheet (log.ts).
-import { CHECKIN_FROM_DAY, CHECKIN_PER_DAY, COMMON_REVIEW_DAY, DUE_AT, FIXED_DAYS, MODEL, PAUSE_FROM_DAY, PILOT_DAYS } from './config'
+import { CHECKIN_FROM_DAY, CHECKIN_PER_DAY, COMMON_REVIEW_DAY, DUE_AT, FIXED_DAYS, MODEL, PAUSE_FROM_DAY, PILOT, PILOT_DAYS } from './config'
 import { itemsFor, type PilotQuestion } from './bank'
 import { logEvent } from './log'
 
 export type Group = 'model' | 'fixed'
-export interface Practice { day: number; at: number; itemId: string; right: boolean; dontKnow: boolean; kind: 'practice' | 'checkin' }
+export interface Practice { day: number; at: number; itemId: string; right: boolean; dontKnow: boolean; kind: 'practice' | 'checkin'; sure?: string }
 export interface PilotState {
   code: string
   consentAt: number | null
@@ -17,13 +17,16 @@ export interface PilotState {
   userOffset: number
   nudgeArm: 'plain' | 'streak'
   doneDays: number[]
+  //main app only: the mean grade (0 to 4) of the courses that cover each skill, when the person shares grades
+  grades: Record<string, number>
 }
 
-const KEY = 'recall.pilot.v1'
+//the pilot keeps one state per device; the main app keeps one per account
+let KEY = 'recall.pilot.v1'
 const DAY_MS = 86400000
 
 function blank(): PilotState {
-  return { code: '', consentAt: null, startDate: null, groups: {}, confidence: {}, finished: null, history: {}, userOffset: 0, nudgeArm: 'plain', doneDays: [] }
+  return { code: '', consentAt: null, startDate: null, groups: {}, confidence: {}, finished: null, history: {}, userOffset: 0, nudgeArm: 'plain', doneDays: [], grades: {} }
 }
 let state: PilotState = load()
 function load(): PilotState {
@@ -33,6 +36,17 @@ function load(): PilotState {
 function save() { try { localStorage.setItem(KEY, JSON.stringify(state)) } catch { /* ignore */ } }
 export function pilot(): PilotState { return state }
 export function resetPilot() { state = blank(); save() }
+
+//main app: point the engine at an account's own history; the account id also seeds the answer order
+export function engineFor(accountId: string | null) {
+  if (PILOT) return
+  KEY = `recall.engine.${accountId ?? 'guest'}`
+  state = load()
+  if (!state.code && accountId) { state = { ...state, code: accountId, consentAt: Date.now(), startDate: String(dayNumber()) }; save() }
+}
+export function clearEngineFor(accountId: string) {
+  try { localStorage.removeItem(`recall.engine.${accountId}`) } catch { /* ignore */ }
+}
 
 //local calendar day number, so "today" follows the participant's clock
 export function dayNumber(d = new Date(Date.now())): number {
@@ -52,9 +66,9 @@ function seeded(seed: string) {
 }
 
 //setup answers the estimate needs before the split exists (the plan screen shows them)
-export function setProfile(confidence: Record<string, number>, finished: string | null) {
-  if (JSON.stringify(confidence) === JSON.stringify(state.confidence) && finished === state.finished) return
-  state = { ...state, confidence, finished }
+export function setProfile(confidence: Record<string, number>, finished: string | null, grades: Record<string, number> = state.grades) {
+  if (JSON.stringify(confidence) === JSON.stringify(state.confidence) && finished === state.finished && JSON.stringify(grades) === JSON.stringify(state.grades)) return
+  state = { ...state, confidence, finished, grades }
   save()
 }
 
@@ -64,7 +78,7 @@ export function markRestDay() {
   if (state.doneDays.includes(d)) return
   state = { ...state, doneDays: [...state.doneDays, d] }
   save()
-  logEvent('rest_day')
+  if (PILOT) logEvent('rest_day')
 }
 
 export function giveConsent(code: string) {
@@ -80,13 +94,16 @@ export function assignGroups(ticked: string[], confidence: Record<string, number
   const order = [...ticked].sort().map(id => ({ id, r: rnd() })).sort((a, b) => a.r - b.r).map(x => x.id)
   const first: Group = rnd() < 0.5 ? 'model' : 'fixed'
   const groups: Record<string, Group> = {}
-  order.forEach((id, i) => { groups[id] = i % 2 === 0 ? first : first === 'model' ? 'fixed' : 'model' })
+  //the main app has no comparison: every skill follows the forgetting estimate
+  order.forEach((id, i) => { groups[id] = !PILOT ? 'model' : i % 2 === 0 ? first : first === 'model' ? 'fixed' : 'model' })
   state = { ...state, groups, confidence, finished }
   save()
-  logEvent('split', { groups: JSON.stringify(groups), confidence: JSON.stringify(confidence), finished: finished ?? '' })
+  if (PILOT) logEvent('split', { groups: JSON.stringify(groups), confidence: JSON.stringify(confidence), finished: finished ?? '' })
 }
 
 // ---------- the forgetting estimate ----------
+
+const GRADE_STEP = 0.5
 
 function itemOffset(q?: PilotQuestion): number {
   return q ? -MODEL.difficultyStep * (q.difficulty - 2) : 0
@@ -97,7 +114,9 @@ function log2Half(skillId: string, upTo: number = Infinity): number {
   const h = (state.history[skillId] ?? []).filter(p => p.at < upTo)
   if (!h.length) {
     const c = state.confidence[skillId] ?? 3
-    return MODEL.startLog2Half + MODEL.confidenceStep * (c - 3) + state.userOffset
+    //a grade shared for the courses behind this skill moves the start a little: B (3.0) is neutral
+    const g = state.grades?.[skillId]
+    return MODEL.startLog2Half + MODEL.confidenceStep * (c - 3) + (g === undefined ? 0 : GRADE_STEP * (g - 3)) + state.userOffset
   }
   const right = h.filter(p => p.right).length
   const wrong = h.length - right
@@ -161,13 +180,13 @@ export interface Plan { skillIds: string[]; checkin: boolean }
 export function todaysPlan(ticked: string[], priority: (id: string) => number): Plan {
   const today = dayNumber()
   const doneToday = ticked.filter(id => lastPracticeDay(id) === today)
-  if (pilotDay() >= CHECKIN_FROM_DAY) {
+  if (PILOT && pilotDay() >= CHECKIN_FROM_DAY) {
     const open = ticked.filter(id => (state.history[id] ?? []).length && !(state.history[id] ?? []).some(p => p.kind === 'checkin'))
     const todayChecked = ticked.filter(id => (state.history[id] ?? []).some(p => p.kind === 'checkin' && p.day === today))
     if (open.length || todayChecked.length) return { skillIds: [...todayChecked, ...open].slice(0, CHECKIN_PER_DAY), checkin: true }
   }
   //common last review: every practiced skill once, whatever its half or schedule
-  if (pilotDay() === COMMON_REVIEW_DAY) {
+  if (PILOT && pilotDay() === COMMON_REVIEW_DAY) {
     return { skillIds: ticked.filter(id => (state.history[id] ?? []).length), checkin: false }
   }
   //pause before the check: no practice in either half
@@ -220,12 +239,12 @@ export function recordAnswer(q: PilotQuestion, picked: string, sure: string, rig
     const g = (gap * Math.LN2 * Math.LN2) / half
     offset = Math.max(-MODEL.offsetLimit, Math.min(MODEL.offsetLimit, offset + MODEL.learnRate * ((right ? 1 : 0) - p) / (1 - p) * g))
   }
-  const entry: Practice = { day: dayNumber(), at: now, itemId: q.id, right, dontKnow: sure === 'dontKnow', kind: checkin ? 'checkin' : 'practice' }
+  const entry: Practice = { day: dayNumber(), at: now, itemId: q.id, right, dontKnow: sure === 'dontKnow', kind: checkin ? 'checkin' : 'practice', sure }
   const isRepeatToday = hist.some(p => p.day === entry.day && p.itemId === q.id && p.kind === entry.kind)
   if (isRepeatToday) return { before, after: recallTomorrow(skillId) }
   state = { ...state, userOffset: offset, history: { ...state.history, [skillId]: [...hist, entry] } }
   save()
-  logEvent('answer', {
+  if (PILOT) logEvent('answer', {
     skill: skillId, group: state.groups[skillId] ?? '', item: q.id, format: q.format, kind: entry.kind, shown_order: q.options.map(o => o.id).join(''),
     picked, sure, right: right ? 1 : 0, dont_know: entry.dontKnow ? 1 : 0, gap_days: gap.toFixed(3),
     predicted: before.toFixed(4), half_life_days: half.toFixed(2), n_before: hist.length, user_offset: offset.toFixed(3),
@@ -250,6 +269,7 @@ export function streak(): number {
 }
 
 export function isPauseDay(): boolean {
+  if (!PILOT) return false
   const d = pilotDay()
   return d >= PAUSE_FROM_DAY && d < CHECKIN_FROM_DAY
 }

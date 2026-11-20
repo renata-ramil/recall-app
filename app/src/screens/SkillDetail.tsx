@@ -73,7 +73,7 @@ export function SkillDetailScreen() {
   const { state: app } = useStore()
   const roles = app.survey.targetRoles
   const skill = api.skill(id, roles)
-  const d = PILOT ? pilotDetail(id, api.skillDetail(id)) : api.skillDetail(id)
+  const d = pilotDetail(id, api.skillDetail(id))
   if (!skill) { nav('/skills', { replace: true }); return null }
   const state = skillState(skill)
   const fill = stateFill(state)
