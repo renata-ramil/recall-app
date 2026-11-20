@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Recall: keep the skills you worked for</title>
+<meta name="description" content="Five minutes a day to keep the data skills your next job asks for.">
+<style>
+@font-face{font-family:'Gilroy';font-weight:400;src:url(../fonts/Gilroy-Regular.ttf) format('truetype')}
+@font-face{font-family:'Gilroy';font-weight:500;src:url(../fonts/Gilroy-Medium.ttf) format('truetype')}
+@font-face{font-family:'Gilroy';font-weight:700;src:url(../fonts/Gilroy-Bold.ttf) format('truetype')}
+:root{--ink:#1F2D3D;--ink-2:#566270;--navy:#2F5D8A;--navy-d:#264C73;--sky:#B3C9E0;--mint:#DDEFE5;--cream:#FAF6EE;--cream-2:#F1EBDD;--paper:#FDFCFA;--ochre:#E8B656;--sand:#F5E7BA;--mist:#DCE7F1}
+*{box-sizing:border-box;margin:0}
+body{font-family:Gilroy,system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.4}
+.wrap{max-width:640px;margin:0 auto;padding:0 24px}
+header{background:var(--navy);color:var(--paper);padding:48px 0 32px;border-radius:0 0 32px 32px}
+.bars{display:flex;align-items:flex-end;gap:10px;height:140px;margin:24px 0}
+.bars i{flex:1;border-radius:999px;display:block}
+h1{font-size:40px;font-weight:700;line-height:1.1}
+h2{font-size:24px;font-weight:700;margin-bottom:12px}
+.lead{font-size:20px;font-weight:500;margin-top:16px}
+section{padding:32px 0}
+.steps{display:flex;flex-direction:column;gap:8px}
+.step{border-radius:16px;padding:16px;font-size:17px}
+.price{background:var(--paper);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.amount{font-size:44px;font-weight:700}
+form{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+label{font-weight:500;font-size:15px}
+input,select{font:inherit;font-size:17px;padding:14px 16px;border-radius:16px;border:2px solid var(--cream-2);background:var(--paper);color:var(--ink);width:100%}
+button{font:inherit;font-weight:700;font-size:17px;height:56px;border-radius:999px;border:0;background:var(--navy);color:var(--paper);cursor:pointer}
+button:disabled{opacity:.5;cursor:default}
+.small{font-size:14px;color:var(--ink-2)}
+.done{background:var(--mint);border-radius:16px;padding:16px;font-weight:500}
+footer{padding:24px 0 48px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div style="font-size:22px;font-weight:700">Recall</div>
+    <div class="bars" aria-hidden="true">
+      <i style="height:140px;background:var(--sky)"></i><i style="height:120px;background:var(--sky)"></i><i style="height:100px;background:var(--sky)"></i>
+      <i style="height:82px;background:var(--sky)"></i><i style="height:64px;background:var(--sand)"></i><i style="height:48px;background:var(--ochre)"></i><i style="height:36px;background:var(--ochre)"></i>
+    </div>
+    <h1>Keep the skills you worked for.</h1>
+    <p class="lead">Skills are like muscles: they weaken without training. Recall keeps the data skills your next job asks for, in five minutes a day.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step" style="background:var(--mist)">1. Pick the jobs you want and the topics you studied. No transcript needed.</div>
+      <div class="step" style="background:var(--sand)">2. Recall ranks your skills by how often real job postings ask for them and how likely they are to be fading.</div>
+      <div class="step" style="background:var(--mint)">3. Each day you answer three short questions and, some days, one work scenario. Each answer comes with a short explanation.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="price">
+      <div class="small">After launch</div>
+      <div class="amount">$5 a month</div>
+      <div>The first month is free. Cancel anytime.</div>
+      <form id="f" novalidate>
+        <label for="email">Email for the waitlist</label>
+        <input id="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        <label for="who">Which fits you best?</label>
+        <select id="who" required>
+          <option value="" disabled selected>Choose one</option>
+          <option>I finished a degree in the last two years</option>
+          <option>I finished a bootcamp or certificate</option>
+          <option>I am looking for a data job</option>
+          <option>I run a program or team and want this for others</option>
+          <option>Something else</option>
+        </select>
+        <button id="go" type="submit" disabled>Join the waitlist</button>
+        <p class="small">I only use your email to tell you when Recall opens. Nothing is charged now.</p>
+      </form>
+      <div id="thanks" class="done" hidden>Thank you. You are on the list. I will write when Recall opens.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap small">Recall is a student capstone project by Renata Ziiangaraeva at Minerva University.</footer>
+
+<script>
+(function () {
+  var url = '';
+  var ref = new URLSearchParams(location.search).get('ref') || 'direct';
+  var vid = Math.random().toString(36).slice(2, 10);
+  function send(row) {
+    if (!url) return Promise.resolve();
+    row.ts = new Date().toISOString(); row.app = 'landing-1'; row.ref = ref; row.visit = vid;
+    return fetch(url, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify([row]) }).catch(function () {});
+  }
+  fetch('../pilot/log-url.txt', { cache: 'no-store' }).then(function (r) { return r.ok ? r.text() : '' }).then(function (t) {
+    t = (t || '').trim();
+    if (t.indexOf('https://script.google.com/') === 0 || t.indexOf('http://localhost') === 0) url = t;
+    send({ event: 'visit' });
+  }).catch(function () {});
+  var f = document.getElementById('f'), email = document.getElementById('email'), who = document.getElementById('who'), go = document.getElementById('go');
+  function check() { go.disabled = !(email.validity.valid && email.value && who.value); }
+  email.addEventListener('input', check); who.addEventListener('change', check);
+  f.addEventListener('submit', function (e) {
+    e.preventDefault(); if (go.disabled) return; go.disabled = true;
+    send({ event: 'signup', email: email.value.trim(), segment: who.value, price: '5_month' }).then(function () {
+      f.hidden = true; document.getElementById('thanks').hidden = false;
+    });
+  });
+})();
+</script>
+</body>
+</html>

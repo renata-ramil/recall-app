@@ -1,4 +1,4 @@
-#turns the user-test notes CSV into the results section of the midterm
+#turns the user-test notes CSV into a results summary
 #usage: python3 analyze_tests.py test_notes.csv
 #findings describe this prototype and these testers only (IRB exemption: product testing)
 import sys

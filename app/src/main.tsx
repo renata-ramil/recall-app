@@ -9,6 +9,19 @@ import { Question, ScenarioScreen, SummaryScreen, SkillsTab } from './screens/Se
 import { SkillDetailScreen } from './screens/SkillDetail'
 import { Profile } from './screens/Profile'
 import './styles/recall.css'
+import { PILOT } from './pilot/config'
+import { pilot } from './pilot/engine'
+import { flush } from './pilot/log'
+import { Consent, PrivacyScreen, TermsScreen } from './pilot/Consent'
+
+if (PILOT) void flush()
+
+//pilot entry: the consent screen first, then setup, then Today
+function PilotHome() {
+  const { state } = useStore()
+  if (!pilot().consentAt) return <Consent />
+  return <Navigate to={state.onboarded ? '/today' : '/setup/survey'} replace />
+}
 
 if (import.meta.env.DEV) {
   const problems = checkRulesAgainstMock()
@@ -18,6 +31,7 @@ if (import.meta.env.DEV) {
 function Guard({ children }: { children: React.ReactNode }) {
   const { state } = useStore()
   const loc = useLocation()
+  if (PILOT && !pilot().consentAt && loc.pathname !== '/') return <Navigate to="/" replace />
   if (!state.onboarded && !loc.pathname.startsWith('/setup') && loc.pathname !== '/') return <Navigate to="/" replace />
   return <>{children}</>
 }
@@ -27,11 +41,13 @@ function App() {
   return (
     <div className={`app${fixed ? ' fixed-frame' : ''}`}>
       <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="/setup/survey" element={<SetupSurvey />} />
-        <Route path="/setup/record" element={<CourseRecord />} />
-        <Route path="/setup/topics" element={<TopicPicker />} />
-        <Route path="/setup/plan" element={<YourPlan />} />
+        <Route path="/" element={PILOT ? <PilotHome /> : <Welcome />} />
+        <Route path="/privacy" element={<PrivacyScreen />} />
+        <Route path="/terms" element={<TermsScreen />} />
+        <Route path="/setup/survey" element={<Guard><SetupSurvey /></Guard>} />
+        <Route path="/setup/record" element={<Guard><CourseRecord /></Guard>} />
+        <Route path="/setup/topics" element={<Guard><TopicPicker /></Guard>} />
+        <Route path="/setup/plan" element={<Guard><YourPlan /></Guard>} />
         <Route path="/today" element={<Guard><Today /></Guard>} />
         <Route path="/session/question" element={<Guard><Question /></Guard>} />
         <Route path="/session/scenario" element={<Guard><ScenarioScreen /></Guard>} />

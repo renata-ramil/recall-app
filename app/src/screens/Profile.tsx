@@ -2,6 +2,10 @@ import { useNavigate } from 'react-router-dom'
 import { api } from '../api'
 import { useStore } from '../state/store'
 import { Btn, Nav, Opt } from '../components/ui'
+import { PILOT } from '../pilot/config'
+import { pilot, resetPilot } from '../pilot/engine'
+import { logEvent } from '../pilot/log'
+import { Link } from 'react-router-dom'
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -23,12 +27,14 @@ export function Profile() {
     <div className="screen">
       <div className="safe-top" style={{ padding: '48px 24px 0 24px', display: 'flex', flexDirection: 'column', gap: 8 }}>
         <h1 className="h1">Profile</h1>
-        <p className="small muted">{user.firstName}, finished {s.finishedMonth} {s.finishedYear}</p>
+        <p className="small muted">{PILOT ? `Study code ${pilot().code}` : user.firstName}, finished {s.finishedMonth} {s.finishedYear}</p>
       </div>
       <div style={{ flex: 1, minHeight: 0, padding: '16px 24px 0 24px', display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <Row label="Target role">
+        <Row label="Target roles">
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-            {opts.targetRoleOptions.map(o => <Opt key={o} selected={s.targetRole === o} style={{ padding: '0 16px' }} onClick={() => up({ targetRole: o })}>{o}</Opt>)}
+            {/* editable later; at least one role stays selected */}
+            {opts.targetRoleOptions.map(o => <Opt key={o} selected={s.targetRoles.includes(o)} style={{ padding: '0 16px' }}
+              onClick={() => { const next = s.targetRoles.includes(o) ? s.targetRoles.filter(r => r !== o) : [...s.targetRoles, o]; if (next.length) up({ targetRoles: next }) }}>{o}</Opt>)}
           </div>
         </Row>
         <Row label="Main goal">
@@ -43,12 +49,13 @@ export function Profile() {
         </Row>
         <Row label="Reminder time">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 8 }}>
-            {opts.reminderTimeOptions.map(o => <Opt key={o} selected={s.reminderTime === o && !state.remindersPaused} onClick={() => { up({ reminderTime: o }); set({ remindersPaused: false }) }}>{o}</Opt>)}
+            {opts.reminderTimeOptions.map(o => <Opt key={o} selected={s.reminderTime === o && !state.remindersPaused} onClick={() => { up({ reminderTime: o }); set({ remindersPaused: false }); if (PILOT) logEvent('reminder', { time: o, paused: 0 }) }}>{o}</Opt>)}
           </div>
         </Row>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 4 }}>
-          <Btn cream style={{ background: 'var(--cream-2)' }} onClick={() => set({ remindersPaused: !state.remindersPaused })}>{state.remindersPaused ? 'Resume reminders' : 'Pause reminders'}</Btn>
-          <Btn cream style={{ background: 'var(--cream-2)' }} onClick={() => { resetAll(); nav('/') }}>Delete my data</Btn>
+          <Btn cream style={{ background: 'var(--cream-2)' }} onClick={() => { set({ remindersPaused: !state.remindersPaused }); if (PILOT) logEvent('reminder', { time: s.reminderTime ?? '', paused: state.remindersPaused ? 0 : 1 }) }}>{state.remindersPaused ? 'Resume reminders' : 'Pause reminders'}</Btn>
+          <Btn cream style={{ background: 'var(--cream-2)' }} onClick={() => { if (PILOT) { logEvent('delete_request'); resetPilot() } resetAll(); nav('/') }}>Delete my data</Btn>
+          {PILOT && <p className="small muted" style={{ textAlign: 'center' }}><Link to="/privacy">Privacy notice</Link> · <Link to="/terms">Terms of use</Link></p>}
         </div>
       </div>
       <div className="safe-bottom" style={{ padding: '16px 24px 24px 24px' }}>

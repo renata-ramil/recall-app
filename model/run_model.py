@@ -1,5 +1,5 @@
 """
-Midterm run of the hierarchical decay model: 4 chains, 2000 draws, with
+Main run of the hierarchical decay model: 4 chains, 2000 draws, with
 diagnostics, a calibration plot, and a demo-user schedule for the prototype.
 
 Reuses the model code from decay_model.py (the first version). Part 1 uses

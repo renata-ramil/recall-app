@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { api, fadeLabel, pct, sortByPriority, skillState, stateFill } from '../api'
+import { api, fadeLabel, sortByPriority, skillState, stateFill } from '../api'
 import { useStore } from '../state/store'
 import { Btn, BottomBar, Check, Note, Opt, StepHeader } from '../components/ui'
+import { PILOT } from '../pilot/config'
+import { assignGroups, setProfile } from '../pilot/engine'
+import { logEvent } from '../pilot/log'
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const YEARS = [2022, 2023, 2024, 2025, 2026, 2027]
@@ -57,14 +60,16 @@ export function SetupSurvey() {
   const s = state.survey
   const opts = api.survey()
   const up = (patch: Partial<typeof s>) => set({ survey: { ...s, ...patch } })
-  const ready = Boolean(s.targetRole && s.finishedMonth && s.finishedYear && s.mainGoal && s.timePerDay && s.reminderTime)
+  //several roles allowed (P8 applied to several kinds of roles); weights average across them
+  const toggleRole = (o: string) => up({ targetRoles: s.targetRoles.includes(o) ? s.targetRoles.filter(r => r !== o) : [...s.targetRoles, o] })
+  const ready = Boolean(s.targetRoles.length && s.finishedMonth && s.finishedYear && s.mainGoal && s.timePerDay && s.reminderTime)
   return (
     <div className="screen">
       <StepHeader step={1} total={4} title="Tell us about you" />
       <div style={{ flex: 1, minHeight: 0, padding: '16px 24px 0 24px', display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <Group label="Target role">
+        <Group label="Target roles, pick all that fit">
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-            {opts.targetRoleOptions.map(o => <Opt key={o} selected={s.targetRole === o} style={{ padding: '0 16px' }} onClick={() => up({ targetRole: o })}>{o}</Opt>)}
+            {opts.targetRoleOptions.map(o => <Opt key={o} selected={s.targetRoles.includes(o)} style={{ padding: '0 16px' }} onClick={() => toggleRole(o)}>{o}</Opt>)}
           </div>
         </Group>
         <Group label="When did you finish your program?">
@@ -105,7 +110,8 @@ export function CourseRecord() {
   const t = api.transcript()
   const fileRef = useRef<HTMLInputElement>(null)
   const [progress, setProgress] = useState(0)
-  const phase = state.transcript
+  //pilot: no transcript upload, course titles only (and they stay on the device)
+  const phase = PILOT && state.transcript === 'before' ? 'typed' : state.transcript
 
   //the mock parser: the file is read, never stored, and the result comes from mock data
   useEffect(() => {
@@ -137,20 +143,37 @@ export function CourseRecord() {
             <div className="num-l">{t.summary.matching}</div>
             <div className="body-m">match data science and statistics</div>
           </div>
-          <div style={{ background: 'var(--sand)', padding: '12px 24px', height: 72, display: 'flex', alignItems: 'center', gap: 16 }}>
-            <div className="num-l">{t.summary.averageGrade.toFixed(1)}</div>
-            <div className="body-m">average grade, out of {t.summary.gradeScaleMax}</div>
+          {state.includeGrades && (
+            <div style={{ background: 'var(--sand)', padding: '12px 24px', height: 72, display: 'flex', alignItems: 'center', gap: 16 }}>
+              <div className="num-l">{t.summary.averageGrade.toFixed(1)}</div>
+              <div className="body-m">average grade, out of {t.summary.gradeScaleMax}</div>
+            </div>
+          )}
+          <div style={{ padding: '12px 24px 0 24px' }}>
+            <Opt selected={state.includeGrades} style={{ width: '100%' }} onClick={() => set({ includeGrades: !state.includeGrades })}>
+              {state.includeGrades ? 'Grades included' : 'Use my grades too (optional)'}
+            </Opt>
           </div>
           <div style={{ padding: '12px 24px 0 24px', display: 'flex', flexDirection: 'column', gap: 4 }}>
             {t.courses.map(c => (
               <div key={c.name} style={{ height: 32, borderRadius: 12, background: c.matches ? 'var(--mint)' : 'var(--cream-2)', padding: '0 12px', display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span className={c.matches ? 'small' : 'small muted'} style={{ flex: 1 }}>{c.name}</span>
                 {c.matches && <span className="cap">Match</span>}
-                <span className={c.matches ? 'small-b' : 'small-b muted'} style={{ width: 28, textAlign: 'right' }}>{c.grade.toFixed(1)}</span>
+                {state.includeGrades && <span className={c.matches ? 'small-b' : 'small-b muted'} style={{ width: 28, textAlign: 'right' }}>{c.grade.toFixed(1)}</span>}
               </div>
             ))}
           </div>
-          <Note margin="12px 24px 0 24px">Course names and grades are enough. Leave out syllabi and lesson plans.</Note>
+          <Note margin="12px 24px 0 24px">Course names are enough. Grades are optional. Leave out syllabi and lesson plans.</Note>
+        </div>
+      ) : phase === 'typed' ? (
+        <div style={{ flex: 1, minHeight: 0, padding: '12px 24px 0 24px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <label htmlFor="typed" className="small-b">Your course titles, one per line</label>
+          <div className="field" style={{ minHeight: 160, display: 'flex' }}>
+            <textarea id="typed" className="body" rows={6} style={{ width: '100%', resize: 'vertical', cursor: 'text' }}
+              placeholder={'Intro to Statistics\nMachine Learning\nData Analysis with Python'}
+              value={state.typedCourses} onChange={e => set({ typedCourses: e.target.value })} />
+          </div>
+          <Note>{PILOT ? 'This list stays on your device. You can also skip it and pick topics on the next step.' : 'No file and no grades needed. You can also skip this and pick topics on the next step.'}</Note>
         </div>
       ) : (
         <div style={{ flex: 1, minHeight: 0, padding: '12px 24px 0 24px', display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -164,10 +187,11 @@ export function CourseRecord() {
               </>
             ) : (
               <>
-                <p className="small muted">Course names and grades are enough. Leave out syllabi and lesson plans.</p>
+                <p className="small muted">Course names are enough. Grades are optional. Leave out syllabi and lesson plans.</p>
                 <Btn onClick={() => fileRef.current?.click()}>Upload transcript</Btn>
                 <input ref={fileRef} type="file" accept="application/pdf,image/*" hidden aria-label="Transcript file" onChange={onFile} />
                 <p className="small muted">PDF or image. Read once, then deleted.</p>
+                <Btn className="btn-soft" onClick={() => set({ transcript: 'typed' })}>Type course titles instead</Btn>
               </>
             )}
           </div>
@@ -176,7 +200,9 @@ export function CourseRecord() {
       <BottomBar>
         {phase === 'before'
           ? <Btn className="btn-soft" onClick={() => nav('/setup/topics')}>Skip for now</Btn>
-          : <Btn off={phase !== 'done'} onClick={() => nav('/setup/topics')}>Continue</Btn>}
+          : phase === 'typed'
+            ? <Btn className={state.typedCourses.trim() ? undefined : 'btn-soft'} onClick={() => nav('/setup/topics')}>{state.typedCourses.trim() ? 'Continue' : 'Skip for now'}</Btn>
+            : <Btn off={phase !== 'done'} onClick={() => nav('/setup/topics')}>Continue</Btn>}
       </BottomBar>
     </div>
   )
@@ -200,11 +226,15 @@ export function TopicPicker() {
         {topics.map(tp => {
           const t = state.topics[tp.id]
           return (
-            <div key={tp.id} style={{ height: 52, borderRadius: 16, background: t.ticked ? 'var(--mint)' : 'var(--cream-2)', padding: '0 12px', display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div key={tp.id} style={{ minHeight: 52, padding: '6px 12px', borderRadius: 16, background: t.ticked ? 'var(--mint)' : 'var(--cream-2)', display: 'flex', alignItems: 'center', gap: 12 }}>
               <button type="button" className={`tick${t.ticked ? ' on' : ''}`} aria-label={t.ticked ? 'Selected' : 'Not selected'} aria-pressed={t.ticked} onClick={() => toggle(tp.id)}>
                 {t.ticked && <Check />}
               </button>
-              <button type="button" className={t.ticked ? 'small-b' : 'small muted'} style={{ flex: 1, minHeight: 44, display: 'flex', alignItems: 'center' }} onClick={() => toggle(tp.id)}>{tp.name}</button>
+              {/* the plain line under each name, since technical names alone were hard to recognize (P3) */}
+              <button type="button" style={{ flex: 1, minHeight: 44, display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'left' }} onClick={() => toggle(tp.id)}>
+                <span className={t.ticked ? 'small-b' : 'small muted'}>{tp.name}</span>
+                <span className="cap muted" style={{ fontWeight: 400 }}>{tp.plain}</span>
+              </button>
               <div className={`rate${t.ticked ? ' rate-on-pale' : ''}`} role={t.ticked ? 'group' : 'img'} aria-label={t.ticked ? `Confidence ${t.confidence} of 5` : 'Confidence not set'}>
                 {[1, 2, 3, 4, 5].map(n => t.ticked
                   ? <button type="button" key={n} aria-label={`Confidence ${n}`} aria-pressed={(t.confidence ?? 0) >= n} onClick={() => update(tp.id, { confidence: n })} style={{ display: 'flex', alignItems: 'flex-end', height: 28, padding: '0 0 0 0' }}><i className={(t.confidence ?? 0) >= n ? 'on' : undefined} style={{ height: 8 + 4 * n }} /></button>
@@ -221,7 +251,7 @@ export function TopicPicker() {
 
 export function PlanList({ onPick }: { onPick?: (id: string) => void }) {
   const { state } = useStore()
-  const skills = sortByPriority(api.skills().filter(s => state.topics[s.id]?.ticked ?? true))
+  const skills = sortByPriority(api.skills(state.survey.targetRoles).filter(s => state.topics[s.id]?.ticked ?? true))
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
       {skills.map(s => {
@@ -229,14 +259,14 @@ export function PlanList({ onPick }: { onPick?: (id: string) => void }) {
           <>
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
               <span className="body-b">{s.name}</span>
-              <span className="small">{fadeLabel(s)}, job weight {s.jobWeight.toFixed(1)}</span>
+              <span className="small">Job weight {s.jobWeight.toFixed(1)}</span>
             </div>
-            <div className="h1">{pct(s.recall)}</div>
+            <div className="body-b">{fadeLabel(s)}</div>
           </>
         )
         const style = { height: 64, background: stateFill(skillState(s)), padding: '0 24px', display: 'flex', alignItems: 'center', gap: 16, width: '100%' } as const
         return onPick
-          ? <button type="button" key={s.id} style={style} onClick={() => onPick(s.id)} aria-label={`${s.name}, ${fadeLabel(s)}, recall ${pct(s.recall)}`}>{row}</button>
+          ? <button type="button" key={s.id} style={style} onClick={() => onPick(s.id)} aria-label={`${s.name}, ${fadeLabel(s)}`}>{row}</button>
           : <div key={s.id} style={style}>{row}</div>
       })}
     </div>
@@ -245,12 +275,27 @@ export function PlanList({ onPick }: { onPick?: (id: string) => void }) {
 
 export function YourPlan() {
   const nav = useNavigate()
-  const { set } = useStore()
+  const { state, set } = useStore()
+  const ticked = Object.entries(state.topics).filter(([, t]) => t.ticked)
+  const s = state.survey
+  const m = MONTHS.indexOf(s.finishedMonth ?? '')
+  const finished = s.finishedYear && m >= 0 ? `${s.finishedYear}-${String(m + 1).padStart(2, '0')}-15` : null
+  if (PILOT) setProfile(Object.fromEntries(ticked.map(([id, t]) => [id, t.confidence ?? 3])), finished)
+  const start = () => {
+    if (PILOT) {
+      assignGroups(ticked.map(([id]) => id), Object.fromEntries(ticked.map(([id, t]) => [id, t.confidence ?? 3])), finished)
+      //setup answers only; typed course titles never leave the device
+      const s = state.survey
+      logEvent('setup', { roles: s.targetRoles.join('|'), finished: finished ?? '', goal: s.mainGoal ?? '', time_per_day: s.timePerDay ?? '',
+        reminder: s.reminderTime ?? '', skills_to_keep: s.skillsToKeep, typed_course_count: state.typedCourses.split('\n').filter(l => l.trim()).length })
+    }
+    set({ onboarded: true }); nav('/today')
+  }
   return (
     <div className="screen">
       <StepHeader step={4} total={4} title="Your plan" subtitle="Sorted by priority, recall today on the right" onBack={() => nav('/setup/topics')} />
       <div style={{ flex: 1, minHeight: 0, paddingTop: 12 }}><PlanList /></div>
-      <BottomBar><Btn onClick={() => { set({ onboarded: true }); nav('/today') }}>Start today's practice</Btn></BottomBar>
+      <BottomBar><Btn onClick={start}>Start today's practice</Btn></BottomBar>
     </div>
   )
 }

@@ -195,7 +195,7 @@ def generate_synthetic_skill_decay_data(n_users: int = 60, n_skills: int = 12,
     rows = []
     for u in range(n_users):
         for s in range(n_skills):
-            grade = RNG.uniform(2.0, 4.0)  # Minerva-style 0-4 HC/LO-adjacent grade scale
+            grade = RNG.uniform(2.0, 4.0)  # 0-4 grade scale
             grade_effect = 0.4 * (grade - 3.0)  # better grade -> longer initial half-life
 
             n_checks = RNG.poisson(avg_checks_per_pair) + 1

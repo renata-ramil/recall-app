@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import { api } from '../api'
+import { PILOT } from '../pilot/config'
 
 export type Sure = 'sure' | 'notSure' | 'dontKnow'
 export interface AnswerRecord { questionId: string; optionId: string; sure: Sure; right: boolean }
@@ -19,10 +20,15 @@ export interface SessionState {
   finishedAt: number | null
   completedOn: string | null
   useThisWeek: string | null
+  //pilot: the session's skills, frozen at start
+  planIds?: string[]
+  planCheckin?: boolean
+  planScenarioId?: string | null
+  changes?: Record<string, { before: number; after: number }>
 }
 
 export interface SurveyAnswers {
-  targetRole: string | null
+  targetRoles: string[]
   finishedMonth: string | null
   finishedYear: number | null
   mainGoal: string | null
@@ -33,14 +39,18 @@ export interface SurveyAnswers {
 
 export interface AppState {
   survey: SurveyAnswers
-  transcript: 'before' | 'processing' | 'done'
+  transcript: 'before' | 'processing' | 'done' | 'typed'
+  //grades are optional: course names alone are enough
+  includeGrades: boolean
+  typedCourses: string
   topics: Record<string, { ticked: boolean; confidence: number | null }>
   onboarded: boolean
   remindersPaused: boolean
   session: SessionState
 }
 
-const KEY = 'recall.v1'
+//v2: several target roles and optional grades; a new key so old saved setups start fresh
+const KEY = PILOT ? 'recall.pilot.app' : 'recall.v2'
 
 const emptySession: SessionState = {
   startedAt: null, questionIndex: 0, phase: 'ask', sure: null, picked: null, answers: [],
@@ -50,15 +60,24 @@ const emptySession: SessionState = {
 
 //the mock answers prefill the survey and topics so the designed states render on first load
 function initial(): AppState {
+  if (PILOT) {
+    //pilot: nothing prefilled, every answer is the participant's own
+    const topics: AppState['topics'] = {}
+    for (const t of api.topics()) topics[t.id] = { ticked: false, confidence: null }
+    return {
+      survey: { targetRoles: [], finishedMonth: null, finishedYear: null, mainGoal: null, skillsToKeep: '', timePerDay: null, reminderTime: null },
+      transcript: 'before', includeGrades: false, typedCourses: '', topics, onboarded: false, remindersPaused: false, session: emptySession,
+    }
+  }
   const s = api.survey()
   const topics: AppState['topics'] = {}
   for (const t of api.topics()) topics[t.id] = { ticked: t.ticked, confidence: t.confidence }
   return {
     survey: {
-      targetRole: s.targetRole, finishedMonth: s.finishedMonth, finishedYear: s.finishedYear, mainGoal: s.mainGoal,
+      targetRoles: s.targetRoles, finishedMonth: s.finishedMonth, finishedYear: s.finishedYear, mainGoal: s.mainGoal,
       skillsToKeep: s.skillsToKeep, timePerDay: s.timePerDay, reminderTime: s.reminderTime,
     },
-    transcript: 'before', topics, onboarded: false, remindersPaused: false, session: emptySession,
+    transcript: 'before', includeGrades: false, typedCourses: '', topics, onboarded: false, remindersPaused: false, session: emptySession,
   }
 }
 

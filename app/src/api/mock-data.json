@@ -1,14 +1,12 @@
 {
-  "_note": "Mock data that reproduces every designed screen exactly. Recall values are fractions 0..1; the UI shows them as whole percentages. Two questions (q-t04-01, q-t10-02) were added from the capstone item bank so the session has 3; verdicts.rightNotSure uses the SPEC section 8 default.",
   "user": {
     "firstName": "Renata",
     "survey": {
-      "targetRole": "Data scientist",
       "targetRoleOptions": [
         "Data analyst",
         "Data scientist",
+        "Business analyst",
         "ML engineer",
-        "Product analyst",
         "Other"
       ],
       "finishedMonth": "May",
@@ -32,6 +30,9 @@
         "12:30",
         "19:00",
         "Off"
+      ],
+      "targetRoles": [
+        "Data scientist"
       ]
     }
   },
@@ -81,61 +82,71 @@
       "id": "cleaning",
       "name": "Data cleaning and preparation",
       "ticked": true,
-      "confidence": 4
+      "confidence": 4,
+      "plain": "Fixing messy data so it is ready to use"
     },
     {
       "id": "exploring",
       "name": "Exploring and plotting data",
       "ticked": true,
-      "confidence": 3
+      "confidence": 3,
+      "plain": "Looking at data and making charts to spot patterns"
     },
     {
       "id": "probability",
       "name": "Probability",
       "ticked": true,
-      "confidence": 2
+      "confidence": 2,
+      "plain": "Working out how likely something is"
     },
     {
       "id": "inference",
       "name": "Statistical inference",
       "ticked": true,
-      "confidence": 3
+      "confidence": 3,
+      "plain": "Telling a real pattern from chance"
     },
     {
       "id": "regression",
       "name": "Regression",
       "ticked": true,
-      "confidence": 4
+      "confidence": 4,
+      "plain": "Measuring how one thing moves with another"
     },
     {
       "id": "causal",
       "name": "Causal thinking",
       "ticked": true,
-      "confidence": 2
+      "confidence": 2,
+      "plain": "Telling cause from coincidence, for example with A/B tests"
     },
     {
       "id": "ml",
       "name": "Machine learning basics",
       "ticked": true,
-      "confidence": 3
+      "confidence": 3,
+      "plain": "Teaching a computer to predict from examples"
     },
     {
       "id": "bayesian",
       "name": "Bayesian modeling",
       "ticked": false,
-      "confidence": null
+      "confidence": null,
+      "plain": "Updating a best guess as new data comes in"
     },
     {
       "id": "pythonsql",
       "name": "Python and SQL for data",
       "ticked": false,
-      "confidence": null
+      "confidence": null,
+      "plain": "Writing code and queries to pull and shape data"
     },
     {
       "id": "communicating",
       "name": "Communicating results",
       "ticked": true,
-      "confidence": 4
+      "confidence": 4,
+      "plain": "Explaining what the data shows to people who did not run the analysis"
     }
   ],
   "fadeThreshold": 0.6,
@@ -145,7 +156,6 @@
       "id": "ml",
       "name": "Machine learning basics",
       "recall": 0.57,
-      "jobWeight": 0.8,
       "state": "faded",
       "daysUntilFade": 0
     },
@@ -153,7 +163,6 @@
       "id": "inference",
       "name": "Statistical inference",
       "recall": 0.62,
-      "jobWeight": 0.8,
       "state": "fadingSoon",
       "daysUntilFade": 1,
       "halfLifeDays": 20
@@ -162,7 +171,6 @@
       "id": "communicating",
       "name": "Communicating results",
       "recall": 0.62,
-      "jobWeight": 0.8,
       "state": "fadingSoon",
       "daysUntilFade": 2
     },
@@ -170,7 +178,6 @@
       "id": "exploring",
       "name": "Exploring and plotting data",
       "recall": 0.58,
-      "jobWeight": 0.7,
       "state": "faded",
       "daysUntilFade": 0
     },
@@ -178,7 +185,6 @@
       "id": "probability",
       "name": "Probability",
       "recall": 0.45,
-      "jobWeight": 0.5,
       "state": "faded",
       "daysUntilFade": 0
     },
@@ -186,7 +192,6 @@
       "id": "causal",
       "name": "Causal thinking",
       "recall": 0.6,
-      "jobWeight": 0.6,
       "state": "fadingSoon",
       "daysUntilFade": 0
     },
@@ -194,7 +199,6 @@
       "id": "cleaning",
       "name": "Data cleaning and preparation",
       "recall": 0.76,
-      "jobWeight": 0.9,
       "state": "solid",
       "daysUntilFade": 8
     },
@@ -202,7 +206,6 @@
       "id": "regression",
       "name": "Regression",
       "recall": 0.7,
-      "jobWeight": 0.7,
       "state": "solid",
       "daysUntilFade": 8
     }
@@ -283,7 +286,7 @@
       ],
       "correctId": "B",
       "explanation": "Single deep trees have high variance. Averaging many trees makes their errors less correlated, so the average is more stable.",
-      "nextReviewIfRight": "Next review in 20 days.",
+      "nextReviewIfRight": "Back in your plan when it starts to fade.",
       "nextReviewIfWrong": "You'll see this again tomorrow."
     },
     {
@@ -313,7 +316,7 @@
       ],
       "correctId": "B",
       "explanation": "The 95 percent describes the long-run behavior of the procedure across repeated samples. Any single interval either contains the true mean or does not.",
-      "nextReviewIfRight": "Next review in 14 days.",
+      "nextReviewIfRight": "Back in your plan when it starts to fade.",
       "nextReviewIfWrong": "You'll see this again tomorrow."
     },
     {
@@ -343,7 +346,217 @@
       ],
       "correctId": "B",
       "explanation": "Translate the interval into the decision's terms: the point estimate, the range, and what the uncertainty means for the choice in front of them.",
-      "nextReviewIfRight": "Next review in 14 days.",
+      "nextReviewIfRight": "Back in your plan when it starts to fade.",
+      "nextReviewIfWrong": "You'll see this again tomorrow."
+    },
+    {
+      "id": "q-t01-01",
+      "skillId": "cleaning",
+      "prompt": "A column of ages has 4 percent missing values. The missingness is unrelated to anything else in the data. Which approach keeps the rest of each row and distorts the age distribution least?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Replace each missing age with 0.",
+          "misconception": "Treats a missing value as a real age of zero, which creates fake infants."
+        },
+        {
+          "id": "B",
+          "text": "Replace each missing age with the median age."
+        },
+        {
+          "id": "C",
+          "text": "Drop the whole age column.",
+          "misconception": "Throws away 96 percent of the real values to handle 4 percent missing."
+        },
+        {
+          "id": "D",
+          "text": "Replace each missing age with the maximum age.",
+          "misconception": "Fills with an extreme value and shifts the mean upward."
+        }
+      ],
+      "correctId": "B",
+      "explanation": "With missingness unrelated to other variables and a small share missing, median imputation keeps the rows and barely shifts the center of the distribution. It does shrink the spread slightly, which is the known cost.",
+      "nextReviewIfRight": "Back in your plan when it starts to fade.",
+      "nextReviewIfWrong": "You'll see this again tomorrow."
+    },
+    {
+      "id": "q-t02-01",
+      "skillId": "exploring",
+      "prompt": "Monthly revenue over three years. Which chart shows the trend best?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A pie chart with one slice per month.",
+          "misconception": "A pie shows parts of one whole, not change over time."
+        },
+        {
+          "id": "B",
+          "text": "A line chart with months on the x-axis."
+        },
+        {
+          "id": "C",
+          "text": "A scatter plot of revenue against itself.",
+          "misconception": "Plotting a variable against itself shows a diagonal and nothing else."
+        },
+        {
+          "id": "D",
+          "text": "A bar chart sorted from highest to lowest month.",
+          "misconception": "Sorting by value destroys the time order, so the trend disappears."
+        }
+      ],
+      "correctId": "B",
+      "explanation": "A single quantity over evenly spaced time is a line chart. The eye reads slope and seasonality directly.",
+      "nextReviewIfRight": "Back in your plan when it starts to fade.",
+      "nextReviewIfWrong": "You'll see this again tomorrow."
+    },
+    {
+      "id": "q-t03-02",
+      "skillId": "probability",
+      "prompt": "P(A | B) = P(B | A) P(A) / ______",
+      "options": [
+        {
+          "id": "A",
+          "text": "P(A)",
+          "misconception": "Dividing by P(A) cancels the prior and leaves P(B | A), the wrong direction."
+        },
+        {
+          "id": "B",
+          "text": "P(B)"
+        },
+        {
+          "id": "C",
+          "text": "P(A and B)",
+          "misconception": "The numerator already is P(A and B); dividing by it gives 1."
+        },
+        {
+          "id": "D",
+          "text": "1 - P(B)",
+          "misconception": "1 - P(B) is the probability of not B and has no place in the rule."
+        }
+      ],
+      "correctId": "B",
+      "explanation": "Bayes' rule divides the joint probability P(B | A) P(A) by the marginal P(B), which normalizes it to a probability of A given B.",
+      "nextReviewIfRight": "Back in your plan when it starts to fade.",
+      "nextReviewIfWrong": "You'll see this again tomorrow."
+    },
+    {
+      "id": "q-t05-02",
+      "skillId": "regression",
+      "prompt": "Which plot is the standard first check for whether a linear model's errors have constant variance?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Residuals against fitted values"
+        },
+        {
+          "id": "B",
+          "text": "Histogram of the outcome",
+          "misconception": "The outcome's shape is not the error's shape."
+        },
+        {
+          "id": "C",
+          "text": "Outcome against time",
+          "misconception": "Useful for autocorrelation in time series, not variance."
+        },
+        {
+          "id": "D",
+          "text": "Correlation matrix of predictors",
+          "misconception": "Shows collinearity among predictors, a different assumption."
+        }
+      ],
+      "correctId": "A",
+      "explanation": "A funnel shape in residuals versus fitted values signals non-constant variance (heteroscedasticity). A flat band is what you want.",
+      "nextReviewIfRight": "Back in your plan when it starts to fade.",
+      "nextReviewIfWrong": "You'll see this again tomorrow."
+    },
+    {
+      "id": "q-t06-01",
+      "skillId": "causal",
+      "prompt": "Cities with more ice cream sales have more drownings. What is the most likely explanation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ice cream causes drowning.",
+          "misconception": "Mistakes correlation for causation."
+        },
+        {
+          "id": "B",
+          "text": "A common cause, hot weather, raises both."
+        },
+        {
+          "id": "C",
+          "text": "Drowning causes ice cream sales.",
+          "misconception": "Reverse causation is possible in principle but implausible here."
+        },
+        {
+          "id": "D",
+          "text": "It is a coincidence in every city.",
+          "misconception": "A consistent pattern across cities is not a coincidence; it has a cause."
+        }
+      ],
+      "correctId": "B",
+      "explanation": "A confounder (temperature) drives both variables. Conditioning on it removes the association.",
+      "nextReviewIfRight": "Back in your plan when it starts to fade.",
+      "nextReviewIfWrong": "You'll see this again tomorrow."
+    },
+    {
+      "id": "q-t08-01",
+      "skillId": "bayesian",
+      "prompt": "In Bayesian inference, the posterior is proportional to the likelihood times the ______.",
+      "options": [
+        {
+          "id": "A",
+          "text": "prior"
+        },
+        {
+          "id": "B",
+          "text": "p-value",
+          "misconception": "p-values belong to frequentist testing."
+        },
+        {
+          "id": "C",
+          "text": "sample size",
+          "misconception": "Sample size enters through the likelihood, not as a separate factor."
+        },
+        {
+          "id": "D",
+          "text": "evidence",
+          "misconception": "The evidence divides, it does not multiply."
+        }
+      ],
+      "correctId": "A",
+      "explanation": "Posterior is proportional to likelihood times prior. The evidence (marginal likelihood) is the normalizing constant in the denominator.",
+      "nextReviewIfRight": "Back in your plan when it starts to fade.",
+      "nextReviewIfWrong": "You'll see this again tomorrow."
+    },
+    {
+      "id": "q-t09-04",
+      "skillId": "pythonsql",
+      "prompt": "A teammate cannot reproduce your notebook's numbers. The most common cause from this list is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cells were run out of order, so the state depends on the run history."
+        },
+        {
+          "id": "B",
+          "text": "Their laptop is slower.",
+          "misconception": "Speed changes time, not results."
+        },
+        {
+          "id": "C",
+          "text": "pandas rounds differently on other machines.",
+          "misconception": "Same version, same arithmetic."
+        },
+        {
+          "id": "D",
+          "text": "Notebooks cannot be shared.",
+          "misconception": "Notebooks share fine when they run clean from the top."
+        }
+      ],
+      "correctId": "A",
+      "explanation": "Notebook state is whatever ran last, in whatever order. Restart the kernel and run all cells top to bottom before sharing, and pin package versions.",
+      "nextReviewIfRight": "Back in your plan when it starts to fade.",
       "nextReviewIfWrong": "You'll see this again tomorrow."
     }
   ],
@@ -459,14 +672,14 @@
         "skillId": "ml",
         "before": 0.57,
         "after": 0.72,
-        "next": "Next in 20 days",
+        "next": "Solid for now",
         "improved": true
       },
       {
         "skillId": "inference",
         "before": 0.62,
         "after": 0.77,
-        "next": "Next in 14 days",
+        "next": "Solid for now",
         "improved": true
       },
       {
@@ -557,5 +770,236 @@
         "daysAgo": 44
       }
     ]
+  },
+  "jobWeights": {
+    "_note": "From jobs/job_weights.py: Glassdoor postings scraped June 2020 (github.com/picklesueat/data_jobs_data), senior titles removed. weight = share of postings asking for the skill / share for the role's most asked skill. With several roles the app averages the weights. The floor keeps a chosen skill from dropping to zero.",
+    "floor": 0.1,
+    "roles": {
+      "Data analyst": {
+        "postings": 4158,
+        "skills": {
+          "cleaning": {
+            "weight": 0.56,
+            "share": 0.342
+          },
+          "exploring": {
+            "weight": 0.71,
+            "share": 0.432
+          },
+          "probability": {
+            "weight": 0.01,
+            "share": 0.008
+          },
+          "inference": {
+            "weight": 0.15,
+            "share": 0.094
+          },
+          "regression": {
+            "weight": 0.06,
+            "share": 0.036
+          },
+          "causal": {
+            "weight": 0.04,
+            "share": 0.026
+          },
+          "ml": {
+            "weight": 0.16,
+            "share": 0.099
+          },
+          "bayesian": {
+            "weight": 0.01,
+            "share": 0.004
+          },
+          "pythonsql": {
+            "weight": 1.0,
+            "share": 0.609
+          },
+          "communicating": {
+            "weight": 0.57,
+            "share": 0.349
+          }
+        }
+      },
+      "Data scientist": {
+        "postings": 680,
+        "skills": {
+          "cleaning": {
+            "weight": 0.23,
+            "share": 0.194
+          },
+          "exploring": {
+            "weight": 0.58,
+            "share": 0.497
+          },
+          "probability": {
+            "weight": 0.1,
+            "share": 0.085
+          },
+          "inference": {
+            "weight": 0.29,
+            "share": 0.25
+          },
+          "regression": {
+            "weight": 0.26,
+            "share": 0.221
+          },
+          "causal": {
+            "weight": 0.16,
+            "share": 0.14
+          },
+          "ml": {
+            "weight": 0.82,
+            "share": 0.704
+          },
+          "bayesian": {
+            "weight": 0.1,
+            "share": 0.085
+          },
+          "pythonsql": {
+            "weight": 1.0,
+            "share": 0.862
+          },
+          "communicating": {
+            "weight": 0.38,
+            "share": 0.326
+          }
+        }
+      },
+      "Business analyst": {
+        "postings": 1624,
+        "skills": {
+          "cleaning": {
+            "weight": 0.25,
+            "share": 0.076
+          },
+          "exploring": {
+            "weight": 0.59,
+            "share": 0.177
+          },
+          "probability": {
+            "weight": 0.01,
+            "share": 0.002
+          },
+          "inference": {
+            "weight": 0.05,
+            "share": 0.015
+          },
+          "regression": {
+            "weight": 0.02,
+            "share": 0.007
+          },
+          "causal": {
+            "weight": 0.02,
+            "share": 0.005
+          },
+          "ml": {
+            "weight": 0.06,
+            "share": 0.017
+          },
+          "bayesian": {
+            "weight": 0.0,
+            "share": 0.0
+          },
+          "pythonsql": {
+            "weight": 1.0,
+            "share": 0.301
+          },
+          "communicating": {
+            "weight": 0.96,
+            "share": 0.288
+          }
+        }
+      },
+      "ML engineer": {
+        "postings": 117,
+        "skills": {
+          "cleaning": {
+            "weight": 0.09,
+            "share": 0.085
+          },
+          "exploring": {
+            "weight": 0.33,
+            "share": 0.325
+          },
+          "probability": {
+            "weight": 0.05,
+            "share": 0.051
+          },
+          "inference": {
+            "weight": 0.11,
+            "share": 0.111
+          },
+          "regression": {
+            "weight": 0.11,
+            "share": 0.111
+          },
+          "causal": {
+            "weight": 0.12,
+            "share": 0.12
+          },
+          "ml": {
+            "weight": 1.0,
+            "share": 0.983
+          },
+          "bayesian": {
+            "weight": 0.07,
+            "share": 0.068
+          },
+          "pythonsql": {
+            "weight": 0.85,
+            "share": 0.838
+          },
+          "communicating": {
+            "weight": 0.18,
+            "share": 0.179
+          }
+        }
+      },
+      "Other": {
+        "postings": 6579,
+        "skills": {
+          "cleaning": {
+            "weight": 0.46,
+            "share": 0.256
+          },
+          "exploring": {
+            "weight": 0.66,
+            "share": 0.374
+          },
+          "probability": {
+            "weight": 0.03,
+            "share": 0.016
+          },
+          "inference": {
+            "weight": 0.16,
+            "share": 0.091
+          },
+          "regression": {
+            "weight": 0.09,
+            "share": 0.049
+          },
+          "causal": {
+            "weight": 0.06,
+            "share": 0.034
+          },
+          "ml": {
+            "weight": 0.28,
+            "share": 0.157
+          },
+          "bayesian": {
+            "weight": 0.02,
+            "share": 0.013
+          },
+          "pythonsql": {
+            "weight": 1.0,
+            "share": 0.563
+          },
+          "communicating": {
+            "weight": 0.58,
+            "share": 0.328
+          }
+        }
+      }
+    }
   }
 }

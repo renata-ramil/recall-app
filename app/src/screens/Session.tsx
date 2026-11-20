@@ -1,17 +1,36 @@
 import { useNavigate } from 'react-router-dom'
-import { api, pct } from '../api'
+import { api, recallWord } from '../api'
 import type { ChoiceStep, ExplainStep } from '../api/types'
 import { todayKey, useStore, type Sure } from '../state/store'
 import { Btn, BottomBar, Check, Cross, IconBtn, Nav, Opt, Segments } from '../components/ui'
 import { PlanList } from './Onboarding'
+import { PILOT } from '../pilot/config'
+import { frozenPlan } from '../pilot/session'
+import { markDayDone, recordAnswer } from '../pilot/engine'
+import { logEvent } from '../pilot/log'
+import type { PilotQuestion } from '../pilot/bank'
+import type { Scenario } from '../api/types'
+
+//letters follow the shown order; option ids stay the bank's letters
+const LETTERS = 'ABCDEFGH'
+
+//end of a session: mark the day, log it, and go to the summary
+function finish(setSession: ReturnType<typeof useStore>['setSession'], startedAt: number | null, nav: (p: string) => void) {
+  const now = Date.now()
+  setSession({ finishedAt: now, completedOn: todayKey() })
+  if (PILOT) { markDayDone(); logEvent('session_done', { seconds: startedAt ? Math.round((now - startedAt) / 1000) : '' }) }
+  nav('/session/summary')
+}
 
 export function Question() {
   const nav = useNavigate()
   const { state, setSession } = useStore()
   const s = state.session
-  const questions = api.questionsForSession()
+  const plan = frozenPlan(state)
+  const questions = plan.questions
   const q = questions[s.questionIndex]
-  if (!q) { nav('/session/scenario', { replace: true }); return null }
+  if (!q) { if (plan.scenario) nav('/session/scenario', { replace: true }); else finish(setSession, s.startedAt, p => nav(p, { replace: true })); return null }
+  const code = (q as PilotQuestion).code
   const total = questions.length
   const skill = api.skill(q.skillId)
   const feedback = s.phase === 'feedback'
@@ -22,16 +41,24 @@ export function Question() {
   const verdict = dontKnow ? v.dontKnow : right ? (s.sure === 'sure' ? v.rightSure : v.rightNotSure) : (s.sure === 'sure' ? v.wrongSure : v.wrongNotSure)
   const last = s.questionIndex === total - 1
 
+  //pilot: every answer updates the history and goes to the sheet; before and after feed the summary
+  const record = (picked: string, sure: Sure, isRight: boolean) => {
+    if (!PILOT) return
+    const c = recordAnswer(q as PilotQuestion, picked, sure, isRight, plan.checkin)
+    setSession(ss => ({ changes: { ...(ss.changes ?? {}), [q.skillId]: ss.changes?.[q.skillId] ?? c } }))
+  }
   const check = () => {
     if (!s.sure || !s.picked) return
+    record(s.picked, s.sure, right)
     setSession(ss => ({ phase: 'feedback', answers: [...ss.answers.filter(a => a.questionId !== q.id), { questionId: q.id, optionId: s.picked!, sure: s.sure as Sure, right }] }))
   }
   //"I don't know" records the item as not recalled, so a blind guess never counts as remembering
   const skip = () => {
+    record('', 'dontKnow', false)
     setSession(ss => ({ phase: 'feedback', sure: 'dontKnow', picked: null, answers: [...ss.answers.filter(a => a.questionId !== q.id), { questionId: q.id, optionId: '', sure: 'dontKnow', right: false }] }))
   }
   const next = () => {
-    if (last) nav('/session/scenario')
+    if (last) { if (plan.scenario) nav('/session/scenario'); else finish(setSession, s.startedAt, nav) }
     else setSession({ questionIndex: s.questionIndex + 1, phase: 'ask', sure: null, picked: null })
   }
 
@@ -43,6 +70,7 @@ export function Question() {
           <span className="small on-dark-2">{skill?.name}</span>
         </div>
         <h1 className={feedback ? 'title on-dark' : 'h1 on-dark'}>{q.prompt}</h1>
+        {code && <pre className="small on-dark" style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 12, padding: 12, overflowX: 'auto', whiteSpace: 'pre' }}>{code}</pre>}
       </div>
 
       {!feedback ? (
@@ -55,9 +83,9 @@ export function Question() {
             </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }} role="group" aria-label="Answers">
-            {q.options.map(o => (
+            {q.options.map((o, i) => (
               <button type="button" key={o.id} className={`ans${s.picked === o.id ? ' sel' : ''}`} style={{ padding: 16 }} aria-pressed={s.picked === o.id} onClick={() => setSession({ picked: o.id })}>
-                <span className="ltr body-b">{o.id}</span><span className={s.picked === o.id ? 'body-m' : 'body'}>{o.text}</span>
+                <span className="ltr body-b">{LETTERS[i]}</span><span className={s.picked === o.id ? 'body-m' : 'body'}>{o.text}</span>
               </button>
             ))}
           </div>
@@ -69,7 +97,7 @@ export function Question() {
       ) : (
         <>
           <div style={{ background: 'var(--paper)', borderRadius: '32px 32px 0 0', padding: '16px 24px 16px 24px', display: 'flex', flexDirection: 'column', gap: 4 }}>
-            {q.options.map(o => {
+            {q.options.map((o, i) => {
               const isRight = o.id === q.correctId
               const isPicked = o.id === s.picked
               const cls = isRight ? 'ans good' : isPicked ? 'ans bad' : 'ans dim'
@@ -77,7 +105,7 @@ export function Question() {
                 <div key={o.id} className={cls}>
                   {isRight ? <span className="ltr" style={{ height: 24, display: 'flex', alignItems: 'center' }}><Check size={20} width={3} label="Correct answer" /></span>
                     : isPicked ? <span className="ltr" style={{ height: 24, display: 'flex', alignItems: 'center' }}><Cross label="Your answer, wrong" /></span>
-                      : <span className="ltr body-b">{o.id}</span>}
+                      : <span className="ltr body-b">{LETTERS[i]}</span>}
                   <span className={isRight || isPicked ? 'body-m' : 'body'}>{o.text}</span>
                 </div>
               )
@@ -89,7 +117,7 @@ export function Question() {
             <p className="body">{q.explanation}</p>
             <p className="title" style={right ? { marginTop: 8 } : undefined}>{right ? q.nextReviewIfRight : q.nextReviewIfWrong}</p>
             <div className="safe-bottom sticky-bottom" style={{ marginTop: 'auto', background: right ? 'var(--mint)' : 'var(--sand)', paddingBottom: 0 }}>
-              <Btn onClick={next}>{last ? 'Start scenario' : 'Next question'}</Btn>
+              <Btn onClick={next}>{last ? (plan.scenario ? 'Start scenario' : 'Finish session') : 'Next question'}</Btn>
             </div>
           </div>
         </>
@@ -102,7 +130,7 @@ export function ScenarioScreen() {
   const nav = useNavigate()
   const { state, setSession } = useStore()
   const s = state.session
-  const sc = api.scenario(api.today().session.scenarioId)
+  const sc = frozenPlan(state).scenario
   if (!sc) return null
   const stepIndex = s.scenarioStep
   const step = sc.steps[stepIndex]
@@ -110,7 +138,10 @@ export function ScenarioScreen() {
   const back = () => stepIndex === 0 ? nav('/session/question') : setSession({ scenarioStep: stepIndex - 1 })
   const forward = () => {
     if (stepIndex < total - 1) setSession({ scenarioStep: stepIndex + 1 })
-    else { setSession({ finishedAt: Date.now(), completedOn: todayKey() }); nav('/session/summary') }
+    else {
+      if (PILOT) logEvent('scenario', { scenario: sc.id, choices: JSON.stringify(s.scenarioChoices), ratings: JSON.stringify(s.ratings), text: s.scenarioText, points: scenarioPoints(sc, s.scenarioChoices, s.ratings) })
+      finish(setSession, s.startedAt, nav)
+    }
   }
 
   const header = (title: React.ReactNode, extra?: React.ReactNode) => (
@@ -196,8 +227,7 @@ export function ScenarioScreen() {
 }
 
 //scoring default from SPEC section 8: one point per step, step 3 counts when no checkpoint is Missed
-export function scenarioPoints(choices: Record<number, string>, ratings: Record<number, string>): number {
-  const sc = api.scenario(api.today().session.scenarioId)
+export function scenarioPoints(sc: Scenario | undefined, choices: Record<number, string>, ratings: Record<number, string>): number {
   if (!sc) return 0
   let pts = 0
   sc.steps.forEach((st, i) => {
@@ -213,12 +243,23 @@ export function SummaryScreen() {
   const s = state.session
   const mock = api.summary()
   const recalled = s.answers.filter(a => a.right).length
-  const total = api.questionsForSession().length || mock.recallTotal
-  const points = scenarioPoints(s.scenarioChoices, s.ratings)
+  const plan = frozenPlan(state)
+  const ids = plan.skillIds
+  const qs = plan.questions
+  const total = qs.length || mock.recallTotal
+  const points = scenarioPoints(plan.scenario, s.scenarioChoices, s.ratings)
+  const scenarioTotal = plan.scenario ? plan.scenario.steps.length : 0
   const secs = s.startedAt && s.finishedAt ? Math.max(0, Math.round((s.finishedAt - s.startedAt) / 1000)) : null
   const duration = secs === null ? mock.duration : `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`
   //before and after values come from the model via the api module (mock for now)
-  const changes = mock.changes.map(c => ({ ...c, name: api.skill(c.skillId)?.name ?? c.skillId }))
+  const rightById = Object.fromEntries(qs.map(q => [q.skillId, s.answers.some(a => a.questionId === q.id && a.right)]))
+  const changes = (PILOT
+    ? ids.filter(id => s.changes?.[id]).map(id => {
+        const c = s.changes![id]
+        //after = the estimate for tomorrow; plain words, no review dates
+        return { skillId: id, before: c.before, after: c.after, improved: rightById[id] ?? false, next: rightById[id] ? 'Stronger now' : 'Comes back soon' }
+      })
+    : api.changesFor(ids, rightById)).map(c => ({ ...c, name: api.skill(c.skillId)?.name ?? c.skillId }))
   return (
     <div className="screen">
       <div className="safe-top" style={{ background: 'var(--navy)', padding: '48px 24px 24px 24px', display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -227,7 +268,7 @@ export function SummaryScreen() {
           <span className="num-xl on-dark">{recalled} of {total}</span><span className="title on-dark">recalled</span>
         </div>
         <div style={{ display: 'flex', gap: 32 }}>
-          <div style={{ display: 'flex', flexDirection: 'column' }}><span className="num-l on-dark">{points} of {mock.scenarioTotal}</span><span className="small on-dark-2">scenario points</span></div>
+          {(!PILOT || scenarioTotal > 0) && <div style={{ display: 'flex', flexDirection: 'column' }}><span className="num-l on-dark">{points} of {PILOT ? scenarioTotal : mock.scenarioTotal}</span><span className="small on-dark-2">scenario points</span></div>}
           <div style={{ display: 'flex', flexDirection: 'column' }}><span className="num-l on-dark">{duration}</span><span className="small on-dark-2">minutes</span></div>
         </div>
       </div>
@@ -236,7 +277,7 @@ export function SummaryScreen() {
           <div key={c.skillId} style={{ background: c.improved ? 'var(--mint)' : 'var(--ochre)', padding: '12px 24px', display: 'flex', flexDirection: 'column' }}>
             <span className="body-b">{c.name}</span>
             <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
-              <span className="h1">{pct(c.before)} to {pct(c.after)}</span><span className="small">{c.next}</span>
+              <span className="h2">{recallWord(c.before)} to {recallWord(c.after)}</span><span className="small">{c.next}</span>
             </div>
           </div>
         ))}
@@ -244,7 +285,7 @@ export function SummaryScreen() {
       <div style={{ flex: 1, minHeight: 0, padding: '16px 24px 0 24px', display: 'flex', flexDirection: 'column', gap: 8 }}>
         <div className="title" id="use-label">Where could you use one of these skills this week?</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 8 }} role="group" aria-labelledby="use-label">
-          {mock.useThisWeekOptions.map(o => <Opt key={o} selected={s.useThisWeek === o} onClick={() => setSession({ useThisWeek: o })}>{o}</Opt>)}
+          {mock.useThisWeekOptions.map(o => <Opt key={o} selected={s.useThisWeek === o} onClick={() => { setSession({ useThisWeek: o }); if (PILOT) logEvent('use_this_week', { answer: o }) }}>{o}</Opt>)}
         </div>
       </div>
       <BottomBar top={16}><Btn onClick={() => nav('/skills')}>See my skills</Btn></BottomBar>

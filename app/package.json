@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "shots": "node compare/shots.mjs"
+    "build:pilot": "tsc -b && VITE_PILOT=1 vite build --base /recall-app/pilot/ --outDir ../docs/pilot --emptyOutDir",
+    "build:all": "npm run build && npm run build:pilot && node scripts/make404.mjs",
+    "dev:pilot": "VITE_PILOT=1 vite"
   },
   "dependencies": {
     "react": "18.3.1",

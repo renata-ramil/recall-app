@@ -1,0 +1,1099 @@
+{
+  "module": "Data science v1",
+  "created": "2026-10-16",
+  "topics": {
+    "T01": "Data cleaning and preparation",
+    "T02": "Exploring and plotting data",
+    "T03": "Probability",
+    "T04": "Statistical inference",
+    "T05": "Regression",
+    "T06": "Causal thinking",
+    "T07": "Machine learning basics",
+    "T08": "Bayesian modeling",
+    "T09": "Python and SQL for data",
+    "T10": "Communicating results"
+  },
+  "recall_items": [
+    {
+      "id": "T01-01",
+      "topic": "T01",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "A column of ages has 4 percent missing values. The missingness is unrelated to anything else in the data. Which approach keeps the rest of each row and distorts the age distribution least?",
+      "code": null,
+      "options": {
+        "A": "Replace each missing age with 0.",
+        "B": "Replace each missing age with the median age.",
+        "C": "Drop the whole age column.",
+        "D": "Replace each missing age with the maximum age."
+      },
+      "key": "B",
+      "explanation": "With missingness unrelated to other variables and a small share missing, median imputation keeps the rows and barely shifts the center of the distribution. It does shrink the spread slightly, which is the known cost.",
+      "misconceptions": {
+        "A": "Treats a missing value as a real age of zero, which creates fake infants.",
+        "C": "Throws away 96 percent of the real values to handle 4 percent missing.",
+        "D": "Fills with an extreme value and shifts the mean upward."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T01-02",
+      "topic": "T01",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "A revenue column loads as text because some cells contain '$1,200'. What is the right order of operations?",
+      "code": null,
+      "options": {
+        "A": "Convert to float first, then strip the symbols.",
+        "B": "Strip '$' and ',' first, then convert to float.",
+        "C": "Drop every row that contains a '$'.",
+        "D": "Keep it as text and sort alphabetically."
+      },
+      "key": "B",
+      "explanation": "The symbols stop the type conversion, so they are removed first. Then the clean strings convert to numbers.",
+      "misconceptions": {
+        "A": "The conversion fails on '$1,200' before anything is stripped.",
+        "C": "Deletes the rows with the most information about revenue.",
+        "D": "Alphabetical order puts '9' after '10,000' and makes sums impossible."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T01-03",
+      "topic": "T01",
+      "format": "interpret_output",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "A table of orders has 10,000 rows. After an inner join to a customers table keyed on customer_id, it has 12,400 rows. What most likely happened?",
+      "code": null,
+      "options": {
+        "A": "The join dropped the orders that had no matching customer in the customers table.",
+        "B": "Some customer_id values repeat in the customers table, so matching orders were duplicated.",
+        "C": "pandas added extra rows to fill in the missing order dates during the join.",
+        "D": "The orders table had hidden or filtered rows that the join brought back into view."
+      },
+      "key": "B",
+      "explanation": "An inner join can only lose rows or, when the key is not unique on the right side, multiply them. Growth from 10,000 to 12,400 means some customers matched more than once.",
+      "misconceptions": {
+        "A": "Dropping rows would lower the count, not raise it.",
+        "C": "Joins never invent dates; row growth comes from duplicate keys.",
+        "D": "A join exposes nothing hidden; it combines rows by key."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T01-04",
+      "topic": "T01",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "Which table layout is 'tidy' in the sense used in data analysis?",
+      "code": null,
+      "options": {
+        "A": "One row per city, one column per month, cells hold sales.",
+        "B": "One row per city and month, with columns city, month, sales.",
+        "C": "One row per sale with a free-text description column only.",
+        "D": "One column that stores 'city-month-sales' as a single string."
+      },
+      "key": "B",
+      "explanation": "Tidy data has one variable per column and one observation per row. City, month and sales are each their own column, and each row is one city-month observation.",
+      "misconceptions": {
+        "A": "Months spread across columns are values stored as column names (wide format).",
+        "C": "Free text mixes several variables into one cell.",
+        "D": "Three variables are packed into one column."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T02-01",
+      "topic": "T02",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "Monthly revenue over three years. Which chart shows the trend best?",
+      "code": null,
+      "options": {
+        "A": "A pie chart with one slice per month.",
+        "B": "A line chart with months on the x-axis.",
+        "C": "A scatter plot of revenue against itself.",
+        "D": "A bar chart sorted from highest to lowest month."
+      },
+      "key": "B",
+      "explanation": "A single quantity over evenly spaced time is a line chart. The eye reads slope and seasonality directly.",
+      "misconceptions": {
+        "A": "A pie shows parts of one whole, not change over time.",
+        "C": "Plotting a variable against itself shows a diagonal and nothing else.",
+        "D": "Sorting by value destroys the time order, so the trend disappears."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T02-02",
+      "topic": "T02",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "Household income has a mean of 85,000 and a median of 62,000. What does this suggest about the distribution?",
+      "code": null,
+      "options": {
+        "A": "It is roughly symmetric, with the mean and median measuring the same center.",
+        "B": "It is skewed to the right, with a tail of high incomes pulling the mean up.",
+        "C": "It is skewed to the left, with a tail of low incomes pulling the median down.",
+        "D": "The data must contain entry errors, since a mean and median should match."
+      },
+      "key": "B",
+      "explanation": "When the mean sits well above the median, a minority of large values pulls the mean up. That is right skew, which is typical for income.",
+      "misconceptions": {
+        "A": "A symmetric distribution has mean and median close together.",
+        "C": "Left skew would pull the mean below the median.",
+        "D": "Mean above median is a normal feature of income data, not an error."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T02-03",
+      "topic": "T02",
+      "format": "interpret_output",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "A bar chart compares two products' conversion rates: 3.1 percent and 3.4 percent. The y-axis starts at 3.0 percent. What is the problem?",
+      "code": null,
+      "options": {
+        "A": "Bar charts cannot show percentages, so the rates should be drawn as a pie chart.",
+        "B": "The truncated axis makes a 0.3-point gap look like a fourfold difference.",
+        "C": "Conversion rates should always use a log scale so small rates are easy to see.",
+        "D": "There is no problem, since truncated axes are standard practice for bar charts."
+      },
+      "key": "B",
+      "explanation": "Bar length encodes value from zero. Starting the axis at 3.0 turns a 10 percent relative difference into a visual 4-to-1 ratio.",
+      "misconceptions": {
+        "A": "Bars show percentages fine when the axis starts at zero.",
+        "C": "A log scale is for data that spans orders of magnitude, which this does not.",
+        "D": "Truncated axes are standard for line charts of levels, not for bars."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T02-04",
+      "topic": "T02",
+      "format": "fill_blank",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "The middle 50 percent of a distribution lies between the first and third quartiles. The distance between them is called the ______.",
+      "code": null,
+      "options": {
+        "A": "standard deviation",
+        "B": "interquartile range",
+        "C": "variance",
+        "D": "confidence interval"
+      },
+      "key": "B",
+      "explanation": "The interquartile range is Q3 minus Q1 and is the box in a box plot. It is robust to outliers.",
+      "misconceptions": {
+        "A": "The standard deviation measures spread around the mean, not between quartiles.",
+        "C": "Variance is the squared standard deviation.",
+        "D": "A confidence interval is about an estimate's uncertainty, not the data's spread."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T03-01",
+      "topic": "T03",
+      "format": "mcq",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "A test for a condition is 99 percent sensitive and 95 percent specific. The condition affects 1 in 1,000 people. Someone tests positive. Roughly what is the chance they have the condition?",
+      "code": null,
+      "options": {
+        "A": "About 99 percent",
+        "B": "About 95 percent",
+        "C": "About 2 percent",
+        "D": "About 50 percent"
+      },
+      "key": "C",
+      "explanation": "Per 100,000 people: 100 have it and 99 test positive; 99,900 do not and about 4,995 test positive anyway. Positive tests: 5,094, of which 99 are true. 99 / 5,094 is about 1.9 percent. Bayes' rule with a low base rate.",
+      "misconceptions": {
+        "A": "Confuses sensitivity, the chance of a positive given the condition, with the chance of the condition given a positive.",
+        "B": "Reads specificity as the answer; it describes people without the condition.",
+        "D": "Ignores the base rate of 1 in 1,000."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T03-02",
+      "topic": "T03",
+      "format": "fill_blank",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "P(A | B) = P(B | A) P(A) / ______",
+      "code": null,
+      "options": {
+        "A": "P(A)",
+        "B": "P(B)",
+        "C": "P(A and B)",
+        "D": "1 - P(B)"
+      },
+      "key": "B",
+      "explanation": "Bayes' rule divides the joint probability P(B | A) P(A) by the marginal P(B), which normalizes it to a probability of A given B.",
+      "misconceptions": {
+        "A": "Dividing by P(A) cancels the prior and leaves P(B | A), the wrong direction.",
+        "C": "The numerator already is P(A and B); dividing by it gives 1.",
+        "D": "1 - P(B) is the probability of not B and has no place in the rule."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T03-03",
+      "topic": "T03",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "Which distribution models the number of support tickets arriving in an hour, when tickets arrive independently at a steady average rate?",
+      "code": null,
+      "options": {
+        "A": "Normal",
+        "B": "Poisson",
+        "C": "Uniform",
+        "D": "Bernoulli"
+      },
+      "key": "B",
+      "explanation": "Counts of independent events in a fixed interval at a constant rate follow a Poisson distribution.",
+      "misconceptions": {
+        "A": "The normal is continuous and allows negative values; counts are non-negative integers.",
+        "C": "Uniform would make 0 tickets and 50 tickets equally likely.",
+        "D": "Bernoulli is a single yes-or-no trial, not a count."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T03-04",
+      "topic": "T03",
+      "format": "mcq",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "A lottery ticket costs $2 and pays out $100 with probability 0.01, otherwise nothing. What is the expected net gain per ticket?",
+      "code": null,
+      "options": {
+        "A": "+$1",
+        "B": "-$1",
+        "C": "+$98",
+        "D": "$0"
+      },
+      "key": "B",
+      "explanation": "Expected payout is 0.01 times $100, which is $1. Subtract the $2 price and the expected net gain is -$1 per ticket.",
+      "misconceptions": {
+        "A": "Forgets to subtract the ticket price.",
+        "C": "Uses the winning outcome alone and ignores its probability.",
+        "D": "Assumes a fair game; the price exceeds the expected payout."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T04-01",
+      "topic": "T04",
+      "format": "mcq",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "A 95 percent confidence interval (the classical, frequentist kind) for a mean is [4.1, 5.3]. Which statement is correct?",
+      "code": null,
+      "options": {
+        "A": "About 95 percent of the individual observations in the data fall between 4.1 and 5.3.",
+        "B": "If the study were repeated many times, about 95 percent of such intervals would contain the true mean.",
+        "C": "Given this one interval, the probability is 0.95 that the true mean lies inside it.",
+        "D": "The sample mean falls between 4.1 and 5.3 with probability 0.95 in this study."
+      },
+      "key": "B",
+      "explanation": "The 95 percent describes the long-run behavior of the procedure across repeated samples. Any single interval either contains the true mean or does not.",
+      "misconceptions": {
+        "A": "Confuses an interval for the mean with a range for individual values.",
+        "C": "Treats the fixed true mean as random; that reading belongs to a Bayesian credible interval.",
+        "D": "The sample mean is a known number that sits at the interval's center."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T04-02",
+      "topic": "T04",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "A p-value of 0.03 in a two-sided test means:",
+      "code": null,
+      "options": {
+        "A": "There is a 3 percent chance that the null hypothesis is true, given the data we observed.",
+        "B": "If the null were true, data at least this extreme would appear about 3 percent of the time.",
+        "C": "The effect is large and practically important, since the p-value is below 0.05.",
+        "D": "There is a 97 percent chance that the alternative hypothesis is true for this effect."
+      },
+      "key": "B",
+      "explanation": "A p-value is a statement about the data under the null, not about the probability of either hypothesis, and it says nothing about effect size.",
+      "misconceptions": {
+        "A": "Inverts the conditional: p is about data given the null, not the null given data.",
+        "C": "Small p can come from a tiny effect in a huge sample.",
+        "D": "Same inversion as A, with 1 minus p."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T04-03",
+      "topic": "T04",
+      "format": "mcq",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "An analyst tests 40 product features for an effect on retention at the 5 percent level and finds 2 significant. What is the best reading of this result?",
+      "code": null,
+      "options": {
+        "A": "Two features clearly improve retention, and the team should ship both of them.",
+        "B": "With 40 tests and no real effects, about 2 false positives are expected by chance.",
+        "C": "The sample was too small to detect effects, so the 2 results are all that showed up.",
+        "D": "The other 38 features hurt retention, since only 2 of them reached significance."
+      },
+      "key": "B",
+      "explanation": "At a 5 percent threshold, 40 null tests produce 2 false positives on average. Two hits is exactly the chance expectation, so a correction for multiple comparisons or a replication is needed before believing them.",
+      "misconceptions": {
+        "A": "Ignores the multiple-comparisons problem.",
+        "C": "Sample size affects power, not the false-positive rate.",
+        "D": "Non-significance says nothing about harm."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T04-04",
+      "topic": "T04",
+      "format": "choose_method",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "You want to know whether the average session length differs between users on two app versions, with 500 users each and no pairing between groups. Which test fits?",
+      "code": null,
+      "options": {
+        "A": "Paired t-test",
+        "B": "Two-sample (independent) t-test",
+        "C": "Chi-squared test of independence",
+        "D": "One-sample t-test against zero"
+      },
+      "key": "B",
+      "explanation": "Two independent groups and a continuous outcome call for an independent-samples t-test (or its non-parametric cousin if lengths are heavily skewed).",
+      "misconceptions": {
+        "A": "Pairing requires the same units measured twice.",
+        "C": "Chi-squared is for counts in categories, not a continuous mean.",
+        "D": "Comparing one mean to zero does not compare the two versions."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T05-01",
+      "topic": "T05",
+      "format": "interpret_output",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "A linear regression of monthly spend on age and income gives: age coefficient 2.5 (p = 0.001), income coefficient 0.02 (p < 0.001). How do you read the age coefficient?",
+      "code": null,
+      "options": {
+        "A": "Each extra year of age goes with 2.5 more spend, holding income fixed.",
+        "B": "Age causes spend to rise by 2.5 for every extra year, since the p-value is tiny.",
+        "C": "Age explains 2.5 percent of the variance in monthly spend across all customers.",
+        "D": "Spend rises 2.5 times for each extra year of age, holding income fixed."
+      },
+      "key": "A",
+      "explanation": "A coefficient in multiple regression is the association with the outcome holding the other predictors constant. It is additive, not multiplicative, and not causal on its own.",
+      "misconceptions": {
+        "B": "Observational regression shows association; causation needs a design that rules out confounding.",
+        "C": "Variance explained is R-squared, not a coefficient.",
+        "D": "A linear coefficient is additive; a multiplicative reading belongs to a log-outcome model."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T05-02",
+      "topic": "T05",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "Which plot is the standard first check for whether a linear model's errors have constant variance?",
+      "code": null,
+      "options": {
+        "A": "Residuals against fitted values",
+        "B": "Histogram of the outcome",
+        "C": "Outcome against time",
+        "D": "Correlation matrix of predictors"
+      },
+      "key": "A",
+      "explanation": "A funnel shape in residuals versus fitted values signals non-constant variance (heteroscedasticity). A flat band is what you want.",
+      "misconceptions": {
+        "B": "The outcome's shape is not the error's shape.",
+        "C": "Useful for autocorrelation in time series, not variance.",
+        "D": "Shows collinearity among predictors, a different assumption."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T05-03",
+      "topic": "T05",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "Adding an L2 (ridge) penalty to a regression mainly does what?",
+      "code": null,
+      "options": {
+        "A": "It sets most of the coefficients exactly to zero, keeping only a few predictors.",
+        "B": "It shrinks coefficients toward zero to reduce variance, at the cost of some bias.",
+        "C": "It removes the intercept so that the model passes through the origin.",
+        "D": "It makes the model fit the training data more closely than plain least squares."
+      },
+      "key": "B",
+      "explanation": "Ridge trades a little bias for lower variance by shrinking coefficients, which usually improves out-of-sample error when predictors are many or correlated.",
+      "misconceptions": {
+        "A": "Exact zeros are the L1 (lasso) behavior.",
+        "C": "The intercept is normally left unpenalized.",
+        "D": "A penalty makes training fit worse by design; the gain is on new data."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T05-04",
+      "topic": "T05",
+      "format": "interpret_output",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "A logistic regression for churn gives a coefficient of 0.69 on 'had a support ticket'. The odds ratio is about 2. What does this mean?",
+      "code": null,
+      "options": {
+        "A": "Customers with a ticket are twice as likely to churn in probability terms, whatever the baseline.",
+        "B": "The odds of churn are about twice as high for ticket holders, holding other predictors fixed.",
+        "C": "About 69 percent of customers who had a support ticket went on to churn.",
+        "D": "Having a ticket adds 0.69 to a customer's churn probability, holding other predictors fixed."
+      },
+      "key": "B",
+      "explanation": "Logistic coefficients are log-odds; exp(0.69) is about 2, so the odds double. The change in probability depends on the baseline rate.",
+      "misconceptions": {
+        "A": "Doubling odds is not doubling probability unless the baseline is small.",
+        "C": "A coefficient is not a rate.",
+        "D": "Coefficients are on the log-odds scale, not the probability scale."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T06-01",
+      "topic": "T06",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "Cities with more ice cream sales have more drownings. What is the most likely explanation?",
+      "code": null,
+      "options": {
+        "A": "Eating ice cream causes drowning.",
+        "B": "Hot weather raises both.",
+        "C": "Drowning causes ice cream sales.",
+        "D": "It is a coincidence in every city."
+      },
+      "key": "B",
+      "explanation": "A confounder (temperature) drives both variables. Conditioning on it removes the association.",
+      "misconceptions": {
+        "A": "Mistakes correlation for causation.",
+        "C": "Reverse causation is possible in principle but implausible here.",
+        "D": "A consistent pattern across cities is not a coincidence; it has a cause."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T06-02",
+      "topic": "T06",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "Why does random assignment in an experiment allow a causal reading of the difference between groups?",
+      "code": null,
+      "options": {
+        "A": "It makes the sample larger, which shrinks the standard errors of the comparison.",
+        "B": "It balances measured and unmeasured confounders between groups in expectation.",
+        "C": "It removes measurement error from the outcome, so the difference is exact.",
+        "D": "It guarantees that the two groups are identical on every single variable."
+      },
+      "key": "B",
+      "explanation": "Randomization breaks the link between treatment and every other cause of the outcome, known or unknown, so the groups differ only by chance and by treatment.",
+      "misconceptions": {
+        "A": "Sample size affects precision, not confounding.",
+        "C": "Measurement error is a separate problem.",
+        "D": "Groups still differ by chance; randomization makes those differences unsystematic."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T06-03",
+      "topic": "T06",
+      "format": "choose_method",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "A company rolled out a new onboarding flow in March. You have monthly retention for this company and for five similar companies that did not change anything. Which design fits best?",
+      "code": null,
+      "options": {
+        "A": "A before-after comparison of this company's retention alone",
+        "B": "Difference-in-differences using the other companies as the comparison",
+        "C": "A simple correlation between the new onboarding flow and retention",
+        "D": "A randomized A/B test run on the data that was already collected"
+      },
+      "key": "B",
+      "explanation": "Difference-in-differences uses the comparison companies to estimate what would have happened without the change, under a parallel-trends assumption.",
+      "misconceptions": {
+        "A": "Ignores anything else that changed in March, such as seasonality.",
+        "C": "A correlation cannot separate the rollout from other changes.",
+        "D": "Randomization has to happen before the data are collected."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T06-04",
+      "topic": "T06",
+      "format": "mcq",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "In a causal diagram, you want the effect of X on Y. Z is caused by both X and Y (a collider). What happens if you control for Z?",
+      "code": null,
+      "options": {
+        "A": "Nothing changes, since controlling for more variables is always safer.",
+        "B": "You open a spurious path between X and Y and bias the estimate.",
+        "C": "You remove the confounding between X and Y, so the estimate improves.",
+        "D": "You increase the effective sample size and narrow the interval."
+      },
+      "key": "B",
+      "explanation": "Conditioning on a collider creates an association between its causes that was not there before. The rule is to control for confounders, never colliders.",
+      "misconceptions": {
+        "A": "More controls can add bias when one is a collider or a mediator.",
+        "C": "Z is not a confounder; it sits downstream of X and Y.",
+        "D": "Controlling for a variable does not change the sample size."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T07-01",
+      "topic": "T07",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "A model scores 99 percent on training data and 71 percent on new data. The most likely issue is:",
+      "code": null,
+      "options": {
+        "A": "Underfitting",
+        "B": "Overfitting",
+        "C": "The new data is wrong",
+        "D": "The model needs more parameters"
+      },
+      "key": "B",
+      "explanation": "A large gap between training and held-out performance is the signature of overfitting: the model memorized noise in the training set.",
+      "misconceptions": {
+        "A": "Underfitting would show poor performance on both sets.",
+        "C": "Blaming new data skips the diagnosis.",
+        "D": "More parameters widen the gap."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T07-02",
+      "topic": "T07",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "What is the purpose of k-fold cross-validation?",
+      "code": null,
+      "options": {
+        "A": "To train the model k times faster by splitting the data into smaller pieces.",
+        "B": "To estimate out-of-sample performance while every row gets used for validation once.",
+        "C": "To find and remove outliers by checking which folds give unusual errors.",
+        "D": "To increase the size of the training set by a factor of k through resampling."
+      },
+      "key": "B",
+      "explanation": "Each fold is held out once while the others train, which gives a more stable estimate of generalization than a single split.",
+      "misconceptions": {
+        "A": "It costs k times more training, not less.",
+        "C": "Cross-validation does not alter the data.",
+        "D": "The data size is fixed; folds rotate which part is held out."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T07-03",
+      "topic": "T07",
+      "format": "mcq",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "A fraud dataset has 0.5 percent positives. A model predicts 'not fraud' for everyone. Which statement is true?",
+      "code": null,
+      "options": {
+        "A": "Accuracy is 99.5 percent, so the model is useful and ready to deploy.",
+        "B": "Accuracy is 99.5 percent, recall on fraud is 0, and the model is useless.",
+        "C": "Precision on fraud is 100 percent, since the model never raises a false alarm.",
+        "D": "The model has a high F1 score, because its accuracy is close to 100 percent."
+      },
+      "key": "B",
+      "explanation": "Precision is undefined because the model predicts no positives. On imbalanced classes, accuracy follows the majority class. Recall, precision, and the precision-recall curve are the metrics that matter here.",
+      "misconceptions": {
+        "A": "High accuracy hides zero fraud caught.",
+        "C": "Precision is undefined when no positives are predicted.",
+        "D": "F1 is zero when recall is zero."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T07-04",
+      "topic": "T07",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "Why does a random forest usually generalize better than a single deep decision tree?",
+      "code": null,
+      "options": {
+        "A": "It uses fewer features overall, so each tree is simpler and less noisy.",
+        "B": "Averaging many trees built on resampled data and random features lowers variance.",
+        "C": "Each tree in the forest is grown deeper, so it captures more of the signal.",
+        "D": "It fits the training data more exactly than any single tree is able to."
+      },
+      "key": "B",
+      "explanation": "Single deep trees have high variance. Bagging and feature randomness make the trees' errors less correlated, so their average is more stable.",
+      "misconceptions": {
+        "A": "Each split considers a random subset, but the forest uses all features overall.",
+        "C": "Depth is similar; the gain comes from averaging.",
+        "D": "A forest usually fits training data slightly less exactly than one unpruned tree."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T08-01",
+      "topic": "T08",
+      "format": "fill_blank",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "In Bayesian inference, the posterior is proportional to the likelihood times the ______.",
+      "code": null,
+      "options": {
+        "A": "prior",
+        "B": "p-value",
+        "C": "sample size",
+        "D": "evidence"
+      },
+      "key": "A",
+      "explanation": "Posterior is proportional to likelihood times prior. The evidence (marginal likelihood) is the normalizing constant in the denominator.",
+      "misconceptions": {
+        "B": "p-values belong to frequentist testing.",
+        "C": "Sample size enters through the likelihood, not as a separate factor.",
+        "D": "The evidence divides, it does not multiply."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T08-02",
+      "topic": "T08",
+      "format": "mcq",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "A hierarchical model estimates a per-school effect with partial pooling. A school with 5 students has a raw mean far above the others. What does the model do to its estimate?",
+      "code": null,
+      "options": {
+        "A": "Leaves it at the raw mean, since that is what the school's own data show.",
+        "B": "Shrinks it toward the overall mean, more than for a school with 500 students.",
+        "C": "Sets it to the overall mean exactly, since 5 students carry no information.",
+        "D": "Drops the school from the model as an outlier with too few students."
+      },
+      "key": "B",
+      "explanation": "Partial pooling shrinks noisy small-group estimates toward the population mean in proportion to their uncertainty. Large groups move little.",
+      "misconceptions": {
+        "A": "No pooling would leave it; partial pooling shrinks.",
+        "C": "Complete pooling would do that; partial pooling keeps some of the school's signal.",
+        "D": "Small groups are kept and regularized, not removed."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T08-03",
+      "topic": "T08",
+      "format": "interpret_output",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "After MCMC sampling, a parameter shows R-hat of 1.21. What should you do?",
+      "code": null,
+      "options": {
+        "A": "Report the estimate as it is, since an R-hat of 1.21 is close enough to 1.",
+        "B": "Treat the chains as not converged: run longer, check modes or reparameterize.",
+        "C": "Delete the worst chain and report the estimate from the remaining chains.",
+        "D": "Increase the prior variance so the sampler can move around more freely."
+      },
+      "key": "B",
+      "explanation": "R-hat compares between-chain and within-chain variance; values above about 1.01 mean the chains disagree, so the posterior summary is not trustworthy yet.",
+      "misconceptions": {
+        "A": "The common threshold is 1.01; 1.21 is far from it.",
+        "C": "Removing a chain hides the problem.",
+        "D": "Prior variance is a modeling choice, not a convergence fix."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T08-04",
+      "topic": "T08",
+      "format": "mcq",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "A 95 percent Bayesian credible interval for an effect is [0.2, 0.9]. Which reading is correct?",
+      "code": null,
+      "options": {
+        "A": "Given the model and data, the effect lies between 0.2 and 0.9 with 95 percent probability.",
+        "B": "95 percent of repeated samples would give an estimated effect inside this range.",
+        "C": "The effect is exactly 0.55, the midpoint of the interval, with 95 percent certainty.",
+        "D": "The p-value for the effect is 0.05, so it is just barely significant."
+      },
+      "key": "A",
+      "explanation": "A credible interval is a direct probability statement about the parameter, conditional on the prior and the data. That is the reading a confidence interval does not allow.",
+      "misconceptions": {
+        "B": "Repeated-sampling coverage is the confidence-interval reading.",
+        "C": "The interval expresses uncertainty; the midpoint is one summary of it.",
+        "D": "Credible intervals do not come with p-values."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T09-01",
+      "topic": "T09",
+      "format": "fix_code",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "This should print the average order total per city but prints a method object. Fix it.",
+      "code": "df[\"total\"] = df[\"price\"] * df[\"qty\"]\nresult = df.groupby(\"city\")[\"total\"].mean\nprint(result)",
+      "options": {
+        "A": "Change .mean to .mean()",
+        "B": "Change groupby to sort_values",
+        "C": "Remove the brackets around 'total'",
+        "D": "Replace print with return"
+      },
+      "key": "A",
+      "explanation": "Without parentheses, .mean is a reference to the method, not a call. Adding () runs the aggregation.",
+      "misconceptions": {
+        "B": "Sorting does not aggregate.",
+        "C": "Selecting the column is correct; the missing call is the bug.",
+        "D": "return outside a function raises an error and does not fix the bug."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T09-02",
+      "topic": "T09",
+      "format": "interpret_output",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "What does this query return?",
+      "code": "SELECT c.name, COUNT(*) AS n_orders\nFROM customers c\nJOIN orders o ON o.customer_id = c.id\nGROUP BY c.id, c.name;",
+      "options": {
+        "A": "Every customer, with order counts and 0 for customers with no orders.",
+        "B": "Only customers who have at least one order, with their order counts.",
+        "C": "Every order with the customer's name repeated.",
+        "D": "An error, because COUNT needs a WHERE clause."
+      },
+      "key": "B",
+      "explanation": "An inner JOIN keeps only customers with a matching order row. Customers with no orders are absent; a LEFT JOIN would keep them with a count of 0.",
+      "misconceptions": {
+        "A": "That is the LEFT JOIN result, with COUNT(o.id) for the zeros.",
+        "C": "GROUP BY collapses the rows to one per customer.",
+        "D": "COUNT works without WHERE."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T09-03",
+      "topic": "T09",
+      "format": "fix_code",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "This filter should keep rows where status is 'active' AND age is over 30, but raises a ValueError about ambiguous truth values. Fix it.",
+      "code": "subset = df[df[\"status\"] == \"active\" and df[\"age\"] > 30]",
+      "options": {
+        "A": "Wrap each condition in parentheses and use & instead of and",
+        "B": "Replace > with >= so the age comparison returns a single value",
+        "C": "Use df.query with no quotes around 'active' in the filter",
+        "D": "Convert the age column to a string first, then compare"
+      },
+      "key": "A",
+      "explanation": "pandas needs element-wise operators (&, |) and parentheses, because the Python keyword and tries to evaluate a whole Series as one boolean.",
+      "misconceptions": {
+        "B": "The comparison operator is not the problem.",
+        "C": "df.query works, but the condition needs quotes around 'active'.",
+        "D": "Comparing strings to 30 breaks the filter."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T09-04",
+      "topic": "T09",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "A teammate cannot reproduce your notebook's numbers. The most common cause from this list is:",
+      "code": null,
+      "options": {
+        "A": "Cells were run out of order, so the results depend on the run history.",
+        "B": "Their laptop is slower, so long-running cells time out before finishing.",
+        "C": "pandas rounds decimal numbers differently on other operating systems.",
+        "D": "Notebooks cannot be shared reliably, so outputs change when they are opened."
+      },
+      "key": "A",
+      "explanation": "Notebook state is whatever ran last, in whatever order. Restart the kernel and run all cells top to bottom before sharing, and pin package versions.",
+      "misconceptions": {
+        "B": "Speed changes time, not results.",
+        "C": "Same version, same arithmetic.",
+        "D": "Notebooks share fine when they run clean from the top."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T10-01",
+      "topic": "T10",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "Which opening line fits a one-paragraph findings summary for a product manager?",
+      "code": null,
+      "options": {
+        "A": "We ran a logistic regression with L2 regularization on 14 features from the checkout logs.",
+        "B": "The new checkout showed about a 0.5-point lift, but the interval includes zero, so test two more weeks.",
+        "C": "Data was collected between March and May from all checkout sessions on web and mobile.",
+        "D": "Please see the attached notebook for the full model output, charts and test details."
+      },
+      "key": "B",
+      "explanation": "Lead with the finding, its uncertainty, and the recommendation. Method and data details come after, for readers who want them.",
+      "misconceptions": {
+        "A": "Opens with method; the reader wants the result.",
+        "C": "Opens with logistics, not the answer.",
+        "D": "Pushes the work onto the reader."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T10-02",
+      "topic": "T10",
+      "format": "mcq",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "A stakeholder asks: 'So is the effect real or not?' Your interval is [-0.1, 1.2] points. The best answer is:",
+      "code": null,
+      "options": {
+        "A": "No. It is not statistically significant, so we can say there is no effect at all.",
+        "B": "Best guess is +0.5 points, but anything from a small loss to +1.2 fits. Ship if a wrong call is cheap.",
+        "C": "Yes. The effect is 0.5 points, which is our best estimate, so we can treat it as real.",
+        "D": "Statistics cannot answer that question, since an interval never says whether an effect is real."
+      },
+      "key": "B",
+      "explanation": "Translate the interval into the decision's terms: the point estimate, the range, and what the uncertainty means for the choice in front of them.",
+      "misconceptions": {
+        "A": "Non-significant is not 'no effect'.",
+        "C": "Drops the uncertainty the stakeholder needs.",
+        "D": "Statistics does answer it, with a range and a recommendation."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T10-03",
+      "topic": "T10",
+      "format": "mcq",
+      "level": 1,
+      "difficulty": 2,
+      "stem": "A dashboard for weekly executives should show:",
+      "code": null,
+      "options": {
+        "A": "Every metric the team tracks, on one page, so nothing important is missed.",
+        "B": "The 3 to 5 metrics tied to their decisions, each with its target and trend.",
+        "C": "Raw tables of the underlying data, so executives can compute their own numbers.",
+        "D": "Only the metrics that improved this week, so the meeting stays focused."
+      },
+      "key": "B",
+      "explanation": "A dashboard serves decisions. Few metrics, each with a target and a trend, is what gets read and acted on.",
+      "misconceptions": {
+        "A": "Everything on one page means nothing stands out.",
+        "C": "Executives want answers, not homework.",
+        "D": "Hiding declines removes the information decisions need most."
+      },
+      "created": "2026-10-16"
+    },
+    {
+      "id": "T10-04",
+      "topic": "T10",
+      "format": "mcq",
+      "level": 2,
+      "difficulty": 2,
+      "stem": "You must report that the model's forecast error doubled last month. Which phrasing is both honest and useful?",
+      "code": null,
+      "options": {
+        "A": "The model is broken and its forecasts should not be used until further notice.",
+        "B": "Error rose from 4 to 8 percent in September, after the pricing change. We are retraining this week.",
+        "C": "There were some fluctuations in model performance last month, which we are monitoring.",
+        "D": "Error went up last month, but it is probably fine and should settle on its own soon."
+      },
+      "key": "B",
+      "explanation": "State the number, the likely cause, and the action. That is what a reader needs to trust the report and to decide whether to intervene.",
+      "misconceptions": {
+        "A": "Alarms without a number or a cause.",
+        "C": "Vague enough to hide a real problem.",
+        "D": "Dismisses a doubling without evidence."
+      },
+      "created": "2026-10-16"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S01",
+      "topic": "T04",
+      "title": "Ship the checkout page?",
+      "level": 2,
+      "context": "Your manager shares an A/B test of a new checkout page. The old page converted 4.1 percent and the new page 4.6 percent, with 10,000 users in each group. The two-sided p-value is 0.08. She wants to ship the new page today.",
+      "steps": [
+        {
+          "kind": "interpret",
+          "prompt": "What do you tell her about the result?",
+          "options": {
+            "A": "The new page raises conversion by 0.5 points; ship it.",
+            "B": "There is a 92 percent chance the new page is better.",
+            "C": "The result is inconclusive at the 5 percent level. The lift could be anywhere from slightly negative to about 1 point. Extend the test, or decide based on the cost of a wrong call.",
+            "D": "The test failed, so the two pages perform the same."
+          },
+          "key": "C",
+          "explanation": "The 95 percent interval for the difference runs from about -0.07 to 1.07 points, so the data do not settle the question at the 5 percent level, and the right move depends on the cost of being wrong.",
+          "misconceptions": {
+            "A": "Treats the observed lift as certain.",
+            "B": "Reads the p-value as the probability the hypothesis is true.",
+            "D": "Treats 'not significant' as 'no difference'."
+          }
+        },
+        {
+          "kind": "act",
+          "prompt": "Nobody knows yet what a wrong call would cost. What should happen next?",
+          "options": {
+            "A": "Extend the test for a fixed two more weeks, set now, then decide.",
+            "B": "Ship now, and roll back if conversion drops over the next week.",
+            "C": "Keep the old page and close the test.",
+            "D": "Rerun the analysis with a one-sided test to get p under 0.05."
+          },
+          "key": "A",
+          "explanation": "Extending the test for a period fixed in advance is the default when the cost of a wrong call is unknown; stopping the moment the interval clears zero would inflate false positives. B is defensible when shipping is cheap to reverse and the downside is small. C discards a likely positive effect. D changes the test after seeing the data, which inflates false positives.",
+          "misconceptions": {
+            "B": "Defensible only when rollback is cheap and the downside is small; say that out loud if you pick it.",
+            "C": "Throws away a result whose best estimate is positive.",
+            "D": "Choosing the test after seeing the data is p-hacking."
+          }
+        },
+        {
+          "kind": "justify",
+          "prompt": "In one or two lines, explain the decision to your manager.",
+          "model_answer": "The new page probably helps, but the test cannot yet rule out no effect. Two more weeks of data would make the call clear; if we must decide today, the downside is small and we can ship with monitoring.",
+          "checkpoints": [
+            "States the best estimate and that the interval includes zero",
+            "Ties the recommendation to the cost of a wrong call",
+            "Gives a concrete next step with a time or condition"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "topic": "T01",
+      "title": "Revenue looks too good",
+      "level": 2,
+      "context": "The monthly revenue dashboard shows September revenue up 38 percent, which nobody expected. You check the pipeline: the orders table is joined to a shipments table before summing order totals, and some orders ship in several packages.",
+      "steps": [
+        {
+          "kind": "interpret",
+          "prompt": "What is the most likely cause of the jump?",
+          "options": {
+            "A": "Sales really rose 38 percent.",
+            "B": "Orders with several shipments appear several times after the join, so their totals are summed more than once.",
+            "C": "The currency changed.",
+            "D": "The dashboard caches old data."
+          },
+          "key": "B",
+          "explanation": "A one-to-many join on orders to shipments duplicates each multi-package order once per package. Summing order totals afterward counts those orders several times. September likely had more split shipments.",
+          "misconceptions": {
+            "A": "An unexplained 38 percent jump that coincides with a pipeline detail deserves a check before it is believed.",
+            "C": "A currency change would shift every month, not one.",
+            "D": "Caching shows old numbers, not inflated ones."
+          }
+        },
+        {
+          "kind": "act",
+          "prompt": "What do you do first?",
+          "options": {
+            "A": "Compare the row count after the join with the number of distinct order ids, and compare the summed total with a sum computed on the orders table alone.",
+            "B": "Tell leadership that revenue is up 38 percent.",
+            "C": "Delete the shipments table.",
+            "D": "Divide September revenue by 1.38."
+          },
+          "key": "A",
+          "explanation": "Verify the diagnosis by comparing rows to distinct orders and checking a reference sum before touching the pipeline or the message. The fix is to aggregate shipments per order before the join, or sum on the orders table.",
+          "misconceptions": {
+            "B": "Reporting an unverified number is the costly mistake here.",
+            "C": "The table is fine; the join order is the bug.",
+            "D": "Guessing a correction factor hides the real error."
+          }
+        },
+        {
+          "kind": "justify",
+          "prompt": "Write the one-line note you would post in the team channel.",
+          "model_answer": "September revenue on the dashboard is inflated: the shipments join duplicates multi-package orders before the sum. Verified by comparing joined rows to distinct orders. Fix in review; corrected figure by end of day.",
+          "checkpoints": [
+            "Names the cause (duplicate rows from the join) and the effect (inflated sum)",
+            "Says how it was verified",
+            "Gives the fix and when the corrected number arrives"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "topic": "T07",
+      "title": "The churn model is too perfect",
+      "level": 2,
+      "context": "A colleague built a churn model that scores 99 percent accuracy on the validation set. One of the features is 'days since last login', computed at the end of the data window. Churned customers stop logging in by definition.",
+      "steps": [
+        {
+          "kind": "interpret",
+          "prompt": "What is going on?",
+          "options": {
+            "A": "The model is excellent and should go to production.",
+            "B": "The feature leaks the label: it is computed after churn happens, so it encodes the answer.",
+            "C": "The validation set is too small.",
+            "D": "Accuracy is the wrong metric, so the model is actually bad."
+          },
+          "key": "B",
+          "explanation": "Days since last login measured at the end of the window is large for every churned customer, because churn means they stopped logging in. The feature is a consequence of the label, not a predictor available at decision time.",
+          "misconceptions": {
+            "A": "Near-perfect scores on a hard problem are a warning sign, not a success.",
+            "C": "Sample size does not create leakage.",
+            "D": "Metric choice matters, but the number here comes from leakage."
+          }
+        },
+        {
+          "kind": "act",
+          "prompt": "What should the fix be?",
+          "options": {
+            "A": "Compute every feature as of a cutoff date before the churn window, and evaluate on customers whose churn status is observed after that date.",
+            "B": "Remove the feature and keep everything else as is.",
+            "C": "Use F1 instead of accuracy.",
+            "D": "Add more features."
+          },
+          "key": "A",
+          "explanation": "The fix is temporal: features must use only information available at the moment the prediction would be made. Removing one feature leaves any other leaking feature in place.",
+          "misconceptions": {
+            "B": "Other features computed at the end of the window may leak too.",
+            "C": "Changing the metric does not stop the leak.",
+            "D": "More features built the same way add more leakage."
+          }
+        },
+        {
+          "kind": "justify",
+          "prompt": "Explain to your colleague in one or two lines why the 99 percent is not real.",
+          "model_answer": "The model is reading the answer off the feature: days since last login is computed after the customer already churned. Rebuilding features as of a cutoff date will give a lower but honest score.",
+          "checkpoints": [
+            "Identifies the feature as a consequence of the label",
+            "Explains the timing problem (computed after the outcome)",
+            "Says what an honest evaluation looks like"
+          ]
+        }
+      ]
+    }
+  ]
+}

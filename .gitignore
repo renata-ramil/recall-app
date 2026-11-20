@@ -1,6 +1,5 @@
 node_modules/
 app/dist/
-app/compare/out/
 __pycache__/
 .DS_Store
 *.log

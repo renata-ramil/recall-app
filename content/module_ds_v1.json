@@ -35,9 +35,6 @@
         "C": "Throws away 96 percent of the real values to handle 4 percent missing.",
         "D": "Fills with an extreme value and shifts the mean upward."
       },
-      "author": "hand",
-      "checker_verdict": "fixed after flag",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -61,9 +58,6 @@
         "C": "Deletes the rows with the most information about revenue.",
         "D": "Alphabetical order puts '9' after '10,000' and makes sums impossible."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -75,10 +69,10 @@
       "stem": "A table of orders has 10,000 rows. After an inner join to a customers table keyed on customer_id, it has 12,400 rows. What most likely happened?",
       "code": null,
       "options": {
-        "A": "The join dropped orders with no matching customer.",
-        "B": "Some customer_id values appear more than once in the customers table, so matching orders were duplicated.",
-        "C": "pandas added rows to fill missing dates.",
-        "D": "The orders table had hidden rows that the join revealed."
+        "A": "The join dropped the orders that had no matching customer in the customers table.",
+        "B": "Some customer_id values repeat in the customers table, so matching orders were duplicated.",
+        "C": "pandas added extra rows to fill in the missing order dates during the join.",
+        "D": "The orders table had hidden or filtered rows that the join brought back into view."
       },
       "key": "B",
       "explanation": "An inner join can only lose rows or, when the key is not unique on the right side, multiply them. Growth from 10,000 to 12,400 means some customers matched more than once.",
@@ -87,9 +81,6 @@
         "C": "Joins never invent dates; row growth comes from duplicate keys.",
         "D": "A join exposes nothing hidden; it combines rows by key."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -113,9 +104,6 @@
         "C": "Free text mixes several variables into one cell.",
         "D": "Three variables are packed into one column."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -139,9 +127,6 @@
         "C": "Plotting a variable against itself shows a diagonal and nothing else.",
         "D": "Sorting by value destroys the time order, so the trend disappears."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -153,10 +138,10 @@
       "stem": "Household income has a mean of 85,000 and a median of 62,000. What does this suggest about the distribution?",
       "code": null,
       "options": {
-        "A": "It is symmetric.",
-        "B": "It is skewed to the right, with a long tail of high incomes pulling the mean up.",
-        "C": "It is skewed to the left, with a tail of low incomes.",
-        "D": "The data must contain errors."
+        "A": "It is roughly symmetric, with the mean and median measuring the same center.",
+        "B": "It is skewed to the right, with a tail of high incomes pulling the mean up.",
+        "C": "It is skewed to the left, with a tail of low incomes pulling the median down.",
+        "D": "The data must contain entry errors, since a mean and median should match."
       },
       "key": "B",
       "explanation": "When the mean sits well above the median, a minority of large values pulls the mean up. That is right skew, which is typical for income.",
@@ -165,9 +150,6 @@
         "C": "Left skew would pull the mean below the median.",
         "D": "Mean above median is a normal feature of income data, not an error."
       },
-      "author": "hand",
-      "checker_verdict": "fixed after flag",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -179,10 +161,10 @@
       "stem": "A bar chart compares two products' conversion rates: 3.1 percent and 3.4 percent. The y-axis starts at 3.0 percent. What is the problem?",
       "code": null,
       "options": {
-        "A": "Bar charts cannot show percentages.",
-        "B": "The truncated axis makes a 0.3-point gap look like the second bar is four times taller.",
-        "C": "Conversion rates should always use a log scale.",
-        "D": "There is no problem; truncated axes are standard for bar charts."
+        "A": "Bar charts cannot show percentages, so the rates should be drawn as a pie chart.",
+        "B": "The truncated axis makes a 0.3-point gap look like a fourfold difference.",
+        "C": "Conversion rates should always use a log scale so small rates are easy to see.",
+        "D": "There is no problem, since truncated axes are standard practice for bar charts."
       },
       "key": "B",
       "explanation": "Bar length encodes value from zero. Starting the axis at 3.0 turns a 10 percent relative difference into a visual 4-to-1 ratio.",
@@ -191,9 +173,6 @@
         "C": "A log scale is for data that spans orders of magnitude, which this does not.",
         "D": "Truncated axes are standard for line charts of levels, not for bars."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -217,9 +196,6 @@
         "C": "Variance is the squared standard deviation.",
         "D": "A confidence interval is about an estimate's uncertainty, not the data's spread."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -243,9 +219,6 @@
         "B": "Reads specificity as the answer; it describes people without the condition.",
         "D": "Ignores the base rate of 1 in 1,000."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -269,9 +242,6 @@
         "C": "The numerator already is P(A and B); dividing by it gives 1.",
         "D": "1 - P(B) is the probability of not B and has no place in the rule."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -295,9 +265,6 @@
         "C": "Uniform would make 0 tickets and 50 tickets equally likely.",
         "D": "Bernoulli is a single yes-or-no trial, not a count."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -321,9 +288,6 @@
         "C": "Uses the winning outcome alone and ignores its probability.",
         "D": "Assumes a fair game; the price exceeds the expected payout."
       },
-      "author": "hand",
-      "checker_verdict": "fixed after flag",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -335,10 +299,10 @@
       "stem": "A 95 percent confidence interval (the classical, frequentist kind) for a mean is [4.1, 5.3]. Which statement is correct?",
       "code": null,
       "options": {
-        "A": "95 percent of individual observations fall between 4.1 and 5.3.",
-        "B": "If the study were repeated many times, about 95 percent of the intervals built this way would contain the true mean.",
+        "A": "About 95 percent of the individual observations in the data fall between 4.1 and 5.3.",
+        "B": "If the study were repeated many times, about 95 percent of such intervals would contain the true mean.",
         "C": "Given this one interval, the probability is 0.95 that the true mean lies inside it.",
-        "D": "The sample mean is between 4.1 and 5.3 with probability 0.95."
+        "D": "The sample mean falls between 4.1 and 5.3 with probability 0.95 in this study."
       },
       "key": "B",
       "explanation": "The 95 percent describes the long-run behavior of the procedure across repeated samples. Any single interval either contains the true mean or does not.",
@@ -347,9 +311,6 @@
         "C": "Treats the fixed true mean as random; that reading belongs to a Bayesian credible interval.",
         "D": "The sample mean is a known number that sits at the interval's center."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -361,10 +322,10 @@
       "stem": "A p-value of 0.03 in a two-sided test means:",
       "code": null,
       "options": {
-        "A": "There is a 3 percent chance the null hypothesis is true.",
-        "B": "If the null hypothesis were true, data at least this extreme would appear about 3 percent of the time.",
-        "C": "The effect is large.",
-        "D": "There is a 97 percent chance the alternative is true."
+        "A": "There is a 3 percent chance that the null hypothesis is true, given the data we observed.",
+        "B": "If the null were true, data at least this extreme would appear about 3 percent of the time.",
+        "C": "The effect is large and practically important, since the p-value is below 0.05.",
+        "D": "There is a 97 percent chance that the alternative hypothesis is true for this effect."
       },
       "key": "B",
       "explanation": "A p-value is a statement about the data under the null, not about the probability of either hypothesis, and it says nothing about effect size.",
@@ -373,9 +334,6 @@
         "C": "Small p can come from a tiny effect in a huge sample.",
         "D": "Same inversion as A, with 1 minus p."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -387,10 +345,10 @@
       "stem": "An analyst tests 40 product features for an effect on retention at the 5 percent level and finds 2 significant. What is the best reading of this result?",
       "code": null,
       "options": {
-        "A": "Two features clearly work.",
+        "A": "Two features clearly improve retention, and the team should ship both of them.",
         "B": "With 40 tests and no real effects, about 2 false positives are expected by chance.",
-        "C": "The sample was too small.",
-        "D": "The other 38 features hurt retention."
+        "C": "The sample was too small to detect effects, so the 2 results are all that showed up.",
+        "D": "The other 38 features hurt retention, since only 2 of them reached significance."
       },
       "key": "B",
       "explanation": "At a 5 percent threshold, 40 null tests produce 2 false positives on average. Two hits is exactly the chance expectation, so a correction for multiple comparisons or a replication is needed before believing them.",
@@ -399,9 +357,6 @@
         "C": "Sample size affects power, not the false-positive rate.",
         "D": "Non-significance says nothing about harm."
       },
-      "author": "hand",
-      "checker_verdict": "fixed after flag",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -425,9 +380,6 @@
         "C": "Chi-squared is for counts in categories, not a continuous mean.",
         "D": "Comparing one mean to zero does not compare the two versions."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -439,10 +391,10 @@
       "stem": "A linear regression of monthly spend on age and income gives: age coefficient 2.5 (p = 0.001), income coefficient 0.02 (p < 0.001). How do you read the age coefficient?",
       "code": null,
       "options": {
-        "A": "Each extra year of age is associated with 2.5 more spend, holding income fixed.",
-        "B": "Age causes spend to rise by 2.5 per year.",
-        "C": "Age explains 2.5 percent of the variance in spend.",
-        "D": "Spend rises 2.5 times for each year of age."
+        "A": "Each extra year of age goes with 2.5 more spend, holding income fixed.",
+        "B": "Age causes spend to rise by 2.5 for every extra year, since the p-value is tiny.",
+        "C": "Age explains 2.5 percent of the variance in monthly spend across all customers.",
+        "D": "Spend rises 2.5 times for each extra year of age, holding income fixed."
       },
       "key": "A",
       "explanation": "A coefficient in multiple regression is the association with the outcome holding the other predictors constant. It is additive, not multiplicative, and not causal on its own.",
@@ -451,9 +403,6 @@
         "C": "Variance explained is R-squared, not a coefficient.",
         "D": "A linear coefficient is additive; a multiplicative reading belongs to a log-outcome model."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -477,9 +426,6 @@
         "C": "Useful for autocorrelation in time series, not variance.",
         "D": "Shows collinearity among predictors, a different assumption."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -491,10 +437,10 @@
       "stem": "Adding an L2 (ridge) penalty to a regression mainly does what?",
       "code": null,
       "options": {
-        "A": "Sets most coefficients exactly to zero.",
-        "B": "Shrinks coefficients toward zero to reduce variance, at the cost of some bias.",
-        "C": "Removes the intercept.",
-        "D": "Makes the model fit the training data better."
+        "A": "It sets most of the coefficients exactly to zero, keeping only a few predictors.",
+        "B": "It shrinks coefficients toward zero to reduce variance, at the cost of some bias.",
+        "C": "It removes the intercept so that the model passes through the origin.",
+        "D": "It makes the model fit the training data more closely than plain least squares."
       },
       "key": "B",
       "explanation": "Ridge trades a little bias for lower variance by shrinking coefficients, which usually improves out-of-sample error when predictors are many or correlated.",
@@ -503,9 +449,6 @@
         "C": "The intercept is normally left unpenalized.",
         "D": "A penalty makes training fit worse by design; the gain is on new data."
       },
-      "author": "hand",
-      "checker_verdict": "fixed after flag",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -518,9 +461,9 @@
       "code": null,
       "options": {
         "A": "Customers with a ticket are twice as likely to churn in probability terms, whatever the baseline.",
-        "B": "The odds of churn are about twice as high for customers with a ticket, holding other predictors fixed.",
-        "C": "69 percent of ticket holders churn.",
-        "D": "A ticket adds 0.69 to the churn probability."
+        "B": "The odds of churn are about twice as high for ticket holders, holding other predictors fixed.",
+        "C": "About 69 percent of customers who had a support ticket went on to churn.",
+        "D": "Having a ticket adds 0.69 to a customer's churn probability, holding other predictors fixed."
       },
       "key": "B",
       "explanation": "Logistic coefficients are log-odds; exp(0.69) is about 2, so the odds double. The change in probability depends on the baseline rate.",
@@ -529,9 +472,6 @@
         "C": "A coefficient is not a rate.",
         "D": "Coefficients are on the log-odds scale, not the probability scale."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -543,8 +483,8 @@
       "stem": "Cities with more ice cream sales have more drownings. What is the most likely explanation?",
       "code": null,
       "options": {
-        "A": "Ice cream causes drowning.",
-        "B": "A common cause, hot weather, raises both.",
+        "A": "Eating ice cream causes drowning.",
+        "B": "Hot weather raises both.",
         "C": "Drowning causes ice cream sales.",
         "D": "It is a coincidence in every city."
       },
@@ -555,9 +495,6 @@
         "C": "Reverse causation is possible in principle but implausible here.",
         "D": "A consistent pattern across cities is not a coincidence; it has a cause."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -569,10 +506,10 @@
       "stem": "Why does random assignment in an experiment allow a causal reading of the difference between groups?",
       "code": null,
       "options": {
-        "A": "It makes the sample larger.",
-        "B": "It balances both measured and unmeasured confounders between groups in expectation.",
-        "C": "It removes measurement error.",
-        "D": "It guarantees the groups are identical."
+        "A": "It makes the sample larger, which shrinks the standard errors of the comparison.",
+        "B": "It balances measured and unmeasured confounders between groups in expectation.",
+        "C": "It removes measurement error from the outcome, so the difference is exact.",
+        "D": "It guarantees that the two groups are identical on every single variable."
       },
       "key": "B",
       "explanation": "Randomization breaks the link between treatment and every other cause of the outcome, known or unknown, so the groups differ only by chance and by treatment.",
@@ -581,9 +518,6 @@
         "C": "Measurement error is a separate problem.",
         "D": "Groups still differ by chance; randomization makes those differences unsystematic."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -595,10 +529,10 @@
       "stem": "A company rolled out a new onboarding flow in March. You have monthly retention for this company and for five similar companies that did not change anything. Which design fits best?",
       "code": null,
       "options": {
-        "A": "Before-after comparison of this company alone",
-        "B": "Difference-in-differences using the other companies as the comparison trend",
-        "C": "A simple correlation of onboarding and retention",
-        "D": "A randomized A/B test on the already-collected data"
+        "A": "A before-after comparison of this company's retention alone",
+        "B": "Difference-in-differences using the other companies as the comparison",
+        "C": "A simple correlation between the new onboarding flow and retention",
+        "D": "A randomized A/B test run on the data that was already collected"
       },
       "key": "B",
       "explanation": "Difference-in-differences uses the comparison companies to estimate what would have happened without the change, under a parallel-trends assumption.",
@@ -607,9 +541,6 @@
         "C": "A correlation cannot separate the rollout from other changes.",
         "D": "Randomization has to happen before the data are collected."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -621,10 +552,10 @@
       "stem": "In a causal diagram, you want the effect of X on Y. Z is caused by both X and Y (a collider). What happens if you control for Z?",
       "code": null,
       "options": {
-        "A": "Nothing; controlling for more variables is always safer.",
-        "B": "You open a spurious path and bias the estimate.",
-        "C": "You remove confounding.",
-        "D": "You increase the sample size."
+        "A": "Nothing changes, since controlling for more variables is always safer.",
+        "B": "You open a spurious path between X and Y and bias the estimate.",
+        "C": "You remove the confounding between X and Y, so the estimate improves.",
+        "D": "You increase the effective sample size and narrow the interval."
       },
       "key": "B",
       "explanation": "Conditioning on a collider creates an association between its causes that was not there before. The rule is to control for confounders, never colliders.",
@@ -633,9 +564,6 @@
         "C": "Z is not a confounder; it sits downstream of X and Y.",
         "D": "Controlling for a variable does not change the sample size."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -659,9 +587,6 @@
         "C": "Blaming new data skips the diagnosis.",
         "D": "More parameters widen the gap."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -673,10 +598,10 @@
       "stem": "What is the purpose of k-fold cross-validation?",
       "code": null,
       "options": {
-        "A": "To train the model k times faster.",
-        "B": "To estimate out-of-sample performance using all the data for both training and validation across folds.",
-        "C": "To remove outliers.",
-        "D": "To increase the training set size by k."
+        "A": "To train the model k times faster by splitting the data into smaller pieces.",
+        "B": "To estimate out-of-sample performance while every row gets used for validation once.",
+        "C": "To find and remove outliers by checking which folds give unusual errors.",
+        "D": "To increase the size of the training set by a factor of k through resampling."
       },
       "key": "B",
       "explanation": "Each fold is held out once while the others train, which gives a more stable estimate of generalization than a single split.",
@@ -685,9 +610,6 @@
         "C": "Cross-validation does not alter the data.",
         "D": "The data size is fixed; folds rotate which part is held out."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -699,10 +621,10 @@
       "stem": "A fraud dataset has 0.5 percent positives. A model predicts 'not fraud' for everyone. Which statement is true?",
       "code": null,
       "options": {
-        "A": "Accuracy is 99.5 percent and the model is useful.",
+        "A": "Accuracy is 99.5 percent, so the model is useful and ready to deploy.",
         "B": "Accuracy is 99.5 percent, recall on fraud is 0, and the model is useless.",
-        "C": "Precision is 100 percent.",
-        "D": "The model has a high F1 score."
+        "C": "Precision on fraud is 100 percent, since the model never raises a false alarm.",
+        "D": "The model has a high F1 score, because its accuracy is close to 100 percent."
       },
       "key": "B",
       "explanation": "Precision is undefined because the model predicts no positives. On imbalanced classes, accuracy follows the majority class. Recall, precision, and the precision-recall curve are the metrics that matter here.",
@@ -711,9 +633,6 @@
         "C": "Precision is undefined when no positives are predicted.",
         "D": "F1 is zero when recall is zero."
       },
-      "author": "hand",
-      "checker_verdict": "fixed after flag",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -725,10 +644,10 @@
       "stem": "Why does a random forest usually generalize better than a single deep decision tree?",
       "code": null,
       "options": {
-        "A": "It uses fewer features.",
-        "B": "Averaging many trees trained on bootstrapped samples and random feature subsets lowers variance.",
-        "C": "Each tree is deeper.",
-        "D": "It fits the training data more exactly."
+        "A": "It uses fewer features overall, so each tree is simpler and less noisy.",
+        "B": "Averaging many trees built on resampled data and random features lowers variance.",
+        "C": "Each tree in the forest is grown deeper, so it captures more of the signal.",
+        "D": "It fits the training data more exactly than any single tree is able to."
       },
       "key": "B",
       "explanation": "Single deep trees have high variance. Bagging and feature randomness make the trees' errors less correlated, so their average is more stable.",
@@ -737,9 +656,6 @@
         "C": "Depth is similar; the gain comes from averaging.",
         "D": "A forest usually fits training data slightly less exactly than one unpruned tree."
       },
-      "author": "hand",
-      "checker_verdict": "fixed after flag",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -763,9 +679,6 @@
         "C": "Sample size enters through the likelihood, not as a separate factor.",
         "D": "The evidence divides, it does not multiply."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -777,10 +690,10 @@
       "stem": "A hierarchical model estimates a per-school effect with partial pooling. A school with 5 students has a raw mean far above the others. What does the model do to its estimate?",
       "code": null,
       "options": {
-        "A": "Leaves it at the raw mean.",
-        "B": "Shrinks it toward the overall mean, more than it would for a school with 500 students.",
-        "C": "Sets it to the overall mean exactly.",
-        "D": "Drops the school."
+        "A": "Leaves it at the raw mean, since that is what the school's own data show.",
+        "B": "Shrinks it toward the overall mean, more than for a school with 500 students.",
+        "C": "Sets it to the overall mean exactly, since 5 students carry no information.",
+        "D": "Drops the school from the model as an outlier with too few students."
       },
       "key": "B",
       "explanation": "Partial pooling shrinks noisy small-group estimates toward the population mean in proportion to their uncertainty. Large groups move little.",
@@ -789,9 +702,6 @@
         "C": "Complete pooling would do that; partial pooling keeps some of the school's signal.",
         "D": "Small groups are kept and regularized, not removed."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -803,10 +713,10 @@
       "stem": "After MCMC sampling, a parameter shows R-hat of 1.21. What should you do?",
       "code": null,
       "options": {
-        "A": "Report the estimate; 1.21 is close to 1.",
-        "B": "Treat the chains as not converged: run longer, check for multimodality or reparameterize.",
-        "C": "Delete the worst chain.",
-        "D": "Increase the prior variance."
+        "A": "Report the estimate as it is, since an R-hat of 1.21 is close enough to 1.",
+        "B": "Treat the chains as not converged: run longer, check modes or reparameterize.",
+        "C": "Delete the worst chain and report the estimate from the remaining chains.",
+        "D": "Increase the prior variance so the sampler can move around more freely."
       },
       "key": "B",
       "explanation": "R-hat compares between-chain and within-chain variance; values above about 1.01 mean the chains disagree, so the posterior summary is not trustworthy yet.",
@@ -815,9 +725,6 @@
         "C": "Removing a chain hides the problem.",
         "D": "Prior variance is a modeling choice, not a convergence fix."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -829,10 +736,10 @@
       "stem": "A 95 percent Bayesian credible interval for an effect is [0.2, 0.9]. Which reading is correct?",
       "code": null,
       "options": {
-        "A": "Given the model and data, there is a 95 percent probability the effect lies between 0.2 and 0.9.",
-        "B": "95 percent of repeated samples would give an effect in this range.",
-        "C": "The effect is exactly 0.55.",
-        "D": "The p-value is 0.05."
+        "A": "Given the model and data, the effect lies between 0.2 and 0.9 with 95 percent probability.",
+        "B": "95 percent of repeated samples would give an estimated effect inside this range.",
+        "C": "The effect is exactly 0.55, the midpoint of the interval, with 95 percent certainty.",
+        "D": "The p-value for the effect is 0.05, so it is just barely significant."
       },
       "key": "A",
       "explanation": "A credible interval is a direct probability statement about the parameter, conditional on the prior and the data. That is the reading a confidence interval does not allow.",
@@ -841,9 +748,6 @@
         "C": "The interval expresses uncertainty; the midpoint is one summary of it.",
         "D": "Credible intervals do not come with p-values."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -867,9 +771,6 @@
         "C": "Selecting the column is correct; the missing call is the bug.",
         "D": "return outside a function raises an error and does not fix the bug."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -893,9 +794,6 @@
         "C": "GROUP BY collapses the rows to one per customer.",
         "D": "COUNT works without WHERE."
       },
-      "author": "hand",
-      "checker_verdict": "fixed after flag",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -908,9 +806,9 @@
       "code": "subset = df[df[\"status\"] == \"active\" and df[\"age\"] > 30]",
       "options": {
         "A": "Wrap each condition in parentheses and use & instead of and",
-        "B": "Replace > with >=",
-        "C": "Use df.query with no quotes",
-        "D": "Convert age to a string first"
+        "B": "Replace > with >= so the age comparison returns a single value",
+        "C": "Use df.query with no quotes around 'active' in the filter",
+        "D": "Convert the age column to a string first, then compare"
       },
       "key": "A",
       "explanation": "pandas needs element-wise operators (&, |) and parentheses, because the Python keyword and tries to evaluate a whole Series as one boolean.",
@@ -919,9 +817,6 @@
         "C": "df.query works, but the condition needs quotes around 'active'.",
         "D": "Comparing strings to 30 breaks the filter."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -933,10 +828,10 @@
       "stem": "A teammate cannot reproduce your notebook's numbers. The most common cause from this list is:",
       "code": null,
       "options": {
-        "A": "Cells were run out of order, so the state depends on the run history.",
-        "B": "Their laptop is slower.",
-        "C": "pandas rounds differently on other machines.",
-        "D": "Notebooks cannot be shared."
+        "A": "Cells were run out of order, so the results depend on the run history.",
+        "B": "Their laptop is slower, so long-running cells time out before finishing.",
+        "C": "pandas rounds decimal numbers differently on other operating systems.",
+        "D": "Notebooks cannot be shared reliably, so outputs change when they are opened."
       },
       "key": "A",
       "explanation": "Notebook state is whatever ran last, in whatever order. Restart the kernel and run all cells top to bottom before sharing, and pin package versions.",
@@ -945,9 +840,6 @@
         "C": "Same version, same arithmetic.",
         "D": "Notebooks share fine when they run clean from the top."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -959,10 +851,10 @@
       "stem": "Which opening line fits a one-paragraph findings summary for a product manager?",
       "code": null,
       "options": {
-        "A": "We ran a logistic regression with L2 regularization on 14 features.",
-        "B": "The new checkout page showed an estimated lift of about 0.5 points in conversion, with an interval that includes zero; we recommend extending the test two weeks.",
-        "C": "Data was collected between March and May.",
-        "D": "Please see the attached notebook."
+        "A": "We ran a logistic regression with L2 regularization on 14 features from the checkout logs.",
+        "B": "The new checkout showed about a 0.5-point lift, but the interval includes zero, so test two more weeks.",
+        "C": "Data was collected between March and May from all checkout sessions on web and mobile.",
+        "D": "Please see the attached notebook for the full model output, charts and test details."
       },
       "key": "B",
       "explanation": "Lead with the finding, its uncertainty, and the recommendation. Method and data details come after, for readers who want them.",
@@ -971,9 +863,6 @@
         "C": "Opens with logistics, not the answer.",
         "D": "Pushes the work onto the reader."
       },
-      "author": "hand",
-      "checker_verdict": "fixed after flag",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -985,10 +874,10 @@
       "stem": "A stakeholder asks: 'So is the effect real or not?' Your interval is [-0.1, 1.2] points. The best answer is:",
       "code": null,
       "options": {
-        "A": "No, it is not significant, so there is no effect.",
-        "B": "The best estimate is a lift of about 0.5 points, and the data are consistent with anything from a slight loss to a 1.2-point gain. If a wrong call is cheap, ship and monitor; if it is costly, run the test longer.",
-        "C": "Yes, the effect is 0.5 points.",
-        "D": "Statistics cannot answer that."
+        "A": "No. It is not statistically significant, so we can say there is no effect at all.",
+        "B": "Best guess is +0.5 points, but anything from a small loss to +1.2 fits. Ship if a wrong call is cheap.",
+        "C": "Yes. The effect is 0.5 points, which is our best estimate, so we can treat it as real.",
+        "D": "Statistics cannot answer that question, since an interval never says whether an effect is real."
       },
       "key": "B",
       "explanation": "Translate the interval into the decision's terms: the point estimate, the range, and what the uncertainty means for the choice in front of them.",
@@ -997,9 +886,6 @@
         "C": "Drops the uncertainty the stakeholder needs.",
         "D": "Statistics does answer it, with a range and a recommendation."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -1011,10 +897,10 @@
       "stem": "A dashboard for weekly executives should show:",
       "code": null,
       "options": {
-        "A": "Every metric the team tracks, on one page.",
-        "B": "The 3 to 5 metrics tied to decisions they make, each with its target and trend.",
-        "C": "Raw tables so they can compute their own numbers.",
-        "D": "Only the metrics that improved this week."
+        "A": "Every metric the team tracks, on one page, so nothing important is missed.",
+        "B": "The 3 to 5 metrics tied to their decisions, each with its target and trend.",
+        "C": "Raw tables of the underlying data, so executives can compute their own numbers.",
+        "D": "Only the metrics that improved this week, so the meeting stays focused."
       },
       "key": "B",
       "explanation": "A dashboard serves decisions. Few metrics, each with a target and a trend, is what gets read and acted on.",
@@ -1023,9 +909,6 @@
         "C": "Executives want answers, not homework.",
         "D": "Hiding declines removes the information decisions need most."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     },
     {
@@ -1037,10 +920,10 @@
       "stem": "You must report that the model's forecast error doubled last month. Which phrasing is both honest and useful?",
       "code": null,
       "options": {
-        "A": "The model is broken.",
-        "B": "Forecast error rose from 4 to 8 percent in September; the jump coincides with the pricing change, and we are retraining with the new price data this week.",
-        "C": "There were some fluctuations in performance.",
-        "D": "Error went up but it is probably fine."
+        "A": "The model is broken and its forecasts should not be used until further notice.",
+        "B": "Error rose from 4 to 8 percent in September, after the pricing change. We are retraining this week.",
+        "C": "There were some fluctuations in model performance last month, which we are monitoring.",
+        "D": "Error went up last month, but it is probably fine and should settle on its own soon."
       },
       "key": "B",
       "explanation": "State the number, the likely cause, and the action. That is what a reader needs to trust the report and to decide whether to intervene.",
@@ -1049,9 +932,6 @@
         "C": "Vague enough to hide a real problem.",
         "D": "Dismisses a doubling without evidence."
       },
-      "author": "hand",
-      "checker_verdict": "pass",
-      "human_reviewed": false,
       "created": "2026-10-16"
     }
   ],

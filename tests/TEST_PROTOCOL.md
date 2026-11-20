@@ -31,7 +31,7 @@ From the Interview Kit sections B and C. Fill `needs_basic`, `needs_performance`
 Fill `new_themes_count` (themes not heard in any earlier call), `top_themes` (semicolon-separated), `design_change` (one concrete change, or "none"). Make the change in the prototype the same day and note it in the change log.
 
 ## Rendering results
-`python3 analyze_tests.py test_notes.csv` writes `results.md`, the results section of the midterm PDF. Run it after every call to watch saturation.
+`python3 analyze_tests.py test_notes.csv` writes `results.md`, a results summary. Run it after every call to watch saturation.
 
 ## Change log
 | Date | From | Change | Where |

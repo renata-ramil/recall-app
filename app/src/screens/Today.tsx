@@ -1,7 +1,11 @@
 import { useNavigate } from 'react-router-dom'
-import { api, FADE_THRESHOLD, pct, sortByPriority, skillState } from '../api'
+import { api, FADE_THRESHOLD, fadeLabel, sortByPriority, skillState } from '../api'
 import { todayKey, useStore } from '../state/store'
 import { Btn, Nav } from '../components/ui'
+import { PILOT } from '../pilot/config'
+import { sessionPlan } from '../pilot/session'
+import { useEffect } from 'react'
+import { dayNumber, isPauseDay, markRestDay, pilot, streak } from '../pilot/engine'
 
 function greeting(d = new Date(Date.now())): string {
   const h = d.getHours()
@@ -14,7 +18,9 @@ function currentWeek(now = new Date(Date.now())) {
   return Array.from({ length: 7 }, (_, i) => {
     const d = new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + i)
     const offset = i - ((now.getDay() + 6) % 7)
-    return { date: String(d.getDate()), letter: 'MTWTFSS'[i], status: offset < 0 ? 'done' : offset === 0 ? 'today' : 'future' }
+    //pilot: only days with a finished session count as done
+    const past = PILOT ? pilot().doneDays.includes(dayNumber(d)) : offset < 0
+    return { date: String(d.getDate()), letter: 'MTWTFSS'[i], status: offset === 0 ? (PILOT && past ? 'done' : 'today') : offset < 0 ? (past ? 'done' : 'future') : 'future' }
   })
 }
 
@@ -23,17 +29,21 @@ export function Today() {
   const { state, resetSession, setSession } = useStore()
   const user = api.user()
   const today = api.today()
-  const skills = sortByPriority(api.skills().filter(s => state.topics[s.id]?.ticked ?? true))
-  const sessionSkills = skills.slice(0, 3)
-  const scenario = api.scenario(today.session.scenarioId)
+  const skills = sortByPriority(api.skills(state.survey.targetRoles).filter(s => state.topics[s.id]?.ticked ?? true))
+  const plan = sessionPlan(state)
+  const sessionSkills = PILOT ? plan.skillIds.map(id => skills.find(s => s.id === id)).filter((s): s is NonNullable<typeof s> => Boolean(s)) : skills.slice(0, 3)
+  const scenario = plan.scenario
   //fade banner target: the next skill still above the threshold; one sitting at 60% today is already fading
   const soonest = skills.filter(s => skillState(s) !== 'faded' && s.recall > FADE_THRESHOLD && s.daysUntilFade > 0).sort((a, b) => a.daysUntilFade - b.daysUntilFade)[0]
   const showCountdown = Boolean(soonest) && soonest.daysUntilFade <= 2
-  const done = state.session.completedOn === todayKey()
+  const done = state.session.completedOn === todayKey() || (PILOT && pilot().doneDays.includes(dayNumber()))
+  const nothingDue = PILOT && !done && sessionSkills.length === 0
+  useEffect(() => { if (nothingDue) markRestDay() }, [nothingDue])
+  const streakDays = PILOT ? streak() : today.streakDays + (done ? 1 : 0)
 
   const start = () => {
     resetSession()
-    setSession({ startedAt: Date.now() })
+    setSession({ startedAt: Date.now(), planIds: plan.skillIds, planCheckin: plan.checkin, planScenarioId: plan.scenario?.id ?? null })
     nav('/session/question')
   }
 
@@ -46,18 +56,18 @@ export function Today() {
       ) : <div className="safe-top" style={{ paddingTop: 48 }} />}
 
       <div style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', gap: 16, padding: '16px 24px 0 24px' }}>
-        <h1 className="greet">{greeting()}, {user.firstName}</h1>
+        <h1 className="greet">{PILOT ? greeting() : `${greeting()}, ${user.firstName}`}</h1>
 
         <div style={{ background: 'var(--navy)', borderRadius: 32, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <div className="num-xl on-dark">{sessionSkills.length}</div>
-            <div style={{ flex: 1 }} className="title on-dark">skills to refresh</div>
+            <div style={{ flex: 1 }} className="title on-dark">{plan.checkin ? 'skills in the final check' : 'skills to refresh'}</div>
             <div className="small on-dark-2">About {today.session.estimatedMinutes} minutes</div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
             {sessionSkills.map(s => (
               <div key={s.id} style={{ height: 44, borderRadius: 16, background: 'var(--paper)', padding: '0 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span className="body-b">{s.name}</span><span className="small-b">{pct(s.recall)}</span>
+                <span className="body-b">{s.name}</span><span className="small-b">{fadeLabel(s)}</span>
               </div>
             ))}
           </div>
@@ -67,14 +77,16 @@ export function Today() {
               <span className="body-b">{scenario.title}</span>
             </div>
           )}
-          {done
+          {nothingDue
+            ? <div className="title on-dark" style={{ minHeight: 56, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>{isPauseDay() ? 'Practice is paused until the final check. See you then.' : 'Nothing is due today. See you tomorrow.'}</div>
+            : done
             ? <div className="title on-dark" style={{ height: 56, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>Done for today. Next session tomorrow.</div>
             : <Btn cream onClick={start}>Start session</Btn>}
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
-            <span className="body-b">{today.streakDays + (done ? 1 : 0)} day streak</span><span className="small muted">This week</span>
+            <span className="body-b">{streakDays} day streak</span><span className="small muted">This week</span>
           </div>
           <div style={{ display: 'flex', gap: 8 }} role="list" aria-label="This week">
             {currentWeek().map(d => (

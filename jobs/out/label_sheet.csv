@@ -1,0 +1,1481 @@
+id,role,title,company,description,hand_cleaning,hand_exploring,hand_probability,hand_inference,hand_regression,hand_causal,hand_ml,hand_bayesian,hand_pythonsql,hand_communicating
+0,Data analyst,Operations Reporting Data Analyst (Alteryx & Tableau),"Tractor Supply
+3.3","This Workforce Management Analyst (WFM Analyst) will support the ongoing success of Tractor Supply’s Workforce Management application and support other reporting needs for the Store Operations department. The WFM Analyst will provide the insight and analysis needed to promote execution, productivity, and growth across our 1850+ stores. In addition, they will also provide support and direction for enhancing the Workforce Management application to help improve the customer and team member experience.
+
+Oversee data transmission and automation development, validation, and maintenance from internal and external sources
+Providing reporting and commentary to field and senior leadership to drive business objectives such as improving employee engagement, customer service, and profitable growth
+Identify, develop, and maintain reporting around key success metrics to measure
+Analyze large amounts of information to discover trends and patterns and uncover solutions to business problems
+Create models to forecast results of various enhancements to events or procedural changes
+Other analytical and process improvement projects as needed
+
+Experience: 3 -6 years of related business, financial, or data analytics experience
+Education: Bachelor’s degree (Finance, Business Administration, Analytics, IT or related field) preferred or equivalent experience
+Other knowledge, skills or abilities:
+Experience with workforce management software is preferred but not required
+Previous retail experience at a corporate or regional level is a plus
+Additional years of related experience may be substituted for the required education
+Successful candidates must have:
+Strong organizational skills and high attention to detail to meet deadlines
+Good written and verbal communications skills with field operators as well as executives and other leadership
+Ability to work independently and with little supervision in a project management like environment
+Required technical proficiencies:
+Alteryx Designer
+Cognos reporting or other Business Intelligence software (i.e. Business Objects / MicroStrategy / etc.)
+Microsoft Office software especially Excel and Access
+Experience with Tableau or Power BI highly preferred
+
+Tractor Supply Company (TSCO), the largest rural lifestyle retailer in the United States, is dedicated to enhancing our strong company culture built on our team members’ commitment to our Mission and Values. With over 1,800 stores and an innovative e-commerce platform, Tractor Supply ranks in the Fortune 400 with revenues of over $8 billion and growing! Come grow your career with us as we serve those who live “Life out Here”!",,,,,,,,,,
+1,Data analyst,Data Analyst (Secret Clearance Required) with Security Clearance,"Zachary Piper Solutions, LLC
+3.9","Zachary Piper Solutions is currently seeking a Data Analyst to work for a long term federal contract in Arlington, VA. Responsibilities for the Data Analyst include: * Produce database development/data extraction using Structured Query Language (SQL) skills to create reporting queries and perform analysis on the database
+Analyze and implement data quality improvements (e.g. using DataFlux)
+Provide expert understanding of the principles and methods for evaluating program or organizational performance using financial and nonfinancial measures
+Ensure all products delivered demonstrate expert level technical writing skills, both to document reporting/design requirements and communicate effectively with customers and vendors
+Qualifications for the Data Analyst include: * 5+ years of Experience as a Data Analyst * 5+ years of Experience with SQL or similar languages
+2+ year of Experience using DataFlux and Tableau
+Must have an Active Secret Clearance Compensation for the Data Analyst include: * $75,000-$120,000 Annually (based off experience) * Full Benefits: Cigna Healthcare, MetLife Dental, VSP Vision, 401K with Voya",,,,,,,,,,
+2,Data analyst,MARKETING DATA ANALYST,"Bayview Asset Management
+3.7","This position is responsible for supporting the analytics, reporting, and data management needs of the Consumer Direct Originations business. The incumbent will work with various departmental teams to develop, maintain, and enhance as needed the tools necessary to support the business with relevant analyses for data-driven decision making.
+
+DUTIES AND RESPONSIBILITIES:
+
+
+Responsibilities include, but are not limited to:
+Collaborate with other team members to analyze targeted offers and omni-channel marketing campaigns including direct mail, email, internet, and telemarketing.
+Generate insights based on customer behavior and campaign performance and make recommendations for campaign improvements.
+Prepare dashboards, reports, and presentations of analysis, results, metrics, insights, and trends for management use.
+Develop business intelligence visualizations, dashboards, and solutions to optimize and automate daily, weekly and monthly delivery of reports.
+Use state-of-the-art technologies and advanced analytics to implement predictive models and decision engines to drive targeted marketing offers.
+Collaborate with IT to design data sources, reports, tools, and automated solutions that meet reporting and analytical needs of the Originations marketing team.
+Create queries and analyze datasets. Generate ad hoc reports as needed.
+Comply with all department and company policies.
+Other duties as needed or required.
+SKILLS/KNOWLEDGE/ABILITIES:
+
+
+Required:
+Understanding of direct response marketing metrics including segmentation, test design, critical KPS’s and results analysis.
+Superior analytical and problem solving skills.
+Ability to clearly understand business processes, drivers, and KPI’s
+Understanding of BI and data warehousing concepts.
+Understanding of dimensional data models and SQL, systems integration and automation.
+Previous experience with reporting and analytical tools like Tableau, Business Objects, Google Analytics.
+Strong project management and collaboration skills
+Strong verbal and written communication skills.
+Advanced proficiency in Microsoft Office Suite.
+EDUCATION& EXPERIENCE:
+
+Bachelor’s degree in business with emphasis in marketing, mathematics, statistics, information systems or related major is preferred
+3+ years’ experience in analytics and data science, database marketing, or business intelligence is required. Mortgage industry experience is a plus.",,,,,,,,,,
+3,Data analyst,Research & Data Analyst,"EVMS
+1.0","Provides IT support for research activities and serve as a liaison between EVMS Medical Group IT and Research conducted by Eastern Virginia Medical School (EVMS). This includes writing scripts of data extracts/queries/reports, extracting data from Allscripts, mapping/integration of extracted data into secure databases and working with EVMS to accomplish approved research objectives as well as long-term research goals. Performs audits and monitors compliance with approved research activities to ensure HIPAA requirements are followed. Ability to work independently and manage multiple priorities with minimal supervision.
+
+Review data requests for compliance, including IRB approval/waiver when required.
+Develop data extracts/queries from Allscripts for de-identified data or data in accordance with IRB approved research requests.
+Mapping, merging and/or integrating data from Allscripts and disparate data sources into secure repositories and searchable research data structures such as TriNeTX and REDcap platforms.
+Coordinate with the EVMS Research Office data manager / REDcap administrator and HADSI to curate approved research data and ensure successful completion of project within projected timelines.
+Participate in any Honest Broker review process established by EVMS.
+Provide technical expertise at a variety of levels in healthcare and research data management
+Ensures databases and data extracts reflect specifications; proactively seeks specification clarification as needed to ensure data quality.
+Assess the quality of data captured in electronic medical record databases and identifies inconsistencies.
+Monitor and audit research activities to ensure compliance with HIPAA requirements related to IRB approved protocols.
+Performs other duties as assigned
+
+Bachelor’s degree in Computer Science, Information Technology or related field OR eight (8) years of equivalent experience in lieu of the Bachelor’s degree. Plus four (4) years of experience extracting and integrating complex data structures to serve data warehousing and business intelligence needs required. Proficiency in SQL-based software programming and maintenance. Experience working with Microsoft SQL*Server, Oracle or other large-scale RDBMS. Experience with procedural programming constructs using a SQL-based script writer (SSMS preferred). Experience designing and documenting logical and physical data models. Experience applying structured testing methods to ensure data quality and consistency.
+Preferred:
+Expertise extracting and integrating medical EMR patient-level data (Allscripts preferred). Experience working with clinical research projects. Expertise in database and query performance tuning advanced methodologies and techniques. Experience supporting multi-disciplinary teams including physicians, management, and technical peers and other end-users. Experience applying state-of-the-art data warehousing techniques to create extensible and sustainable solutions. Experience designing and delivering star-based schemas preferred. Knowledgeable with ETL technologies such as SSIS, Python or Data Integrator. Experience supporting end-users consuming delivered DataMart’s and reports (Excel and SAS preferred.
+
+US-VA-Norfolk",,,,,,,,,,
+4,Data analyst,Data Analyst I (Healthcare Analytics),"Centene Corporation
+3.3","Job ID 1188030
+
+Category Data Analytics
+Schedule Full-time
+Description:
+
+Position Purpose:
+Interpret and analyze data from multiple sources including claims, provider, member, and encounters data. Identify and assess the business impact of trends
+Execute, maintain, and troubleshoot existing scripts and reports developed using SQL, Microsoft Excel, or other analytics tools
+Support execution of large-scale projects with limited direction from leadership
+Identify and perform root-cause analysis of data irregularities and present findings and proposed solutions to leadership and/or customers
+Manage multiple, variable tasks and data review processes under direct supervision within targeted timelines and thrive in a demanding, quickly changing environment
+Support the design, testing, and implementation of process enhancements and identify opportunities for automation
+Support multiple functions and levels of the organization and effectively, both verbally and visually, communicate findings and insights to non-technical business partners
+
+Qualifications:
+
+The Data Analyst (Healthcare Analytics) will have the opportunity to make a significant impact through the discovery, development, and implementation of leading-edge analytics that answer important business questions. The analyst will collaborate with key corporate and health plan business partners for the purpose of identifying and delivering robust reporting and analytics capabilities to drive improved business performance.
+
+Education/Experience:
+Bachelor’s degree in business, economics, statistics, mathematics, actuarial science, public health, health informatics, healthcare administration, finance or related field or equivalent experience. 0-2 years of experience in working with large databases, data verification, and data management. Working knowledge of SQL or similar coding language. Working knowledge of analytical tools, including R, Python, SAS, ArcGIS, QGIS, Microstrategy, Tableau, Hadoop, or related tools preferred. Working knowledge of relational databases preferred. Working knowledge of automation capabilities such as batch processes, stored procedures, scripting languages, Microstrategy, or other tools preferred
+
+Provider
+Experience in provider contracting, claims pricing, financial reporting/analysis, data modeling, statistical modeling, data science, or geospatial/reimbursement analysis preferred
+
+Clinical
+Experience in public health (epidemiology, biostatistics), population health, social determinants of health, data science, social science, or geospatial/ROI/financial analysis preferred
+
+Finance
+Experience working closely with accounting & finance business partners, using analytic techniques & tools to explore financial performance trends, or regulatory reporting with external agencies preferred; Familiarity with claims data, utilization, rate setting, risk adjustment, or member eligibility and reconciliation preferred
+
+Fraud, Waste & Abuse
+Experience in fraud/waste/abuse identification and investigation, provider billing, or clinical coding preferred; Experience with data mining, machine learning, artificial intelligence, or statistical modeling preferred
+
+Risk Adjustment
+Experience in risk adjustment, clinical coding, financial reporting/analysis, or CMS/State encounters and regulatory file submissions preferred; Experience with data mining, population health, and statistical modeling preferred
+
+Quality
+Experience with HEDIS, NCQA, Medicare Star Rating System, QRS, or other quality measures preferred; Quality auditing or analysis of call center performance preferred; Experience with data mining, population health, and statistical modeling preferred
+
+Tools & Technology
+Experience with report/dashboard development, data/report automation, self-service capabilities, data design and integration, or data quality and governance preferred
+
+Centene is an equal opportunity employer that is committed to diversity, and values the ways in which we are different. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, veteran status, or other characteristic protected by applicable law.",,,,,,,,,,
+5,Data analyst,Local Data Analyst - Clinical,"Keywords Studios
+3.1","We are hiring a Data Analyst to maintain databases and master data for one of our pharmaceutical client's product research wing. The data analyst will utilize established processes and serve as a key technical resource at the operational level. They will drive master data solutions for the local site. They will also provide on-going support for completing tasks associated with the SAP master data/specification responsibilities and projects including but not limited to the following:* Execute data collection, data entry, data verification, and data cleansing in SAP and associated systems per established processes and procedures* Second person verify SAP master data entries for new master data requests and changes to existing data.* Assist in creation and maintenance of material specifications managed by the product research group.* Use change management process and tools.* Create, change, maintain, and inactivate SAP master data utilizing established processes, tools, and procedures.* Assist with Periodic Review of material specifications and update appropriate systems per established processes and procedures.* Be proactive in maintaining data accuracy in recognition of its criticality to running our business.* Identify and address issues as they arise, and escalate them to supervision and/or business sponsor when issues are outside of one's scope to remedy.* Be able to train others on tasks they perform.* Comply with local and global SOPs/policies.* Maintain a safe work environment, working safely and accountable for supporting all Health Safety and Environmental Corporate and Site Goals.* Maintain learning plan at a 100% compliance level in accordance with all government regulations and Global Policies and Procedures* Experience with SAP master data entry* Strong attention to detail and work accuracy* Strong organizational skills* Ability to manage multiple priorities and meet timelines* Ability to build collaborative working relationships* Knowledge of and compliance with GMP requirements* Critical thinking and problem solving skills* Good written and verbal communication skills* Learning agility and self-management skills* Ability to learn a variety of IT systems and tools (e.g. SAP, cMat, Excel tools, Trackwise, SharePoint, Regulus) General business understanding of clinical trial data governance and supply chain* Quality background is helpful.16 days of PTOMedical, Dental and Vision benefits401(k) enrollment option with 3% employer matching",,,,,,,,,,
+6,Data analyst,Management & Program Analyst (Data Scientist),"US Customs and Border Protection
+3.4","Summary
+
+As our nation navigates the COVID-19 pandemic, CBP is committed to delivering our mission to safeguard America's borders and enable legitimate trade and travel. Staffing mission critical positions remains a high priority. Be reassured that CBP is still hiring, despite potential hiring process step delays due to restrictions to in-person activities.
+
+Learn more about this agency
+
+Responsibilities
+
+Organizational Location: This position is with the Department of Homeland Security, within U.S. Customs and Border Protection, Enterprise Services, Office of Human Resources Management, Planning, Program Analysis, and Evaluation Directorate, Human Capital Analytics Branch, located in Washington, DC.
+
+Joining the Customs and Border Protection, Office of Human Resources Management, will allow you to be responsible for providing analytics expertise to programs and offices around CBP. This position starts at a salary of $121,316.00 (GS-14, Step 1) to $157,709.00 (GS-14, Step 10) with promotion potential to $157,709.00 (GS-14 Step 10).
+
+In this Management & Program Analyst (Data Scientist) position, you will become a key team member of Homeland Security professionals involved in developing and evaluative methodologies and techniques to Enterprise Services and CBP policy, resource, and operational problems and projects. Typical work assignments include:
+Carrying out research and evaluation projects for the agency that may address issues arising in specific programs or that cut across agency programs, which involve the evaluation of complex sample survey designs, and the exploration of new methods of estimating data parameters and their variances.
+Serving as an expert on data creation and utilization principles; preparing a variety of analytical reports, memoranda, and technical documents on CBP issues.
+Researching and the evaluation of a large and varied literature to develop innovative ways to improve existing data utilization methodologies.
+Serving as an advisor to the leadership of the Planning, Program Analysis, and Evaluation Directorate, with responsibility for consulting on and managing multiple analytics, and/or simulation projects for numerous program offices within CBP organizational elements.
+
+Travel Required
+
+
+Occasional travel - You may be expected to travel for this position.
+
+
+
+Supervisory status
+
+
+No
+
+
+
+Promotion Potential
+
+
+14",,,,,,,,,,
+7,Data analyst,Data Analyst,"Relevante, Inc.
+3.1","Job Description
+We have partnered with a large Mining and Metals company in the Sun Valley, CA area to provide them with a Data Analyst.
+
+Please review the below description and if you are interested please contact:
+Vahidin Topcagic at vtopcagic@relevante.biz, 314-853-6670
+Responsibilities of the Data Analyst:
+Ensures business systems are efficient and operating in supported environments
+Proactively reviews the business operations for ongoing process improvements
+Works with process owners to document detailed business requirements
+Coordinates with IT, consultants and process owners to validate solutions
+Analyses processes and dependencies across integrated software applications
+Prepares functional documents and technical specifications, RFP's, RFI's, etc.
+Recommends new functionality, middleware for ERP, CRM and related applications
+Proposes solutions to improve productivity and or save operating capital
+Drives development, acceptance testing and subsequent promotion of changes
+Prioritizes projects and various change requests in conjunction with management
+Coordinates upgrades and data integration efforts with the HRIS users
+Proven SQL experience in writing queries and user dashboards in a manufacturing/distribution and/or production environment.
+Develops SQL Queries and Smart Views with SQL reporting services
+Participates in the back-end maintenance of SQL based applications as needed
+Supports point of sale systems and credit card devices for retail operations
+Utilizes Microsoft Office (Word, Excel and PowerPoint) to present analysis
+Implements Cross-Functional strategy and methods to solve systems issues
+Evaluates new functional requests, business impacts and recommends solutions
+Works with Quality and Safety teams to ensure process meets all requirements
+Coordinates with Infrastructure and Help Desk teams to ensure project readiness
+Participates in the Business Continuity Planning design and implementation
+Attends and participates in regular planning and staff meetings
+Liaison with process owners, application support, end users and customers
+Assists the Help Desk in problem resolution for corporate applications
+Works closely and assists the Business Systems Manager
+May be required to travel to various office branches as needed
+Qualifications of the Data Analyst:
+
+The following are the minimum qualifications which an individual requires in order to successfully perform the duties and responsibilities of this position. Please note that the minimum qualifications may vary based upon the department size and/or geographic location.
+Driven professional attitude, enthusiastic, self-reliant
+Self-motivated, responsible and reliable
+Excellent interpersonal and communication skills
+Detail oriented with strong analytical and problem-solving skills.
+Ability to drive projects from concept to completion
+Negotiating skills
+Strong sense of ownership of issues
+Understands the value of human capital
+Requirements of the Data Analyst:
+
+The ideal candidate will have experience with any combination of the following:
+Experience with a major ERP system and ……solutions Epicor BisTrack and Microsoft Dynamics GP in a Terminal Server environment
+Databases such as Microsoft SQL Server 2014
+Nesting applications such as SigmaNEST
+Customer Relationship Management (CRM) such as Salesforce
+HRIS applications such as Ascentis
+Medium to large scale ERP/CRM/HRIS application experience
+Experience in the metals industry, supply chain, distribution or retail sales environments
+Experience working across multiple geographic locations using video conferencing
+Benefits of the Data Analyst:
+Health Insurance
+Dental Insurance
+Life Insurance
+401 (k)",,,,,,,,,,
+8,Data analyst,Technical Business Analyst (Data Warehouse),"Piper Companies
+4.5","Piper Companies is looking for a Technical Business Analyst for an leading financial solutions client located in Horsham, PA.
+
+Responsibilities for the Technical Business Analyst:
+Gather and translate business requirements into functional specs - focused on data reporting efforts
+Act as the liaison between the business and IT teams
+Qualifications for the Business Analyst:
+5+ years as a Business Analyst focused on data-centric projects
+Experience creating technical requirement documents through translation of business requirements
+Comfortable with data warehouse concepts - fact tables, dimensions, star schemas, etc
+Experience working on data reporting projects - SSRS, PowerBI, Crystal Reports, Cognos, Business Objects
+Capable of running complex SQL queries
+Microstrategy experience - a plus
+Comfortable using the Atlassian suite (Jira, Tempo, Confluence)
+Compensation/Benefits for the Technical Business Analyst:
+$55-65/hr (12 month+), Full-time conversion possible
+Comprehensive benefit package; Medical, Dental, Vision, 401k, and Paid Time Off
+Keywords:
+
+Technical business analyst, business analyst, business systems analyst, product owner, requirements gathering, functional specs, class model, constraint, deliverable, enterprise analysis, feature, functional design, functional requirements, finance, data, statistics, data modeling, data warehouse, etl, sql, data architecture, needs, jad, product, requirements analysis, user stories, olution assessment, servicenow, itsm, it service management, shared services, traceability, use case diagram, stakeholder, benefits, vacation, holiday, 401k",,,,,,,,,,
+9,Data analyst,Data Analyst,"Softcom Systems
+4.4","Role: Data Analyst
+Location: Tempe, AZ
+Duration: 6+ Months
+
+Job Description:
+
+A driven, experienced data analyst to join the Vendor Managed Inventory team who has a passion for solving problems with data, an eye for process improvement, and the skill to execute changes.
+You'll be a great fit if you have the grit to persevere through challenging or ambiguous problems, love a chance to step away from your desk to understand and improve processes, and get excited about translating data into action.
+
+Â
+Use statistical methods to analyze data and generate useful business reports to solve operational problems.
+Be responsible for extracting, cleansing, and visualizing large data sets using the tools and techniques described above.
+Plan and lead execution of identified process improvements and cross functional initiatives.
+Proactively monitor existing reporting, identify areas of concern, and perform any additional analysis needed to understand underlying causes or nuances.
+Deliver insights on urgent business challenges by performing ad hoc analysis and crafting accurate, easy to understand findings.
+Forecast future performance based on impact of process improvements and changes to the business.
+Work with management team to create a prioritized list of needs for each business segment.
+Use data to create models that depict trends related to growth, consumption and forecast.
+Work with Project managers to outline the specific data needs for each supplier negotiations.
+
+Qualifications/Experience:
+
+Bachelor's degree in Computer Science, Engineering, Math, or similar field from an accredited undergraduate institution required.
+2+ years of professional experience in data, reporting, and analytics.
+Ability to collaborate effectively and work as part of a team.
+Strong attention to detail.
+Strong analytical skills with proficiency in Microsoft SQL Server.
+Experience with visualization software; Excel, Access, Pivot Tables, V-Look Up, Tableau proficiency a big plus.
+Capable of managing competing priorities.
+Ability to thrive (and preference to work) in a dynamic, fast-paced environment.
+Ability to communicate confidently to senior leadership.",,,,,,,,,,
+10,Data analyst,"Program Associate I, Data Analyst","Detroit Public Schools
+2.3","Job Description
+
+
+Job Title
+
+Job Title: Data Analyst, Program Associate I
+
+Date: June 17, 2020
+
+Closing Date: Until Filled
+
+Salary Details: $57,006 - $73,865
+
+In accordance with the agreement between the Organization of School Administrators (O.S.A.S.) and the Board of Education of the School District of the City of Detroit, Article 6.4, Promotion Procedure, the following vacancy is announced:
+
+Job Type: Administrative
+
+Benefits Eligibility: Successful candidates will be eligible for competitive medical, dental, vision and life insurance coverage, as well as generous illness and/or vacation days.
+
+Reports to: Deputy Executive Director of Data Services
+
+Location: Fisher Building
+
+Position Summary
+
+As a member of the district’s Data Services team, the Data Analyst, Program Associate I works with the Deputy Executive Director and members of the team to develop, implement, and research data tools and frameworks on behalf of the District. The new and developing work of District-wide accountability systems are in direct support of our goal of raising performance through consistent and transparent understanding. The program associate will take initiative in answering analytical questions, and ensure that the team is engaging in thoughtful and data-driven work.
+
+The program associate serves as a technical data expert responsible for providing top-tier analytical research to inform decisions. This role will be a great opportunity for exposure into the data trends of an urban school district representing over 50,000 students.
+
+Qualifications
+
+Education:
+Must possess and provide evidence of a Bachelor’s degree, and/or technical or equivalent experience in data science or statistical research
+Relevant data-related certifications are a plus
+Experience:
+More than two (2) years’ experience in statistical research, data analysis, or program evaluation
+Proficiency and extensive experience in R, or another statistical package with interest in learning R
+Experience working with and manipulating large datasets (with millions of rows) and maintaining statistical code
+Proficiency in Microsoft Excel, having facility with pivot tables, nested functions and vlookup
+Experience in SQL is a plus
+Experience in Microsoft PowerBI is a plus
+Demonstrated experience compiling and maintaining technical documentation
+Understanding of applied statistics and experimental design
+Understanding of the education landscape
+Expertise and experience working in an urban public school district is a plus
+Essential Functions
+
+Under the direction of the Deputy Executive Director of Data Services, the Data Analyst, Program Associate I shall:
+Perform analytical research on data trends in the district to guide direction of accountability system metrics
+Produce summarized findings for Deputy Executive Director of Data Services and other stakeholders
+Engage in requirement gathering process with local stakeholders (principals, teachers, support staff, administrators, district teams, etc.)
+Develop methodological expertise on the calculation of school-level metric scores, to verify the work of developers and performing statistical due diligence
+Run simulations on evaluation frameworks and proposed methodologies
+Produce ad hoc analysis in response to questions internally and externally related to methodology
+Develop and curate documentation internally and externally around business rules for metrics
+Communicate clearly and effectively both in writing and presentation to stakeholder groups
+Build effective relationships with staff members in different departments through meetings to gather information and produce school evaluations that are aligned to district priorities
+Perform other duties as assigned by manager
+Security Clearance:
+
+Internal Applicants
+
+If you are a current Detroit Public Schools employee, presently employed with the district, you do not have to submit a fee related to obtaining the Detroit Public Schools security clearance, unless your new role requires a different type of security clearance.
+
+External Applicants
+
+If you are hired to fill a vacant position, you will be required to submit a Detroit Public Schools security clearance. At point of offer to hire, you will be responsible for a non-refundable payment of $64.50 via Visa, Master Card, American Express, Discover Card, cashier's check, or money order, payable to the DPSCD Police Department. No personal checks or cash is accepted.
+
+Method of Application:
+
+Applicants must apply through the online application system. Only applications submitted through the online application system will be considered for any posted position and all applications require a resume to be considered.
+
+Successful candidates are required to submit official transcript(s) at point of offer to hire. Teaching service outside of the Detroit Public Schools Community District must be verified by the applicant's prior employer(s) prior to hire. It is the applicant's responsibility to provide all documentation (including copies) as requested.
+
+Applicants requesting assistance during the application process should contact the Office of Human Resources via email at recruitment@detroitk12.org or phone at (313) 873-6897.
+
+DPSCD does not discriminate on the basis of race, color, national origin, sex, sexual orientation, transgender identity, disability, age, religion, height, weight, citizenship, marital or family status, military status, ancestry, genetic information, or any other legally protected category, in its educational programs and activities, including employment and admissions opportunities. Contact the Civil Rights Coordinator for more information at (313) 240-4377 or detroitk12.org/compliance.",,,,,,,,,,
+11,Data analyst,"Data Standards Analyst in Seattle, Washington | Careers at Fred Hutchinson Cancer Research Center","Fred Hutch
+3.9","Overview
+Cures Start Here. At Fred Hutchinson Cancer Research Center, home to three Nobel laureates, interdisciplinary teams of world-renowned scientists seek new and innovative ways to prevent, diagnose and treat cancer, HIV/AIDS and other life-threatening diseases. Fred Hutch's pioneering work in bone marrow transplantation led to the development of immunotherapy, which harnesses the power of the immune system to treat cancer. An independent, nonprofit research institute based in Seattle, Fred Hutch houses the nation's first cancer prevention research program, as well as the clinical coordinating center of the Women's Health Initiative and the international headquarters of the HIV Vaccine Trials Network. Careers Start Here.
+
+The Statistical Center for HIV/AIDS Research and Prevention (SCHARP) at Fred Hutch is a full service statistical and data management center focused on HIV prevention research. SCHARP has an annual budget of over $40 million, more than 180 employees and is currently managing over 40 active phase I - III clinical trials in over 150 clinical sites around the world. SCHARP is seeking a Data Standards Analyst.
+
+Under general supervision, the Data Standards Analyst contributes to the coordination and management of clinical data standards and production of standard datasets within SCHARP. The incumbent provides subject matter expertise in CDISC data standards, supports coordination efforts with SCHARP staff and network partners to standardize the collection and tabulation of clinical trials data, coordinates and/or leads CDISC working groups, drafts SDTM and ADaM metadata and conversion specifications as well as CRF Global Library form content, maintains awareness of publication updates from CDISC and other data standards or regulatory agencies that impact SCHARP data standards, and configures data transformations to provision SCHARP SDTM data tables from CRF and other data pipelines to SCHARP Programmers and Statistical Research Associates via a clinical data warehouse.
+
+Core to the role is a deep understanding of data standards and data transformations, the ability to communicate effectively, work collaboratively with colleagues and be responsive to the needs of both internal and external customers within an environment of mutual cooperation and respect.
+
+Responsibilities
+Reviews study builds to ensure they are following Global Library specifications and review and/or approve of the changes as necessary
+Stays informed of updates to CDISC data specifications; incorporates new versions of SDTM into SCHARP SDTM and advises to others in SCHARP on CDASH, SDTM and ADaM
+Works with study teams to lead the definition and documentation of per study SDTM metadata and conversion specifications and ensures alignment with organizational data standards
+Draft and/or update Global Library form content as needed based on requirements from SCHARP staff and network partners
+Draft and/or review SDTM metadata and conversion specifications and final datasets
+Defines and documents per study clinical data transformations to SDTM+- from data collection formats such as CDASH
+Implements clinical data transformations of source data to SCHARP SDTM using database ETL tools. Specifies complex transformations and consults with Programmers, as needed, to implement
+Reviews and validates derived SCHARP SDTM datasets using Pinnacle 21 to ensure compliance with published specifications
+Coordinates internal CDISC training to SCHARP and our partners as appropriate and provides routine updates to SCHARP staff to ensure current and new staff are aware of materials and training
+Participates in process definitions and SOP development as needed
+
+Qualifications
+Minimum qualifications:
+Reviews study builds to ensure they are following Global Library specifications and review and/or approve of the changes as necessary
+2yr experience working on SDTM
+Stays informed of updates to CDISC data specifications; incorporates new versions of SDTM into SCHARP SDTM and advises to others in SCHARP on CDASH, SDTM and ADaM
+Works with study teams to lead the definition and documentation of per study SDTM metadata and conversion specifications and ensures alignment with organizational data standards
+Draft and/or update Global Library form content as needed based on requirements from SCHARP staff and network partners
+Draft and/or review SDTM metadata and conversion specifications and final datasets
+Defines and documents per study clinical data transformations to SDTM+- from data collection formats such as CDASH
+Implements clinical data transformations of source data to SCHARP SDTM using database ETL tools. Specifies complex transformations and consults with Programmers, as needed, to implement
+Reviews and validates derived SCHARP SDTM datasets using Pinnacle 21 to ensure compliance with published specifications
+Coordinates internal CDISC training to SCHARP and our partners as appropriate and provides routine updates to SCHARP staff to ensure current and new staff are aware of materials and training
+Participates in process definitions and SOP development as needed
+Preferred qualifications:
+Experience as a member of a team completing regulatory submissions
+5yrs experience working on SDTM
+Experience building transformation pipelines using modern ETL tools such as IBM
+InfoSphere DataStage, Pentaho/Kettle, SQL Server Integration Services, or other
+Knowledge of relational database structures and complex data systems
+Experience programming with a modern procedural, declarative, or statistical programming language such as SAS, Perl, Python, Shell or SQL
+Experience working in an environment governed by Good Clinical Practices, Good Clinical Data Management Practices, or other FDA guidelines
+Experience with Electronic Data Capture (EDC) systems
+
+Our Commitment to Diversity
+We are proud to be an Equal Employment Opportunity (EEO) and Vietnam Era Veterans Readjustment Assistance Act (VEVRAA) Employer. We are committed to cultivating a workplace in which diverse perspectives and experiences are welcomed and respected. We do not discriminate on the basis of race, color, religion, creed, ancestry, national origin, sex, age, disability (physical or mental), marital or veteran status, genetic information, sexual orientation, gender identity, political ideology, or membership in any other legally protected class. We are an Affirmative Action employer. We encourage individuals with diverse backgrounds to apply and desire priority referrals of protected veterans. If due to a disability you need assistance/and or a reasonable accommodation during the application or recruiting process, please send a request to our Employee Services Center at (see application details) or by calling (see application details).",,,,,,,,,,
+12,Data analyst,Enterprise Data Analyst,"City National Bank
+3.6","ENTERPRISE DATA ANALYST
+
+WHAT IS THE OPPORTUNITY?
+The Enterprise Data analyst is a key role responsible for developing and supporting the development activities of various enterprise data initiatives. The Data Analyst will the support the team by examining the data available from an existing information source (e.g. a database or a file extract from Systems of Record) and collect facts that could be used to determine how this existing data can be repurposed. The Data Analyst will also analyze and advise the team on workflow issues and data integrity problems and offers recommendations on resolution.
+
+Business and Technology Services Division
+As a member of City National's Business & Technology group, you will drive, develop, and maintain solutions for clients and colleagues. This is an exciting time of technology advancement and innovation across the bank, particularly within our technology teams.
+
+WHAT DO YOU NEED TO SUCCEED
+
+Must-Have*
+Bachelor's Degree or equivalent
+* 3-5 years of hands-on experience with SQL and other data profiling tools and techniques
+* 3-5 years' experience in data analysis preferably in a data-intensive financial company.
+Skills and Knowledge
+Strong SQL Skills
+Experience with data profiling tools like Informatica DQ analyst
+Excellent analytical and problem solving skills.
+Excellent oral and written communication and interpersonal skills.
+Strong organizational, multi-tasking, and time-management skills preferred.
+Ability to work independently or within a team for problem resolution
+Must demonstrate ability to multi-task and be flexible.
+Ability to interface effectively with all levels of the organization
+Ability to express complex technical concepts in business terms.
+Opportunity may also be considered to be based in Raleigh, NC
+*To be considered for this position you must meet at least these basic qualifications
+The preceding job description has been designed to indicate the general nature and level of work performed by employees within this classification. It is not designed to contain or be interpreted as a comprehensive inventory of all duties, responsibilities, and qualifications required of employees assigned to this job.
+
+INCLUSION AND EQUAL OPPORTUNITY EMPLOYMENT
+City National Bank is an equal opportunity employer committed to diversity and inclusion. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, veteran status or any other basis protected by law.
+
+ABOUT CITY NATIONAL
+We start with a basic premise: Business is personal. Since day one we've always gone further than the competition to help our clients, colleagues and community flourish.City National Bank was founded in 1954 by entrepreneurs for entrepreneurs and that legacy of integrity, community and unparalleled client relationships continues to drive phenomenal growth today. City National is a subsidiary of Royal Bank of Canada, one of North America's leading diversified financial services companies.
+
+#ca-jd
+
+#LI-JD1
+
+#gd-jdf
+
+Equal Opportunity Employer Minorities/Women/Protected Veterans/Disabled",,,,,,,,,,
+13,Data analyst,Data Systems Analyst 3 - ACO - MSSP - F/T - Days,"UC Irvine Health
+4.2","Job Description & Salary Range
+
+UC Title: Data Systems Analyst 3
+
+Position Number: 10007310
+
+Reports to: Dir Enterprise Data&Analytics
+
+Working Title: Data Systems Analyst 3
+
+Cost Center: ACO - MSSP (8625)
+
+Bargaining Unit: None
+
+FLSA: Exempt
+
+Job Code: 7199
+
+Date Created: 05/14/2019
+
+Shift: Day Shift
+
+Hours: 40.00
+
+Position Summary:
+
+The incumbent designs and manages the Business Intelligence (BI) tools and application environment that support analytics for ACO delivery at UC Irvine Health.
+
+Salary Range:
+
+Rate Minimum $68,500.00 Maximum $140,200.00
+
+Required Qualifications:
+
+Ability to customize Business Intelligence tools to meet user needs
+
+Ability to establish and maintain effective working relationships across the HealthSystem
+
+Ability to lead projects or portions of larger projects
+
+Ability to maintain a work pace appropriate to the workload
+
+Ability to translate business questions and requirements into reports, templates and analytical views
+
+Ability to troubleshoot hardware and software based technical issues to ensure a stable, robust data warehouse/BI environment in Windows platforms
+
+Bachelor's Degree in Computer Science or related field and/or combination of education and equivalent work experience
+
+Excellent written and verbal communication skills in English
+
+Experience with Transact SQL scripts and relational and multidimensional database designs
+
+Minimum 2 years’ experience with Microsoft SQL Server
+
+Must demonstrate customer service skills appropriate to the job
+
+Must possess the skill, knowledge and ability essential to the successful performance of assigned duties
+
+Strong problem-solving abilities
+
+Preferred Qualifications:
+
+Data Warehouse development experience
+
+Experience using MS Reporting Services (MSRS) and knowledge of SQL Server Reporting Services
+
+Experience using an ETL tool such as Talend
+
+Experience with Tableau Software
+
+Experience with data modeling tools
+
+Full software lifecycle development experience using a variety of programming environments, including open source tools
+
+Minimum of 5 years working in programming in a healthcare or finance setting
+
+Physical, Mental & Environmental Demands:
+
+To comply with the Rehabilitation Act of 1973 the essential physical, mental and environmental requirements for this job are listed below. These are requirements normally expected to perform regular job duties. Incumbent must be able to successfully perform all of the functions of the job with or without reasonable accommodation.
+
+]]>",,,,,,,,,,
+14,Data scientist,Data Scientist,"CGI Technologies and Solutions, Inc.","*Data Scientist** + Log in **Share this** Find similar career opportunities **Data Scientist** **Category:** Database Administration **City:** Dallas, Texas, United States **Position ID:** J0620-0337 **Employment Type:** Full Time **Position Description:** This position is responsible for business consulting activities for the Data Strategy and Analytics teams within our client organizations to monitor and assist in improving their analytics eco system. We need someone with a creative problem-solving skills to work on our client's business opportunities. Our Data Scientistwill work to understand high value opportunities and identify/build potential solutions, which often involve discovering new insights by transforming data into intuitive & interactive visualizations or applications Responsibilities: Serve as an expert in translating complex data into key strategy insights and valuable actions. • Discover business narratives told by the data and present them to other scientists, business stakeholders, and managers at various levels. • Develop and test heuristics. • Create and run statistic/ML models. • Perform data exploration and data mining. • Create business intelligence, dashboards, visualizations, and/or other advanced analytics reports to adequately tell the business narrative and offer recommendations that are practiced, actionable, and have material impact, in addition to being well-supported by analytical models and data. Skills: Work experience in addition to degree: 3 - 5 years of data engineering/science related activities with overall 10+ years' experience. • Graduation from a four-year college or university with a degree in statistics, physics, mathematics, engineering, computer science, or management of information systems. • Expert knowledge of SAS, Python Machine Learning or R • Working knowledge of statistics, programming and predictive modeling. • Working knowledge of code writing • Big Data/Hadoop/NoSQL and experience with large datasets Desired: Doctorate in Computer science, Engineering, Physics or Statistics **Your future duties and responsibilities:** \#LI-JS2 **Skills:** + Data Analysis + SQL + Python + QlikView + Data Architecture **What you can expect from us:** **Build your career with us.** It is an extraordinary time to be in business. As digital transformation continues to accelerate, CGI is at the center of this change-supporting our clients' digital journeys and offering our professionals exciting career opportunities. At CGI, our success comes from the talent and commitment of our professionals. As one team, we share the challenges and rewards that come from growing our company, which reinforces our culture of ownership. All of our professionals benefit from the value we collectively create. Be part of building one of the largest independent technology and business services firms in the world. Learn more about CGI at www.cgi.com . No unsolicited agency referrals please. CGI is an equal opportunity employer. Qualified applicants will receive consideration for employment without regard to their race, ethnicity, ancestry, color, sex, religion, creed, age, national origin, citizenship status, disability, medical condition, military and veteran status, marital status, sexual orientation or perceived sexual orientation, gender, gender identity, and gender expression, familial status, political affiliation, genetic information, or any other legally protected status or characteristics. CGI provides reasonable accommodations to qualified individuals with disabilities. If you need an accommodation to apply for a job in the U.S., please email the CGI U.S. Employment Compliance mailbox at US_Employment_Compliance@cgi.com . You will need to reference the requisition number of the position in which you are interested. Your message will be routed to the appropriate recruiter who will assist you. **Please note, this email address is only to be used for those individuals who need an accommodation to apply for a job. Emails for any other reason or those that do not include a requisition number will not be returned** . We make it easy to translate military experience and skills! Click here at https://cgi-veterans.jobs/ to be directed to our site that is dedicated to veterans and transitioning service members. All CGI offers of employment in the U.S. are contingent upon the ability to successfully complete a background investigation. Background investigation components can vary dependent upon specific assignment and/or level of US government security clearance held. CGI will not discharge or in any other manner discriminate against employees or applicants because they have inquired about, discussed, or disclosed their own pay or the pay of another employee or applicant. However, employees who have access to the compensation information of other employees or applicants as a part of their essential job functions cannot disclose the pay of other employees or applicants to individuals who do not otherwise have access to compensation information, unless the disclosure is (a) in response to a formal complaint or charge, (b) in furtherance of an investigation, proceeding, hearing, or action, including an investigation conducted by the employer, or (c) consistent with CGI's legal duty to furnish information.",,,,,,,,,,
+15,Data scientist,Data Scientist,"Goodway Group
+4.2","Goodway Group is a fully-remote, digital marketing, and advertising firm. We sit at the intersection of top talent, amazing technical partnerships, and game-changing analytics within the ad technology and marketing technology space. We're well-established with the pace of a start-up. This position is work from home (or anywhere else you have reliable internet) and can be located anywhere within the United States.
+
+Who We Are
+
+Goodway Group aims to be the beacon of honesty and intelligence in the programmatic marketplace. We deliver authentic results for our clients by running smart advertising campaigns. Data Science & & Analytics at Goodway Group develops data products that ensure the company's media campaigns are running efficiently. Doing this involves:
+showing feasibility through data analysis,
+designing and producing prototypes
+deploying models to production.
+Who You Are
+
+A Data Scientist is a key member of the Data Science and Analytics team at Goodway. This team utilizes advanced tools and innovative techniques to maximize advertising results for our clients, as well as demonstrates thought leadership within the digital advertising industry.
+
+You will be at the center of data analysis, modeling, machine learning, and data engineering and on the bleeding-edge in the ad-tech space.
+
+The ideal candidate will have hands-on experience working on a wide range of optimization and analytics problems in ad-tech including fraud detection/mitigation, price prediction, conversion attribution, and modeling, as well as experience with the tools of the trade including SQL, Python, Hive, R, Athena, and others.
+
+What You Will Do
+Design, build and deploy algorithms to optimize the performance of advertising campaigns.
+Define data requirements and gather/validate information, applying judgment and statistical tests.
+Apply various models and methods to test, learn, and improve the manner in which data is being evaluated and algorithms are being built.
+Construct data narratives to convey complex ideas to non-technical stakeholders.
+Be constantly learning the latest technologies and trends.
+Work with analysts and stakeholders to gather, understand, and develop business initiatives and specifications.
+Provide expertise and leadership on making technical decisions, thus delivering a platform that provides business value and meets end-user goals.
+What We Offer
+
+Goodway Group is a wholly remote organization, so no commute to consider! We offer unlimited PTO (MyTime) because we know you're at your best when your life has balance. We have the usual steak and potatoes array of benefits, as well as some great wellness programs that are available to both you and your family. While we work remotely, we foster an environment that promotes connectedness and community.
+
+For a lot more detail, make sure to check us out on Glassdoor!
+
+You’ll Be Successful Because You Are
+Knowledgeable: B.S., M.S. or Ph.D. in computer science, math, statistics or a strong quantitative educational background
+Experienced: Minimum of 2 years’ experience in applied data science, machine learning or modeling
+Adept with Python/Bash and some exposure to modern software development practices including GitHub/git-flow and automated testing
+Experience working with big data tools such as Hadoop, Hive, Spark, Pig, Presto, Athena or Qubole
+Excellent communication skills and ability to convey ideas accurately and concisely to both technical and non-technical employees
+Adaptable to any and every situation: You have a knack for being fluid and embracing change.
+A quick study: swiftly demonstrate an understanding of the business, organizational structure, culture, client base, and industry.
+Masterful ability to evangelize Goodway’s values and culture to both prospects and employees.
+Results-Oriented: we call this grit. You can be counted on to exceed goals, and you’re known to push yourself and others across the finish line
+Ability to learn new paradigms, tools, and processes quickly and thrive in a fast-paced, rapidly changing, exciting work environment
+Excellent communication skills and ability to convey ideas accurately and concisely to both technical and non-technical employees
+Work From Home: we all work from our home offices throughout the United States
+Things You Should Know
+Our workdays can sometimes be long and unpredictable. You should be comfortable and capable of sitting and/or standing at a desk for at least 8 hours.
+Twice per year, we gather together to work and play for a week. Both retreats are “can’t miss” events (like seriously…they are mandatory). There may also be other opportunities to travel depending on your specific role and business needs.
+Goodway embraces a culture of equality and wants applications from everyone, regardless of race, creed, color, religion, sex, sexual orientation, gender identity, national origin, marital status, citizen status, age, disability, military or protected veteran status, genetic predisposition or carrier status or any other legally protected status.",,,,,,,,,,
+16,Data scientist,Data Scientist,Gayathri's Sandbox,Experiment engineers will be expected to help define and develop our core software for designing and deploying advanced experiments.,,,,,,,,,,
+17,Data scientist,"Data Scientist, Marketplace Economics","Spotify
+3.8","We are looking for a Data Scientist to join the Marketplace Economics team within the Marketplace Business group. The mission of the Marketplace Economics team is to use the science of Economics in shaping efforts to improve Spotify's business while strengthening creator sustainability. The team accomplishes this mission by combining the marketplace incentive structure of creators & intermediate agents (labels, publishers, governmental organizations and regulatory bodies) with internal and external data to test empirical hypotheses and build algorithmic measurement of performance indicators to improve the Creator Marketplace tools/services.In this role, using our petabytes of data, you will help build data products and surface insights to understand connections between artists and listeners, track performance of our products and their impact on artists' careers. You will join a centralized Economics team of researchers and data scientists to build algorithmic insights and novel research.In addition to possessing a strong technical background, you will be a natural communicator who is equally comfortable explaining complex Economic frameworks to both business, science and engineering teams. You will also have a strong preference for learning and applying causal inference and other Econometric & Machine Learning statistical techniques. Accompanying this broad set of responsibilities is exposure to many functional areas, as well as senior management, across Spotify.What you'll do:* Own the building and reporting on Worldwide music industry Economic trends.* Design, build, maintain and iterate on a suite of data products to enable insights and track metrics measuring the health of our marketplace.* Work closely with PhD level researchers to identify content substitution patterns and build/transition them to internal self-serve data products.* Work on data projects that balance the needs of our two sided marketplace, considering the goals of artists' teams while maintaining listener satisfaction and discovery.* Communicate data-driven insights and recommendations to key partners through clear visualizations and presentations.Who you are:* Degree in Science/Engineering, Data Science, Mathematics, Statistics, Economics, or a similar quantitative field.* Ability to communicate complex topics using plain (non-technical) language.* Prior proven experience analyzing and summarizing complex data via modern SQL dialects* Prior experience with a statistical scripting language (Python (preferred), STATA, or R)* Prior experience visualization and building dashboards (Tableau preferred)* You are comfortable working with distributed teams across multiple offices and timezones.* You are a communicative person that values building strong relationships with colleagues and partners and have the ability to explain complex topics in simple terms.You are welcome at Spotify for who you are, no matter where you come from, what you look like, or what's playing in your headphones. Our platform is for everyone, and so is our workplace. The more voices we have represented and amplified in our business, the more we will all thrive, contribute, and be brilliant. So bring us your personal experience, your perspectives, and your background. It's in our differences that we will find the power to keep revolutionizing the way the world listens.Spotify transformed music listening forever when we launched in 2008. Our mission is to unlock the potential of human creativity by giving a million creative artists the opportunity to live off their art and billions of fans the opportunity to enjoy and be inspired by these creators. Everything we do is driven by our love for music and podcasting. Today, we are the world's most popular audio streaming subscription service with a community of more than 271 million users.",,,,,,,,,,
+18,Data scientist,Graduate - Data Science for Ocean of Things (DARPA),"SDSU Research Foundation
+4.2","This Statement of Work covers the need for student services to provide technical and/or analytical support in the fields of Computer Science, Electrical Engineering, Ocean Engineering, or Oceanography for the Defense Advanced Research Program Agency (DARPA) Ocean of Things (OoT) project. The purpose of this project is to support research, design, and implementation of storage and analysis of data collected by oceanographic floats.
+The DARPA’s OoT project processes information collected from the cloud-based data center, converting raw field measurements into oceanographic, environmental, meteorological products. DARPA imports and formats products information from external sources, used as ground truth comparison. The collected data include: Sea Surface Temperature (SST), salinity, solar irradiance, wave/swell height/periodicity (derived from IMU/accelerometer), barometric pressure, precipitation, wind speed/direction, surface current measurements.
+
+The student shall assist the work sponsor in:
+Developing, testing and documenting computer software, likely in the Python language, for the purposes of the machine learning research described above.
+Performing data conversion, as necessary, to facilitate experimentation with recorded data. This will include using well-known existing products from the oceanographic community as templates. These existing products are available online from government
+and academic websites.
+Performing data import/conversion of well-known existing products from the oceanographic community to the cloud-based data center for the purposes of comparing/calibrating against the DARPA OoT data.
+Generating statistical summaries and graphs of incoming data, primarily to validate incoming data.
+Assisting with the evaluation of experiments testing and machine learning models, numerical, and statistical techniques upon the OoT data.
+
+Minimum Qualifications:
+Graduate Student 1: Must have a Bachelor's degree in the required discipline and be enrolled in a Master's degree program. Must be able to accomplish a minimum of 50% of the task without supervision.
+Graduate Level 1: Computer Science, Electrical Engineering, Ocean Engineering, or
+Oceanography major (working on Master’s)
+
+Required Course Work:
+Calculus
+Desired Qualifications:
+Previous programming experience is preferred.
+Experience with Python Programming is strongly preferred.
+Familiarity with data formats such as XML, JSON, and NetCDF is preferred
+Previous experience analyzing oceanographic/environmental data is preferred
+GPA 3.75 or higher.
+This position is unclassified.
+Due to the regulations established by the Department of Defense, only US Citizens may qualify
+This is a student position and is limited to working 20 hours per week
+This position will remain open until filled
+San Diego State University Research Foundation is an EEO/AA/Disability/Vets Employer",,,,,,,,,,
+19,Data scientist,Data Scientist/AI Scientist,"STATS LLC
+2.7","Do you have a background in Data Science, Physics, Statistics or Probability Theory? Do you have a passion for sports? Do you live to find data driven solutions to complex problems? Come join our team at Stats Perform as a AI Scientist building predictive models with modern deep learning tools that will be utilized by the world's leading technology companies, sports franchises and sports book operators.
+
+What You'll Do:
+Researching, developing, and implementing the most innovative machine learning and computer vision techniques to Stats Perform's wealth of sports data (both structured and unstructured)
+Productizing artificial intelligence based solutions along side engineers and product teams
+Providing technical guidance to product teams on the artificial intelligence (machine learning and computer vision) approaches appropriate for a task
+Patenting the innovative solutions
+What You Need:
+Bachelor's, MS or PhD in computer science or related quantitative field.
+Expertise in using Python, C++, or other programming language
+Substantial experience with unstructured data sources, especially in areas such as spatiotemporal data, video/image, speech or text data
+Proficiency in, at least, one modern deep learning engine such as Tensorflow, PyTorch etc. (preferred: knowledge of using GPUs)
+Proven track record of innovation in creating novel algorithms and advancing the state of the art
+Passion for creating new technologies with high product impact within sport.
+Stats Perform Core Values
+
+One Team
+
+We foster a culture of respect and collaboration to selflessly support and engage our teammates
+
+Committed Players
+
+We are proud and passionate about the work we do and our role in sport
+
+Dedicated to Client Success
+
+We keep our client's goals at the center of everything we build and do; when our clients win, we win
+
+Always Innovate
+
+We aspire to innovate in all of our work to disrupt and shape the future of our industry
+
+Be The Best
+
+We have a relentless pursuit of getting the job done right and celebrating the results
+
+Stats Perform is an equal opportunity employer our goal is to create an inclusive workplace for all. We welcome and encourage diversity in the workplace regardless of gender, race, disability or veteran status.",,,,,,,,,,
+20,Data scientist,"Search Data Scientist, Apple Media Products - Culver City, CA","Apple
+4.1","Posted: Apr 22, 2020
+Role Number:
+200167176
+At Apple, new ideas have a way of becoming great products, services, and customer experiences very quickly. If you are a results-oriented, energetic individual who is not afraid of challenges, we’re looking for you. Apple is seeking an expert Data Scientist to join a team passionate about Data Science & Analytics for Apple Media Products (AMP) covering search and discovery across Apple Services. This role will involve working with Internet-scale search data across numerous product, undertaking in-depth quantitative analysis and building machine learning models to drive product and strategy. The team’s culture centers around rapid iteration with open feedback and debate along the way, plus strong collaboration with product, engineering, business, and marketing partners.
+Key Qualifications
+3+ years demonstrated ability in a Data Scientist or Data Analyst role, preferably from a role passionate about search and discovery. Proven experience in music, mobile apps, or video content is a plus.
+Strong proficiency with SQL-based languages. Experience with large scale analytics technologies such as Hadoop and Spark preferred
+Familiarity with Python or R and data visualization tools such as Tableau for full-stack data analysis, insight synthesis and presentation.
+We seek experience using relevant statistical and machine learning methods for building predictive models and knowledge of A/B test experimentation design.
+Proficiency with text mining and NLP methods.
+Curious business attitude with an ability to condense complex concepts and analysis into clear and concise takeaways that drive action.
+Excellent communication, social and presentation skills with meticulous attention to detail.
+Strong time management skills with the ability to handle work to tight deadlines and the pressure of executive requests.
+Description
+Dive deep into large-scale data to uncover trends and identify key insights that will drive Apple Services product and design strategy. Craft how best to supervise, measure and understand product and business performance. Collaborate with business, marketing, finance and executive teams to generate regular presentations for C-level. Partner with other Apple organizations on data gathering, data governance, evangelizing key performance indicators and democratizing data. Your creative skills will be utilized daily.
+Education & Experience
+Minimum of a Bachelors degree in Computer Science, Statistics, Mathematics, Engineering, Economics or related field. Ideally, Masters or PhD in related field.",,,,,,,,,,
+21,Data scientist,Data Scientist,One Drop,"We’re seeing a passionate Data Scientist to join the team at One Drop. Data Science is all about providing startlingly novel and refreshingly useful decision support directly to One Drop’s end users. For example, One Drop is the first company to make blood glucose prediction available to the majority of people with diabetes. Working with One Drop’s behavioral and health science, diabetes education, engineering, and product teams, we invent new ways to convert over 11 billion health data points into daily support and suggestions for over 2 million users through the One Drop app.
+
+We look at a wide variety of health and lifestyle data provided by users both actively, through logging, and passively, from phones and wearables. Our job is to help inform the hundreds of decisions that people with chronic conditions have to make every day, to empower users to take the actions that will help them get healthier. There are a lot of directions to explore, and each team member is expected and encouraged to help set the development agenda.
+You'll make an impact by
+Developing machine learning, deep learning, or dynamic simulation models for forecasting and classification
+Creating new model features by intelligently combining multiple data sources
+Adding to One Drop’s inventory of tools and routines to accelerate experimentation
+Creatively applying additional techniques to develop and test new data products
+Envisioning new and useful data-driven applications to help people manage chronic conditions
+You'll bring
+Several years of experience in machine learning or simulation modeling
+Strong skills with a scripting language such as Python, and data-related libraries
+Expertise in any of deep learning, time series forecasting, pattern identification, recommendation systems, natural language processing, or other data science subdomains with application to helping transform the lives of people living with diabetes
+Ability and motivation to absorb new, complex domain knowledge quickly
+Evident verbal and written communication skills ranging from documentation of experiments and results to explaining project goals, plans, and progress
+Demonstrated ability to set and follow a productive agenda independently, while keeping coordinated with the team
+Bonus Points:
+Experience with data related to diabetes or other chronic conditions
+Experience with tracking data from mobiles and wearables
+A personal connection to, or passion for empowering people living with chronic conditions
+You'll get
+Deeply impact the lives of people with chronic conditions
+Work at an early stage startup and help develop the future of healthcare
+Competitive salary and equity commensurate with experience and performance
+Medical, Dental, and Vision insurance and 401k plan
+Yearly Professional Development Budget
+Unlimited Vacation Days
+Weekly Catered Lunches, Company Swag, company outings, and other surprises when you start
+One Drop is the future of healthcare. Our mission is to develop technology that ensures all people living with diabetes and other chronic conditions can thrive. We harness the power of data science and mobile computing to make healthcare more affordable, accessible, and effective.
+
+Our clinically proven mobile platform combines AI-powered predictive insights, personalized health coaching, and FDA-approved connected devices to simplify self-care. And it works. People using the One Drop platform have seen significant improvements in their health in just a few weeks.
+
+Today, the rate of people living with chronic conditions is increasing dramatically, and traditional approaches to healthcare cannot possibly scale to reach them all. We exist to serve those people and help them lead their best lives. www.onedrop.today
+
+One Drop provides equal employment opportunities (EEO) to all employees and applicants for employment without regard to race, color, religion, sex, national origin, age, disability or genetics.
+
+To all recruitment agencies: One Drop does not accept unsolicited agency resumes. Please do not forward resumes to our jobs alias or One Drop employees. One Drop is not responsible for any fees related to unsolicited resumes.",,,,,,,,,,
+22,Data scientist,Data Scientist,Point72 Ventures,"About Our AI/ML Team
+
+Our mission is to build the best model-driven businesses. To do this, we make investments in industries where machine learning can be the most transformative. Beyond our initial investments, we give our portfolio companies a meaningful edge by helping them acquire and integrate incumbent businesses in order to enable such transformation. Essential to this approach is our Foundry team of experienced product managers, engineers, data scientists, and other specialists who take an active role to help portfolio companies execute on transformation initiatives while supporting our investment team with industry research and due diligence.
+
+About This Role
+
+As a data scientist on the AI/ML team you will be building models that transform our portfolio companies and entire industries. You will be involved in all parts of the data science lifecycle. That starts in partnership with the investment team where you'll learn about new industries and work with them to understand they key workflows and how ML can be applied. After an investment, you will partner with our portfolio companies combining their domain expertise with your ML knowledge to instrument their workflows, build representative datasets, and deploy trained models. All of these actions will be taken with an eye towards the goal of iterative, data-driven transformation of our portfolio companies while retaining and growing the strengths that were the basis of the original investment.
+
+Primary Responsibilities
+Developing a deep understanding of a portfolio company and identifying the correct business problem to address with ML
+Train and evaluate machine learning models
+Build datasets that support the training and evaluation of ML models
+Analyze existing data assets to understand their scope, quality, and gaps
+Requirements
+Demonstrated experience building ML models to solve business problems
+Strong software development background
+Familiarity with common ML frameworks
+Strong verbal and written communication ability
+Passion for understanding quickly developing an understanding of new companies and industries
+Travel up to 25% of the time",,,,,,,,,,
+23,Data scientist,Data Scientist- Machine Learning Software Engineer,"Halliburton
+3.5","We are looking for the right people — people who want to innovate, achieve, grow and lead. We attract and retain the best talent by investing in our employees and empowering them to develop themselves and their careers. Experience the challenges, rewards and opportunity of working for one of the world’s largest providers of products and services to the global energy industry.
+
+Overview:
+
+As a data scientist and machine learning software engineer on Halliburton Digital Solution team, you are responsible to deliver digital solutions which can achieve measurable business results through collaborating with subject matter experts in businesses, applying common open source libraries for building data analytics models, prototyping data driven digital tools to tackle business problems. We are looking for top talents who enjoy learning and contributing to our team through creative and innovative thinking.
+
+Job Responsibilities:
+Efficiently extract large scale complex business data (time series data, structured/unstructured) from various data sources and prepare them for data analytics.
+Partner with product experts, leverage common open source Machine Learning/Deep Learning packages for identifying data patterns/trends or building predictive models.
+Deploy solutions to business units using software technologies to generate measurable values for businesses.
+Grasp the application of the latest machine learning & artificial intelligence open source packages, cloud and distributed computing technologies to ensure the best technologies are implemented to meet businesses’ data challenges.
+
+
+Required Qualifications:
+Undergraduate degree in Data Science, Computer Science, or Math, or Statistics.
+For candidates who hold an engineering degree, we require candidates have taken data science classes already.
+7 years of experiences with a minimum of 2 years experiences in extracting the data, using common classification or regression open source packages through R or Python.
+Has basic knowledge with big data platforms like Hadoop, Hive, or Phoenix, as well as knowledge in parallel programming, and distributed computing frameworks like Spark.
+Preferred Qualifications:
+Advanced degree in in Data Science, Math, Statistics, Computer Science, or Engineering:
+5 years of experiences with a Master’s degree
+2 years of experiences with a PhD degree.
+Has experience with open source machine learning packages and deep learning packages provided by Microsoft Azure, Amazon AWS, or Google GCP (such as Scikit-learn, Azure ML, TensorFlow, Sagemaker).
+Interview process:
+
+Potential candidates are required to pass a data challenge test before on-site interview can be scheduled.
+
+Halliburton is an Equal Opportunity Employer. Employment decisions are made without regard to race, color, religion, disability, genetic information, pregnancy, citizenship, marital status, sex/gender, sexual preference/ orientation, gender identity, age, veteran status, national origin, or any other status protected by law or regulation.
+
+Location
+
+3000 N. Sam Houston Parkway E., Houston, Texas, 77032, United States
+
+Job Details
+
+Requisition Number: 87825
+Experience Level: Experienced Hire
+Job Family: Engineering/Science/Technology
+Product Service Line: Global R&D
+Full Time / Part Time: Full Time
+
+Additional Locations for this position:
+
+Compensation Information
+Compensation is competitive and commensurate with experience.",,,,,,,,,,
+24,Data scientist,Data Scientist for Industrial Image Processing,"ROSEN USA
+3.6","Job Description
+New Challenge: New Team, New Office! Protect Our Environment With Your Algorithms
+
+Have you ever thought about pipelines and integrity? Why should pipelines need machine learning?
+
+The answer is simple: Pipeline inspections generate a lot of sensor data (e.g. from ultrasonic sensors) which have to be analyzed using state of the art computer vision techniques. Think of it like doing healthcare just for pipelines.
+
+Interested? Then learn more about industrial machine learning applications and data analysis for pipeline data in a start-up environment. Be part of a new team. Shape the team and your future. Enjoy working in a multi-cultural and multi-national team.
+
+We love Python, C++, Tensorflow, Docker, Kubernetes and want to stay as close as possible to the state of the art tools, research in machine learning, data science and big data. Our ideal team member has a creative mind and natural curiosity when faced with challenging data science tasks. We cherish self-improvement and continuous learning and we offer the possibility to create new data-driven visions for the future using your own methods.
+
+We are looking for a new team of:
+Data Engineers for Industrial Image Data
+Data Scientists for Industrial Image Processing
+Software Developers / C++/PyThon
+Linux Administrators / DevOps
+You will be working in an extremely creative environment with a lot of freedom, focused on a joint target with great opportunities to grow internationally.
+
+ROSEN is going to extend its Data Analytics Footprint in Columbus, Ohio and you can be part of this groundbreaking journey for our company.
+
+Responsibilities:
+Designing and applying (machine learning) algorithms for extraction of information from image data
+Deriving technical parameters and specifications from measured data
+Performance estimation and definition of algorithm test procedures
+Deployment of algorithms as minimum viable products focusing on early customer feedback
+Creation and maintenance of related technical documentation
+Researching, rating and implementing development tools
+Using open source software libraries from the field of signal processing, computer vision and data science
+Deliver production code stemming from scientific ideas with support from our software engineers
+Closely collaborate with teams around the world to improve our products
+Professional guidance of Junior level Data Scientists
+Visit of national and international conferences on a regular basis
+Requirements:
+
+To become part of the ROSEN family, you convince through a result-oriented, structured and independently working method. Moreover, you should bring with you:
+Deep understanding of Computer Vision and Machine Learning methods applied in an industrial context
+Hands-on experience with gathering of image data and image data cleaning
+Solid knowledge of applied mathematics (linear algebra, optimization, probability theory)
+Basic knowledge of physics
+Experience with at least one object oriented programming language (e.g. Python, C++)
+Basic understanding of professional software development
+Education and Experience
+University degree in physics, electrical engineering, computer science or similar fields
+5+ years relevant work experience in industry in the field of Computer Vision
+About Rosen-Group:
+
+The ROSEN Group in Coumbus, USA acts as a partner in technology development for 20 global subsidiaries. The location supports the entire Group, developing, building and delivering innovative solutions based on client requests.
+
+ROSEN USA offers an exceptional working environment, salary commensurate with experience and incredible benefits package.
+Company Description
+ROSEN is a leading privately owned company serving the oil and gas industry with inspection, integrity, and rehabilitation products and services. For over 35 years, ROSEN has provided the industry with advanced inspection solutions to ensure safe and economical operation of a wide range of assets and facilities. The ROSEN Group operates in more than 120 countries and employs over 3,000 people.
+
+ROSEN is an extended team of people with a passion for technology and innovation. Our claim “empowered by technology” is the key to our sophisticated and highly innovative products and services to the oil and gas and other engineering industries. The focus of all our research efforts and high tech solutions is on a safe operation of assets and therefore provide protection for both people and the environment.",,,,,,,,,,
+25,Data scientist,Grand Prairie Data Science Tutor Jobs,"Varsity Tutors
+4.2","#Grand Prairie Data Science Tutor Jobs
+
+Varsity Tutors has students in #Grand Prairie looking for Data Science tutoring. Varsity Tutors is a live learning platform that connects tutors with students to provide personalized learning. In addition to having knowledge of Data Science, clients also look for tutors who are friendly, articulate, and reliable. Working as a tutor on the Varsity Tutors platform includes several benefits, such as the flexibility to schedule your own sessions and to choose your own hours. We put forth great effort to match tutors to students, resulting in productive learning experiences. Tutors working with Varsity Tutors are paid twice a week and choose their own tutoring load. There are multiple ways for tutors to earn while tutoring on the Varsity Tutors platform:
+In-Person tutoring
+Online tutoring (you can use the Varsity Tutors online tutoring platform to tutor anywhere and at anytime)
+On-Demand tutoring (no need to schedule sessions ahead of time - simply take on opportunities as they arise.) Tutors are independent contractors and have the freedom to use their own teaching styles and methods.",,,,,,,,,,
+26,Business analyst,Technical Business Analyst,"Servesys Corporation
+3.7","Technical Business Analyst Location Glendale, Arizona or Anchorage, Alaska( Only local candidates can apply ) 4+ month contract to hire Seeking candidate with combined skillset as programmer analyst and business analyst. Position will act as conduit between business units and technical team. Although a programming background is desired, the business analyst skillset would be more heavily weighted. The skill needed is a Business Analyst that has a technical background with Development. Ideally development with the .NetVB.net languages. As stated above the Business Analyst background with Agile with be more important then the Development background but the development background is needed. SkillsBackground needed 5+ years of Agile Business Analyst background Agile Scrum and Kanban experience adaptable to change Workflow writing story writing 2+ years of Development background Platform MS OS .NetVB.Net C Concepts of object oriented Knowledge and working experience with alarythems with languages Person will need to have development background not just software project background collaborative, problem solving, innovative and extreme ownership mindset team player and open to different perspectives and approaches to setting goals and achieving results. Role Details Develop a working knowledge of Credit Union applications systems features and capabilities. Act as a liaison between MIS and other departments to assist in the analysis of technicaloperational problems, development of recommendations and presentation of findings to department management. May act as project lead to coordinate the development and implementation of small to medium size projects. Prepare and maintain application system documentation and manuals. Prepare and execute test plans for system changes and new application systems. Develop knowledge of current and emerging technologies and best practices. May assist in the preparation of business proposals for the evaluation and selection of application systems, development of system enhancements and acquisition of new technologies. Perform other duties as assigned in support of team efforts and results. Neeraj Babu s Servsys Corp Email id neerajservsys.com Number 972 232 2194",,,,,,,,,,
+27,Business analyst,Business Analyst,"Y&L Consulting
+3.4","Job Description: *
+This worker will have considerable latitude to use their experience and judgment to ensure successful completion of their assigned tasks. The Worker will be able to multi-task, analyze priorities, communicate clearly, and set expectations for the phases of the project. The Worker will be responsible for communicating with multiple internal/external stakeholders including executives, contractors, technical staff and program staff.
+Analyzes program policies, procedures, and initiatives to determine the impact on business systems and functional areas.
+Analyzes and reviews complex project deliverables such as project charters, business user requirements, design documentation, test plans, and risk assessment plans to ensure business requirements are met.
+Acts as a Product Owner and liaison between State Staff and Vendors to translate operational and business requirements to vendors.
+Reports project statuses to management based on established timelines.
+Analyzes and writes User Stories with Acceptance Criteria based on business needs and according to the Agile methodology.
+Develops business user test scenarios and participates in systems and user acceptance testing.
+Identifies potential project risks and issues and develops mitigation strategies.
+Manages schedule for deliverables as established.
+Skills/Experience: *
+8 yrs required experience identifying project risks and issues; and developing/implementing mitigation strategies.
+8 yrs required experience reporting project status to management including risks, issues, and key decisions
+8 yrs required experience translating business needs into technical objectives and identifying solutions to satisfy the business need.
+8 yrs required experience in effective general written/oral communication, including documenting requirements, deliverables, test scenarios and project status.
+8 yrs required experience utilizing business analysis skills and interacting with business end users and technical staff.
+8 yrs required experience performing review and approval processes of complex technical user and system requirements written by vendors.
+5 yrs required experience with Microsoft Office products (e.g., Word, Excel, etc.).
+5 yrs required experience coordinating changes to user and system requirements.
+5 yrs required experience coordinating and developing test strategies
+5 yrs required experience with Microsoft Project or similar project management software.
+3 yrs required experience utilizing the Agile methodology or other form of adaptive software development methodology.
+3 yrs required experience working in a team environment.
+Job Types: Full-time, Contract
+
+Pay: $55.00 - $70.00 per hour
+
+Benefits:
+Dental Insurance
+Health Insurance
+Paid Time Off
+Vision Insurance
+Schedule:
+Monday to Friday
+Experience:
+business analyst: 8 years (Required)
+SDLC: 8 years (Required)
+Education:
+Bachelor's (Preferred)
+Location:
+Austin, TX 78751 (Required)
+Work authorization:
+United States (Required)
+Contract Length:
+2 months or less
+Full Time Opportunity:
+No
+Work Location:
+One location
+Work Remotely:
+Temporarily due to COVID-19",,,,,,,,,,
+28,Business analyst,BUSINESS ANALYST,Arizona Health Care Cost Containment System (AHCCCS),"Post Date 07/08/2020 Close Date 07/10/2020
+Category BUSINESS AND FINANCIAL Grade 24
+Location PHOENIX Salary 50,891.00-60,000.00
+Arizona Health Care Cost Containment System
+
+Accountability, Community, Innovation, Leadership, Passion, Quality, Respect, Teamwork
+Business Intelligence Developer
+
+First Resume Review: 07/09/20
+Arizona Health Care Cost Containment System (AHCCCS), Arizonas Medicaid Agency, is driven by the passion to deliver comprehensive and cost effective health care to Arizonans in need. AHCCCS is nationally acclaimed as a model for other Medicaid programs and recipient of multiple awards for excellence in workplace effectiveness and flexibility.
+
+All Arizona state employees operate within the Arizona Management System (AMS), an intentional, results-driven approach for doing the work of state government whereby every employee reflects on performance, reduces waste, and commits to continuous improvement with sustainable progress. Through AMS, every state employee seeks to understand customer needs, identify problems, improve processes, and measure results. State employees are highly engaged, collaborative and embrace a culture of public service. Visit our careers page to learn more about AHCCCS. Use your skills to benefit others; join the AHCCCS Team!
+JOB SUMMARY:
+The Division of Health Care Management (DHCM) is looking for a highly motivated individual to join our team as a Business Intelligence Developer. Position works directly with Agency management and staff to fulfill business intelligence needs, translating data reporting needs and questions into technical specifications. Major duties and responsibilities include but are not limited to:
+* Design and develop reports using business intelligence tools that result in a clear and meaningful presentation of the data and respective analysis
+* Assist in requirements gathering for business questions of management and staff and translate those technical specifications into data views to enable data driven decision making
+* Provide oral and written feedback interpreting the results of the reports
+* Serve as a trainer and support resource for other users within the Agency as it relates to business intelligence tools
+* Attend meetings within the Agency with regard to business intelligence needs of the Agency
+KNOWLEDGE, SKILLS AND ABILITIES (KSAs):
+* Knowledge of business intelligence concepts, practices and procedures, including general methodologies and techniques for data analysis and design, requirements gathering, quality assurance, and report development
+* Demonstrated knowledge of health care operations and terminology, preferably within Medicaid
+* Experience developing and designing clear and meaningful reports for end users
+* Proven ability to analyze complex data, identifying trends, make recommendations and deliver presentations of the complex material in a clear and effective manner
+* Experience developing and designing reports and dashboards from a data warehouse environment, with reporting tools such as Tableau and or Cognos
+* Excellent oral and written communication
+* Ability to build effective working relationships with internal and external customers, partnering with staff across the Agency to gather reporting requirements and analysis of data
+SELECTIVE PREFERENCE(S):
+* Bachelors degree in Information Technology, Computer Science, Finance, Economics or health care related field
+* One - two years of data analytics and reporting experience
+BENEFITS
+At AHCCCS, we promote the importance of work/life balance by offering workplace flexibility and a variety of learning and career development opportunities. Among the many benefits of a career with the State of Arizona, there are 10 paid holidays per year, accrual of sick and annual leave, affordable medical benefits and participation in the Arizona State Retirement Plan. Click here to learn more about benefits.
+Arizona State Government is an EOE/ADA Reasonable Accommodation Employer. Persons with a disability may request a reasonable accommodation such as a sign language interpreter or an alternative format by calling (602) 417-4678. Requests should be made as early as possible to allow sufficient time to arrange the accommodation. AHCCCS is an Equal Employment Opportunity Employer. All newly hired employees will be subject to E-Verify Employment Eligibility Verification.
+
+Click the APPLY NOW button to submit your application.
+
+For technical assistance, email HRIShelpdesk@azdoa.gov or call 602-542-4700.",,,,,,,,,,
+29,Business analyst,Salesforce Business Analyst,"TECHNOCRAFT Solutions
+3.4","Varian Medical Systems
+
+https://www.varian.com/
+
+6+ months
+
+Milpitas, CA (Onsite interview required)
+
+$55-67
+
+Client needs a Business Analyst with Salesforce Cloud Services experience for a migration project.
+
+Job Description
+
+Working in a software application project deliverable environment, candidate will have Salesforce functional experienceÂand understand the Salesforce Sales and Service cloud environment with previous experience in agile development projects.
+
+Responsibilities
+
+Requirements Documentation and delivery Functional testing and validation Determine program gaps in Salesforce.com development.
+
+Help with systems integration requirements Build and develop customized reports and dashboards.
+
+Workflow diagrams, functional maps and user stories, create wireframes
+
+Areas of Focus
+
+Support the design, implementation, and rollout of Salesforce releases Pro-actively identify areas of improvement and functional gaps in existing Salesforce.com setup
+
+Help gather and assess Functional requirements and define technical solutions Estimates for design, development during build phases.
+
+An understanding of contemporary requirements gathering, analysis, validation, and management practices.
+
+Experience working with cross-functional teams across all levels of the organization.
+
+Configure platform to meet requirements including installation and configuration of app exchange applications
+
+Job Requirements
+
+Experience as a Business Analyst or Technical Analyst working with the Salesforce Platform.
+
+Good functional knowledge of Salesforceâs Sales and Service Cloud.
+
+Experience configuring workflows and customizations for Salesforce implementation
+
+Agile SCRUM development environment is preferred
+
+Bachelors or Masterâs degree in computer science or related technical field or equivalent experience.
+
+Excellent writing and verbal communication skills",,,,,,,,,,
+30,Business analyst,Business Analyst,"Odesus
+3.8","Responsibilities This position is critical to manage and track product compliance with Data Privacy regulations and communicate key details of technical implementation and legal requirements Focus is on the upcoming company wide ECT initiative, as well as Prism adoption. Serve as support structure for Privacy Office initiatives that required Brand Outreach (e.g. location data exercise, etc.) Will act as liaison between Privacy office and BrandProduct owners across the portfolio Will take legal and technical requirements and translate them into business and product owner communications and work with communications and training leads to execute against training and communications roadmap. Will interface with Product owners to take feedback, test , troubleshoot implementations Will communicate concerns issues from the Privacy office and recommend solutions Requirements Project Management, Computer Science, Computer Information Systems or related technical field. Strong numeracy and analytical skills and experience working with complex data Comfortable working with, and ability to summarize key findings from, large data sets. Strong computer skills and knowledge of databases Experience in aggregating, manipulating and visualizing data into actionable insight Methodical, accurate and organized with excellent attention to detail Clear, concise verbal and written communication skills Ability to work independently with ability to take initiative and prioritize workloads Ability to cope in a dynamic changeable environment in a calm and professional manner Ability to communicate to all levels of the organization, and with global teams Ability to identify risks throughout the project and providing mitigation strategy Strong Business AcumenSavvy",,,,,,,,,,
+31,Business analyst,Business Systems Analyst II,"Lower Colorado River Authority
+2.9","General OverviewAt an intermediate level, serves as a liaison between technical staff and end-users of software application(s) to ensure functionality and efficient use of systems to support moderately complex business processes. This position may specialize in a particular business process and the related enterprise application (such as PeopleSoft, Maximo, etc.) or may be involved in the implementation of various applications to support multiple business processes. Formulates and defines information technology systems scope and objectives based on both user needs and an understanding of applicable business systems and industry requirements. Analyzes business processes and user needs, documents requirements and processes and translates into system requirement specifications. Participates in application upgrade/enhancement efforts and communicates changes. When specializing in a particular enterprise application, designs related training materials, tests application for errors, writes documentation and trains end-users in the use of the application. This position utilizes knowledge and experience in own discipline but is still building higher-level knowledge and skills. Utilizes discretion and independent judgment to determine an appropriate approach within general parameters and some guidance from supervisor, manager and/or more experienced colleagues.* Acts as the liaison between business departments and technical staff to enable technical solutions to business needs, either through development of new software or through purchase and configuration of software. Assists in developing business cases for technical solutions and participates in build vs. buy decisions on technology project teams.* Analyzes business operations to understand process strengths and weaknesses to determine opportunities to automate/improve processes and functions.* Documents business requirements to be used in developing technical solutions. Manages changes to system requirements from project initiation to final implementation to ensure that requirements have been met.* When specializing in a particular enterprise application, partners with technology staff and vendors as needed in software development, configuration and/or upgrade/enhancement efforts. Participates in project planning and provides status reports as required. Configures purchased software to desired functionality.* When specializing in a particular enterprise application such as PeopleSoft or Maximo, supports end-users of the application in areas such as: reviewing and auditing user access, designing training materials, training end-users, delivering reports in support of business operations, maintaining online system documentation, researching and correcting moderately complex system errors and tracking system issues and resolutions. Performs testing to ensure proper operation of the system. May develop test plans and test cases.* May participate in the development and implementation of standardized procedures for business systems analysis, business process mapping and business requirements documentation.This general overview only includes essential functions of the job and does not imply that these are the only duties to be performed by the employee occupying this position. Employees will be required to follow any other job-related instruction and to perform any other job-related duties requested by supervisor or management.Minimum QualificationsSix or more years of experience in developing and documenting business requirements and serving as a liaison between business partners and IT. A degree(s) in business, computer science, information systems or relevant field may be substituted per LCRA guidelines for certain years of experience.",,,,,,,,,,
+32,Business analyst,Junior Business Analyst,"CyberCoders
+4.2","Junior Business Analyst
+Job Title: Business Analyst - SQL
+Location: Fort Washington, PA
+Salary Range: $55k-$70k
+Requirements: SQL
+
+Based in Fort Washington, PA we are a well-known, well-established financial services firm. Due to growth, we are actively hiring for a Business Analyst to join our team. The ideal candidate will have SQL experience professionally or in a college environment as well. If this sounds like you, please apply immediately or send your resume to adam.vargas@cybercoders.com
+Top Reasons to Work with Us
+1. Great benefits package!
+2. Our ideas, rigorous standards, and deep expertise continue to open new opportunities for consumers, professional advisors, and institutional investors alike!
+3. Tons of growth potential!
+What You Will Be Doing
+As a Business Analyst, you will be assisting our team with the maintenance and administration of our CRM/Salesforce system as well as gathering of business requirements for system changes. In addition, you will assist in the maintenance and development of system reports, data updates, user administration, and workflows. This position will require you to interact with various teams to continuously enhance our CRM system for our business needs.
+
+- Maintenance and updates of existing CRM/SalesForce system
+- Creation and maintenance of Salesforce reports
+- Documentation of business processes
+What You Need for this Position
+Must-have skills:
+1) 1-3 years of professional experience as a business analyst or CRM admin or a recent college graduate with a degree in information technology or computer science. Degrees in similar analytical areas of study will also be considered.
+
+Plus skills to have:
+1) Experience with Microsoft Dynamics CRM or Salesforce is preferred.
+2) Working knowledge of SQL Server or academic study of SQL is preferred.
+3) Salesforce Admin Certification is a plus.
+4) Experience in the Financial Services or Insurance industries is a plus.
+What's In It for You
+For your hard work and dedication, you will be rewarded with a competitive base salary ($55k-$70k) and benefits package including but not limited to:- Health/dental/vision
+- Life insurance
+- FSA/HSA- Matching 401k
+- Generous PTO
+- Training
+- Many more!
+So, if you are a Junior Business Analyst with experience, please apply today!
+-
+Applicants must be authorized to work in the U.S.
+
+
+CyberCoders, Inc is proud to be an Equal Opportunity Employer
+
+All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, national origin, disability, protected veteran status, or any other characteristic protected by law.
+
+Your Right to Work In compliance with federal law, all persons hired will be required to verify identity and eligibility to work in the United States and to complete the required employment eligibility verification document form upon hire.",,,,,,,,,,
+33,Business analyst,Technical Business Systems Analyst,"JPMorgan Chase
+3.9","As a member of our Business Analysis team, you'll play a crucial role in identifying, improving, and developing technology solutions that drive our strategic goals. This is a tremendous opportunity to learn about high-priority initiatives and collaborate with colleagues throughout the firm. Working at the intersection of business and technology, you'll sharpen your understanding of business processes and data analysis, while continuing to develop your leadership, management, and communication skills. No matter where your career ultimately takes you, you'll make a meaningful impact and lasting connections with outstanding colleagues and mentors.As a member of our Business Analysis team, you'll play a crucial role in identifying, improving and developing technology solutions that drive our strategic goals. This is a tremendous opportunity to learn about high-priority initiatives and collaborate with colleagues throughout the firm. Working at the intersection of business and technology, you'll sharpen your understanding of business processes and data analysis, while continuing to develop your leadership, management and communication skills. No matter where your career ultimately takes you, you'll make a meaningful impact and lasting connections with outstanding colleagues and mentors.**Project Details:**+ Works with product engineering teams (development and infrastructure) to come up with designs that meet the business requirements.+ Proficient in knowledge of business applications, data usage, data management tools and flow charting tools.+ High degree of organization skills including the use of Confluence and JIRA for managing product documentation.+ Business Systems Analyst or Technical Analyst in a large scale development environment.+ Work with the product owners to map detailed technical requirements to capture strategic business goals for both short term and longer term roadmaps.This role requires a wide variety of strengths and capabilities, including:+ BS/BA degree or equivalent experience+ A strong understanding of at least one business function in the firm, as well as a broader understanding of other areas.+ Proficiency in business applications, data usage and management+ Ability to liaison between lines of business and the development team, while working with a wide range of stakeholders and collaborating with your team.+ Ability to work collaboratively in teams and develop meaningful relationships to achieve common goals+ Demonstrated experience of working with product owner and Dev teams to create user stories in Jira to capture requirements. Experience in developing detailed business process flows and/or functional designs based on discussions with business partners/stakeholders. Proven track record of being a liaison between the product owner, scrum master, testing teams and developer teams.+ Strong analytical and troubleshooting skills, with the ability to assess and solve problems, (i.e. blockers identified by developers). Solid understanding of agile development methodologies and ability to ensure Agile/Scrum concepts and principles are adhered to. A strong understanding of at least one business function in the firm, as well as a broader understanding of other areas.+ Proficiency in business applications, data usage and management. Ability to liaison between lines of business and the development team, while working with a wide range of stakeholders and collaborating with your team. Ability to work collaboratively in teams and develop meaningful relationships to achieve common goals.JPMorgan Chase & Co., one of the oldest financial institutions, offers innovative financial solutions to millions of consumers, small businesses and many of the world's most prominent corporate, institutional and government clients under the J.P. Morgan and Chase brands. Our history spans over 200 years and today we are a leader in investment banking, consumer and small business banking, commercial banking, financial transaction processing and asset management.We recognize that our people are our strength and the diverse talents they bring to our global workforce are directly linked to our success. We are an equal opportunity employer and place a high value on diversity and inclusion at our company. We do not discriminate on the basis of any protected attribute, including race, religion, color, national origin, gender, sexual orientation, gender identity, gender expression, age, marital or veteran status, pregnancy or disability, or any other basis protected under applicable law. In accordance with applicable law, we make reasonable accommodations for applicants' and employees' religious practices and beliefs, as well as any mental health or physical disability needs.Equal Opportunity Employer/Disability/Veterans",,,,,,,,,,
+34,Business analyst,Business Analyst,"Encore Consulting Services
+1.0","Business Analyst Houston TX 6 months (W2 Only) Industry Waste Management Needs Peoplesoft Conducts highly complex business process analyses, needs assessments, and preliminary costbenefit analyses in an effort to align information technology solutions with business initiatives. Responsibilities To perform this job successfully, an individual must be able to perform the assigned essential duties satisfactorily. Other minor duties may be assigned and duties may vary by department. bull Works at the highest technical level of most phases of systems analysis while considering the business implications of the application of technology to the current and future business environment. bull Coordinates with users to determine business and user requirements, process flow definitions, and functional specifications. bull Coordinates documentation of requirements and formulation of test plans. bull Develops and manages development of highly complex information systems, or revisions to existing system logic difficulties as necessary to meet business requirements. bull Reviews progress and evaluates results for accuracy and efficiency. bull Acts as a liaison between technical staff and business owners. bull Guides and advises less-experienced Business Systems Analysts and other computer support staff. bull Acts as team leader on systems projects. Establishes and communicates common goal and direction for the team. Coordinates activities of the project team, project plans, and assists in monitoring project schedules and costs. Supervisory Responsibilities Some informal supervisory duties, such as delegation of tasks, may be required. Qualifications Bachelorrsquos Degree, or equivalent experience, in Computer Science, MIS, Business Administration or similar area of study, and seven or more years previous experience. Preferred Masterrsquos Degree. Preferred PMI Certification. ScrumAgile experience using JIRA May require intermediate skills in one or more of the following PeopleSoft HRMS systems development, implementation, upgrades and analyses, QA testing, catalyst or unified business modeling, system design and analysis, web application development, imaging technology, subject matter knowledge such as benefits, payroll, and basic accounting, project management, conducting training, strong analytical skills and communication skills.",,,,,,,,,,
+35,Business analyst,SAP EWM Business Analyst,"Two95 International Inc.
+4.0","Job Description
+Hi,
+
+Title SAP EWM Business Analyst
+
+Position Contract to Hire ( 4 Months Contract and then Hire )
+
+Location Philadelphia, PA
+
+Salary- $Open(Best Possible)
+
+Required Skills:
+5 years of experience working in a functional Business Analyst role
+3 years of experience with the functionality side of EWM is required
+Experience implementing SAP EWM
+Lead the business requirements collection and documentation for end-to-end business processes for projects and enhancements
+Lead design and oversee development for projects and enhancements
+Lead requirements, artifacts, and project documentation, and working with vendors and partners
+Work closely with the development team to ensure clear understanding of functional and technical requirements
+Proactively work to identify, communicate, and resolve project issues and risks that interfere with the success of a project
+Note: If interested please send your updated resume and include your rate requirement along with your contact details with a suitable time when we can reach you. If you know of anyone in your sphere of contacts, who would be a perfect match for this job then, we would appreciate if you can forward this posting to them with a copy to us.
+
+We look forward to hearing from you at the earliest!.",,,,,,,,,,
+36,Business analyst,Business Analyst I,"Sirvist HRC, LLC","Job Summary:
+
+The Retail Commissions Analyst I is responsible for the management of Incentive programs within the Retail Customer Operations organization. The Retail Commissions Team works with the Retail Organization, managing commissions from the creation of the programs through execution. The programs include cash sales bonuses, monthly/weekly performance based contests and monthly/quarterly/annual recognition events. The team works with each line of business to create the programs to best drive the desired metrics to achieve annual goals.
+
+Essential Duties/Responsibilities:
+
+• Support the Retail Customer Operations department with the creation, implementation and execution of all incentive programs.
+• Perform commission calculations for LOB’s transitioned to the Retail Commissions Team
+• Prepare payroll reporting for both internal and external agents, as well as accrual and amortization data
+• Validate and process agency invoices
+• Communicate incentive programs including the announcement of programs, all details of the contests including qualifications and sending updates for any changes throughout the year.
+• Produce monthly/quarterly sales contest budgets for all lines of business (including all vendor sites) and work with the teams to determine measurable contests to drive desired performance outcomes.
+• Purchase and manage distribution of all awards and prizes associated to the incentive contests exploring all options for prizes requested in order to get the most out of the set budget.
+• Organize, coordinate and execute recognition lunches and dinners to spotlight top performing employees
+• Organize, coordinate and execute annual Pinnacle Club trip, including all travel arrangements, all events, receptions and awards dinners to entertain the Pinnacle Club winners and their guest on the annual trip.
+• Create monthly imputed income report of non- cash bonus incentives earned for distribution to all required payroll departments (internal and contractor)
+• Audit process map, SOX control documentation, and plan structure for each commission plan on a scheduled basis (monthly/quarterly/annually)
+• Monitor compliance and facilitate the Commission SOX control process.
+• Monitor the Incentives team mailbox and respond to questions or concerns in a timely manner.
+• Skilled in Microsoft Excel in order to utilize calculation models.
+
+Working Conditions:
+
+• Open office environment.
+• Some overtime required as special projects arise.
+• Minimal travel may be required.
+
+Minimum Requirements:
+
+• High School diploma or GED required. Bachelor's degree from an accredited college or university preferred.
+• 1+ years experience working directly with incentive programs in a sales environment required.
+• Strong project management skills and experience as well as relationship sales skills are preferred.
+• Strong math and excel skills required.
+
+NOTE: If a candidate does not meet these requirements, Success Factors will automatically disqualify the candidate.
+
+Preferred Qualifications:
+
+• Bachelor's degree from an accredited college or university preferred
+
+Additional Knowledge, Skills and Abilities:
+
+• Strong work ethic.
+• Must be an effective team player.
+• High level of honesty and integrity.
+• Attention to details.
+• Able to handle multiple tasks simultaneously.
+• Strong leadership skills.
+• Excellent communications skills, both written and verbal.
+• Analytical thinking in order to create and maintain necessary reports
+• Excellent personal computer skills, including all MS Office applications are required",,,,,,,,,,
+37,Business analyst,Entry Level Business Analyst,"Staffigo Technical Services, LLC
+5.0","Job Description
+Job description:
+
+The primary responsibility of an entry-level business analyst includes to perform business analysis and related duties. Liaise with the project sponsors, stakeholders, external vendors and other divisions within the Client to document current state, elicit & document requirements to ensure the delivery of quality products.
+
+Responsibilities:
+Analyze complex problems, derive options and solutions and present in an understandable manner to stakeholders, developers, testers and users at multiple levels.
+Act as a liaison with technology and business unit subject matter experts in support of Transactions Monitoring project.
+Solicit information from business and IT SMEs about application functions, data and process flows.
+Document application functions, data and process flows using prescribed template, or appropriate fit-for-purpose format
+Participate in integration design process and provide detailed documentation and requirements as appropriate.
+Document reports required by system stakeholders.
+Oversees the acquisition, analysis, strategy and dissemination of subject matter knowledge.
+Conducts high level business analysis involving complex business requirements and processes.
+Requirements
+Master’s degree in Computer Science / Information Technology
+0-2 years of experience as a business analyst
+Clear written and oral communication skills
+Good listening skills
+Customer focused
+Strong attention to detail and results oriented
+Well organized; adaptability and ability to learn quickly
+Ability to develop good, effective working relationships with customers through minimal contact
+Experience with MS Office Suite
+Willing to Re-locate anywhere.
+Powered by JazzHR
+
+NI6uioPbZK",,,,,,,,,,
+38,ML engineer,Maps Search Machine Learning Engineer,"Apple
+4.1",", 2020
+Weekly Hours: 40
+Role Number:
+200158503
+Would you like to be part of a team that impacts millions of users every single day? Does finding patterns in data and building highly scalable data-driven systems to solve real-world problems excite you? Would you be interested to explore building novel ML/NLP features that find use in the next iOS release?
+
+We power Apple’s Maps Search. Our team operates at the intersection of building highly scalable applications, analytics to understand user behavior and big data machine learning to improve our end-user experience.
+
+As a member of this stellar team, you'll be working closely with Runtime Infrastructure, Maps Data and Analytics teams to develop new ML models/features that improve Maps Search experience. You will be prototyping ideas, running/evaluating experiments and shipping ML/NLP features that have deep impact. Along the way, you will continuously learn from a versatile group of experienced ML practitioners and top-notch engineers.
+
+Key Qualifications
+Strong ML background with expertise in one of these areas - search applications, information retrieval, text mining, natural language processing, search relevance/ranking
+Strong programming and debugging skills in: Java or C/C++ or Python or equivalent
+Experience in distributed computing, search and related technologies
+Experience with big data technologies like Hadoop/MapReduce, Spark, Kafka
+Excellent interpersonal and communication skills - working independently and/or in small teams
+
+Description
+Here are some of your job responsibilities:
+Apply knowledge of data mining, information retrieval, NLP and machine learning to develop
+key iOS and OS X features focused on improving maps search experience.
+Design and build highly scalable, big data pipelines that enrich our maps index/corpus for search
+use-cases.
+Own and conduct A/B tests for exploring various ideas and perform data analysis to infer insights
+from experiments to help ship features.
+Collaborate with various teams (e.g., infrastructure, quality, data) to develop exciting features and
+bring them from ideation to shipping the feature.
+Develop and mentor aspiring applied scientists / engineers to expand their scope and have a
+huge impact. Be part of building a world class search team!
+
+Education & Experience
+- MS/PhD in ML/NLP/CS/Physics or a related field
+4+ years of industry experience in a related area
+Additional Requirements
+- Experience with Hadoop/Map-Reduce/Spark
+- Experience with data engineering
+- Experience with Lucene/Solr/Elastic Search or any other Search Engine — is a plus!
+Apple is an equal opportunity employer that is committed to inclusion and diversity. We take affirmative action to ensure equal opportunity for all applicants without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, Veteran status, or other legally protected characteristics.",,,,,,,,,,
+39,ML engineer,"AI/ML - Machine Learning Engineer, Machine Intelligence","Apple
+4.1","Posted: Jul 8, 2020
+Weekly Hours: 40
+Role Number:
+200177502
+Play a part in building the next revolution of machine learning technology. Build groundbreaking technology that will change the way we create machine learning solutions at Apple. The Machine Intelligence team is looking for passionate engineers to develop the next generation of machine learning introspection technologies focused on improving and understanding the behavior of deep learning, computer vision and natural language processing models. As a member of the Machine Intelligence team, you will work on some of the most challenging technical problems, collaborate with world-class machine learning engineers and researchers, develop new ML solutions that will impact future Apple products, and collaborate with the best product teams to integrate your ideas into products.
+Key Qualifications
+Excellent programming skills in Python.
+Understanding of data structures, software design principles and algorithms.
+Hands-on experience working with deep learning toolkits such as Tensorflow, PyTorch, or Keras.
+Design and deployment of real-world machine learning solutions preferred.
+Excellent spoken and written communication skills
+Ability to understand and implement machine learning research papers.
+Description
+You will take part in building innovative ML strategies to solve challenging problems that will affect Apple products. Collaborate with broader teams across Apple to transfer ML solutions and provide technical mentorship. Prepare technical reports for publication and do a lot of public speaking. Use your strong programming skills to craft, prototype, and deliver advanced machine learning solutions. You should be passionate about building extraordinary products and be inspired by a fast-paced environment, to execute on the required tasks, meet production deadlines and, at the same time, work with researchers to explore new innovative ideas in machine learning that can improve and transform the product experience of Apple customers. The role is critical to deliver ML technologies aligned with the core values of Apple, ensuring the highest standards of quality, scientific rigor, innovation and respect for privacy.
+Education & Experience
+Masters degree (or equivalent industrial experience) in Computer Science or related field.",,,,,,,,,,
+40,ML engineer,Machine Learning Scientist I,"Intelligence Communications and Engineering
+4.7","SUMMARY: The Machine Learning Scientist I will provide on-site and off-site support and provisioning of specific classified and unclassified telecommunications and information technology (IT) services for National Technology and Engineering Solutions of Sandia (NTESS) with a workforce of approximately 14,000 personnel.
+
+WORK LOCATION: Albuquerque, NM and Livermore, CA
+
+DUTIES AND RESPONSIBILITIES:
+
+• Noting a given problem, provides well-formed ideas that are actionable and feasible given the problem statement.
+
+• Works with Machine Learning Engineers to recommend and guide implementation of new models or refinement of existing models to show proof-of-life for the proposed idea.
+
+• Bases work in literature reviews and good science that can be explained showing deep understanding of the work being performed.
+
+MINIMUM JOB REQUIREMENTS:
+
+Experience/Education
+
+• Must have a Bachelor’s Degree, six (6) additional years of experience or an Associate’s Degree with three (3) years’ experience may be substituted for the degree.
+
+• Must have at least five (5) years of related experience, in addition to degree requirement.
+
+• Must be a U.S. Citizen.
+
+SECURITY CLEARANCE: Must possess and maintain an active Q security clearance.
+
+PHYSICAL DEMANDS:
+
+The physical demands described here are representative of those that must be met by an employee to successfully perform the essential functions of the job. Reasonable accommodations may be made to enable individuals with disabilities to perform the essential functions.
+
+While performing the duties of this job, the employee is required to reach with hands and arms. The employee is frequently required to sit, stand and walk. The employee may be required to move ten pounds and could occasionally lift or move up to twenty-five pounds.
+
+Disclaimer: The listed duties are not intended to serve as a comprehensive list of all duties performed by all employees in this classification, only a representative summary of primary duties and responsibilities. Incumbent(s) may not be required to perform all duties listed and may be required to perform additional position specific duties.
+
+ICE, Inc. is a Veteran friendly employer and provides equal employment opportunity (EEO) to all employees and applicants without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability status, genetic information, marital status, ancestry, protected veteran status, or any other characteristic protected by applicable federal, state, and local laws. Equal Opportunity for VEVRAA Protected Veterans. ICE, Inc. will not discriminate against employees and job applicants who inquire about, discuss or disclose compensation information.",,,,,,,,,,
+41,ML engineer,Machine Learning Engineer,"CyberCoders
+4.2","Machine Learning Engineer
+If you are a Machine Learning Engineer with experience, please read on!
+
+Based in beautiful, Calabasas, we are well-established and highly innovative software company dominating the space of human identification technology and solutions. With over 10 years of R&D studies, and 100+ patents issued/pending patents, we continue to be a true market leader in our industry.
+
+Due to growth and demand for our services we are in need of a talented Machine Learning Engineer to join our brilliant team and help us continue to lead the charge!
+
+Job Type: DIRECT HIRE / PERMANENT
+LOCATION: CALABASAS, CA
+Top Reasons to Work with Us
+- HUGE opportunities for growth!
+- Small, diverse, and BRILLIANT team of scientists, engineers, and PhDs!
+- Highly lucrative area of study and development!
+What You Will Be Doing
+- Assist in our product technology development
+- Design and implement integration and testing
+- Help to develop techniques and strategies to ensure system dynamics are performing optimally, and to ensure client deliverables are being met
+- Work cross-organizationally with multiple teams / individuals
+What You Need for this Position
+- Bachelor's, Master's, or PhD in relevant field of study
+- 5+ years of experience working in R&D or Machine Learning field
+- Experience with Python or Shell scripting
+- Experience with facial recognition algorithms or machine learning
+- Experience with profiling and benchmarking
+- Experience with regression testing
+
+HUGE bonus points if you have the following:
+- Experience with LiDAR
+- Experience with C/C++ or Matlab programming
+- Experience with embedded systems
+What's In It for You
+- Competitive base salary
+- EQUITY
+- Medical, Dental, and Vision
+- 401(K)
+- PTO
+- Small, close-knit team
+- Brilliant leadership team
+- We are one of the leaders in our field of study
+- Great office location!
+- Great company culture
+- Much more!
+So, if you are a Machine Learning Engineer with experience, please apply today!
+-
+Applicants must be authorized to work in the U.S.
+
+
+CyberCoders, Inc is proud to be an Equal Opportunity Employer
+
+All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, national origin, disability, protected veteran status, or any other characteristic protected by law.
+
+Your Right to Work In compliance with federal law, all persons hired will be required to verify identity and eligibility to work in the United States and to complete the required employment eligibility verification document form upon hire.
+
+CyberCoders will consider for Employment in the City of Los Angeles qualified Applicants with Criminal Histories in a manner consistent with the requirements of the Los Angeles Fair Chance Initiative for Hiring (Ban the Box) Ordinance.",,,,,,,,,,
+42,ML engineer,Data & Machine Learning Scientist,"Tempus
+3.3","Passionate about precision medicine and advancing the healthcare industry?Recent advancements in underlying technology have finally made it possible for AI to impact clinical care in a meaningful way. Tempus' proprietary platform connects an entire ecosystem of real-world evidence to deliver real-time, actionable insights to physicians, providing critical information about the right treatments for the right patients, at the right time.We are looking for machine learning, deep learning, and data science experts who are passionate about applying state of the art techniques to the processing and integrative analyses of vast amounts of data. The ideal candidate has significant expertise in the biomedical or clinical domain, and is eager to apply his or her skills to improve patient outcomesWhat You'll Do* Analyze and integrate large diverse clinical, molecular, biosignal and imaging datasets to extract insights, and drive research opportunities.* Design and prototype novel analysis tools and algorithms for predicting patient outcome and treatment response in oncology and cardiology* Collaborate with product, science, engineering, and business development teams to build the most advanced data platform in precision medicine.* Interrogate analytical results for robustness, validity, and out of sample stability.* Document, summarize, and present your findings to a group of peers and stakeholders.* Provide technical leadership & expertise across multiple modeling projects.Qualifications* MS/PhD degree in a quantitative discipline (e.g. statistical genetics, cancer genetics, machine learning, bioinformatics, statistics, computational biology, applied mathematics, physics, or similar).* 2+ years full time employment or postdoctoral experience building and validating predictive models on structured or unstructured data* Outstanding analytical and problem solving skills, with a particular focus on understanding the intricacies of molecular or multi-modal data sets.* Expert-level experience with supervised and unsupervised machine learning algorithms, and ensemble methods, such as: PCA, regression, deep neural networks, decision trees, gradient boosting, generalized linear models, mixed effect models, non-linear low dimensional embeddings and clustering.* Proficient in Python and SQL.* Experience with the following: Pandas, NumPy, SciPy, Scikit-learn, Jupyter Notebooks, and a machine learning framework such as TensorFlow, SageMaker, or PyTorch* Strong programming skills.* Thrive in a fast-paced environment and willing to shift priorities seamlessly.* Experience with communicating insights and presenting concepts to diverse audiences.* Team player mindset and ability to work in an interdisciplinary team.* Goal orientation, self motivation, and drive to make a positive impact in healthcare.Nice to Haves* Experience working with genomic, biosignal, clinical, or imaging data.* Strong peer-reviewed publication record.* Kaggle.com competitions and/or kernels track record* Experience with: Git, matplotlib, seaborn, HTML5, CSS3, JavaScript, D3, Plot.ly, Flask, Dask, Docker, AWS.* Experience working in a Linux / Mac and AWS cloud environments.* Experience in agile environments and comfort with quick iterations.",,,,,,,,,,
+43,ML engineer,Machine Learning Engineer,Perpay,"Nearly one in two households in the U.S. struggles to handle an unexpected expense of $400 or more. When it comes to managing household expenses, things like a broken appliance or a growing family can be financially burdensome. We're a collaborative team of creative problem-solvers on a mission to make life's purchases more accessible and affordable. Located in the heart of vibrant Philadelphia, we're building a FinTech-enabled e-commerce marketplace that combines quality brands with sensible financing to improve the lives of our neighbors and communities.
+
+Position Overview
+
+We are looking for engineers to help build our machine learning platform in a fast-paced, entrepreneurial environment. As a member of the Engineering Team, you will design, implement, and ship new ML solutions at scale that will be used by data scientists and engineers within our Product Team. Applicants should be highly motivated and comfortable with taking on and adapting to a diverse array of subject matter. This opportunity is both unique and pivotal, as it provides the chance to join a rapidly-growing team that delivers software products that are experienced by millions of people.
+
+Initial Responsibilities
+Utilize deep technical knowledge of machine learning, recommendation systems, data engineering, and software engineering principles to build machine learning solutions and workflows
+A passion for making these methods scalable, reproducible and easy-to-use
+Providing guidance on transitioning prototypes and experiments to performant, production models
+Leading architectural decisions and tool selection in order to deliver platform features
+Contributing to our team's commitment to testable, readable, and well-organized code
+Clearly communicate trade-offs between schedule, resources, model performance etc.
+Work on projects of growing responsibility, both individually and as part of a team, to build experience and skills at a pace matched to your shown ability
+Learn more about the industry and Perpay, establishing a solid foundation to be better positioned for long-term career success
+Basic Qualifications
+Bachelor's degree or higher in a quantitative/technical field (Computer Science, Engineering)
+Creative, collaborative, and product focused
+Minimum 2+ years work experience in related field required
+Strong working knowledge of SQL/NoSQL, relational databases and Python is required (2+ years experience)
+Industry experience in algorithm design and implementation, codebase management and code generalization
+Experience delivering complex engineered features for real-time prediction systems
+What We Offer:
+Competitive salary + equity
+Health/dental/vision insurance fully covered
+401K + company match
+Gym + public transportation subsidy
+Relocation assistance
+Centrally located in downtown Philadelphia in a beautiful loft-style office with an espresso machine and office pup (Kingsli)
+We don't work with external recruiting agencies, please contact us or apply directly!",,,,,,,,,,
+44,ML engineer,Machine Learning Engineer,"Peloton Interactive
+3.8","Who_We_Are
+
+The Personalization & ML Engineering team is responsible for building features
+powered by machine learning such as personalized content recommendations.
+
+Responsibilities
+Build and improve machine learning pipeline that power Peloton s
+content recommendations.
+Evaluate, implement, and improve machine learning models.
+Productionize, deploy and monitor machine learning based services.
+Qualifications
+Passion for building scalable backend framework that supports a rapid
+growing user base
+4+ years of software development experience
+Strong understanding of software engineering principles and fundamentals
+including data structures and algorithms.
+Proficient in at least one programming language, e.g., Python, Java,
+Kotlin, Go, C++, C.
+Experience with relational and non-relational databases such as Postgres,
+MySQL, Cassandra, or DynamoDB.
+Experience with both machine learning and developing services with
+production quality deployment and monitoring.
+Strong machine learning knowledge, including neural networks, RNNs and
+CNNs. Good understanding of the practical aspects of ML such as train/
+dev/test sets, bias, variance, overfitting, hyperparameter tuning, etc.
+Experience using machine learning libraries and tools, such as PyTorch,
+Tensorflow, Keras, Caffe, Theano, or scikit-learn.
+Familiar with monitoring and deployment tools and platforms, for
+instance, DataDog, Jenkins, Docker, Kubernetes, Terraform and AWS
+services.
+Self directed and detail oriented with ability to come up with good
+design proposals or thorough analysis of production issues.
+About_Peloton
+Founded in 2012, Peloton is a global interactive fitness platform that brings
+the energy and benefits of studio-style workouts to the convenience and comfort
+of home. We use technology and design to bring our Members immersive content
+through the Peloton Bike, the Peloton Tread, and Peloton Digital, which provide
+comprehensive, socially-connected fitness offerings anytime, anywhere. We
+believe in taking risks and challenging the status quo by continuously
+innovating and improving. Our team is made up of passionate brand ambassadors,
+and we know that together, we go far.
+
+Headquartered in New York City, with offices, warehouses and retail showrooms
+in the US, UK and Canada, Peloton is changing the way people get fit. Peloton
+has been named to many prestigious industry lists, including Fast Company's
+Most Innovative Companies, CNBC's Disruptor 50, Crain's New York Business'
+Tech25 and Fast50, as well as TIME's Genius Companies. Visit
+to learn more about joining our team.
+Show moreShow less",,,,,,,,,,
+45,ML engineer,Machine Learning Engineer,"Horizon Corp
+3.5","Job Title: Machine Learning Engineer
+Location: San Antonio, TX
+Duration: Full Time
+
+Required Skills:
+Python/Machine Language/SAS /Python - Data Science
+Job Type: Full-time",,,,,,,,,,
+46,ML engineer,Data Scientist Machine Learning Engineer,Group HN - HN Services USA,"Title: Data Scientist Machine Leaning specialist
+Location: New York, NY
+Duration: 6 months renewable as long as the new hire performs well
+Client: Undisclosed Investment Bank
+Type: Contract or contract-to-hire based on experience and performance
+Fundamentals:
+Knowledge of Machine Learning techniques: e.g. Regression, Classification, Natural Language Processing, Dimensionality reduction, Clustering, Time Series, Neural networks
+Knowledge of Visualization techniques: eg. matplotlib, seaborn, Plotly, Tableau, Flask, D3.js
+Knowledge of programming languages used in Data Science: Python, R, Stata
+Knowledge of Economics: Fixed Income, Equities, etc",,,,,,,,,,
+47,ML engineer,Machine Learning Engineer,"Livongo
+4.6","The Opportunity
+
+
+The machine learning effort is part of the Data Science team at Livongo and works closely with product managers, engineering and operations to identify, build, ship and maintain machine learning models and pipelines to personalize how our members manage chronic conditions.
+
+This is an opportunity to use technical rigor to apply machine learning to real-world business problems, and engineer, deploy, measure and iterate ML in production, for every Livongo member.
+
+Responsibilities:
+Design, develop, deploy and maintain production grade data processing, machine learning and deep learning code, pipelines and systems.
+Study and transform data science prototypes. Use Python, Tensorflow, PyTorch, and Keras to run exploratory analyses using both traditional and deep-learning techniques. This includes feature engineering, unsupervised learning, supervised learning, reinforcement learning.
+Run machine learning tests and experiments; measure the performance of deployed models; work with data scientists to propose improvements and iterate to improve performance.
+Manage machine learning model lifecycle: develop, deploy, monitor, maintain and update models in production.
+Research and implement appropriate ML algorithms and tools.
+Develop machine learning applications and services according to requirements.
+Select appropriate datasets and data representation methods
+Perform statistical analysis and fine-tuning using test results
+Train and retrain systems when necessary
+Extend existing ML libraries and frameworks
+Keep abreast of developments in the field.
+Collaborate closely with product management and engineering teams to drive requirements and define new product features and architecture.
+Candidate Profile
+Advanced degree in computer science, math, statistics or a related discipline
+Proven experience as a Machine Learning Engineer or similar role
+Deep knowledge of math, probability, statistics and algorithms
+Ability to write robust code in Python, Spark, SQL, R or Java.
+Familiarity with machine learning frameworks (like Keras or PyTorch) and libraries (like scikit-learn)
+Knowledge of Hadoop or other distributed systems.
+Experience with ML systems, recommendation engines, NLP, etc.
+Extensive understanding of data structure, data modeling and software architecture
+Experience in end-to-end machine learning model development, deployment and production.
+Experience with agile sprint processes to deliver ML work.
+Experience in ML CI/CD process; and familiar with Jenkins, dockers, Databricks, git code management, etc.
+Experience designing and building useful, maintainable code for model training, evaluation and interpretation.
+Familiarity with the entire ML algorithm life-cycle (modeling approach ideation, POC, data exploration, data processing, feature extraction, feature construction, model development, evaluation, iteration).
+Willingness to learn new ML platforms and tools, as well as propose and help teams adopt new tools.
+Experience in close collaboration with backend software engineer, data engineering team; as well as business owners to establish ML A/B testing platform.
+Great active listening skills to infer product needs and underlying context.
+Ability to collaborate effectively with peers, and respect for member privacy
+Why Join Livongo?
+
+
+The Transformative Name in Healthcare: The transformative industry forces in Community, Content and Commerce are now household names. As Amazon is to Commerce, Livongo is to Healthcare. With our Applied Health Signals engine, AI+AI, we've transformed how care is delivered.
+
+Our Work Truly Matters: Livongo's proprietary, consumer-first technology is revolutionizing the experience of living with a chronic health condition. Our data-driven digital health engine enables our Members to seamlessly manage multiple health conditions on one empowering platform. We use smart, connected devices, personalized digital guidance, and 24x7x365 access to health professionals to make it easier for people to stay healthier.
+
+Make an Impact: Do you want to accomplish something meaningful? To create results that matter? Livongo's innovative solution produces industry-leading member satisfaction, measurable clinical outcomes and proven healthcare costs savings. Here you can truly improve lives.
+
+The Largest Digital Health IPO in History: We are at a milestone period in our history. On July 25, 2019 we took our company public, in order to elevate and expand the way the industry views us, thus ushering us into a whole new set of mission-critical conversations that will help us accomplish the work still to be done. As we reach new levels of achievement, we accelerate our ability to deliver life-changing services.
+
+Focus on PEOPLE: Livongo has been voted one of the Best Places to Work in healthcare, by Fortune Magazine and Best Place to Work! Talented, passionate individuals make the difference, in this fast-moving, collaborative and inspiring environment.
+
+Diversity and Inclusion: At Livongo we believe that personal and professional diversity is the key to innovation. We hire based solely on your strengths and qualifications, and the way in which those strengths can directly contribute to your success in your new position.
+
+Growth and Innovation: We've already made healthcare history, yet we remain on the threshold of very big things. Leading the industry with our Applied Health Signals category, we have cracked the code to transforming healthcare. Come grow with us and support our mission to make a tangible difference in the lives of our Members.
+
+See photos, watch videos and learn more about Livongo: follow us on Glassdoor.
+
+As an Equal Opportunity Employer, we never have and never will discriminate against any job candidate or employee due to age, race, religion, color, ethnicity, national origin, gender, gender identity/expression, sexual orientation, membership in an employee organization, medical condition, family history, genetic information, veteran status, marital status, parental status or pregnancy (including breastfeeding we have a mother's room in both our offices). In our innovative and inclusive workplace, we prohibit discrimination and harassment of any kind.
+
+#LI-Remote",,,,,,,,,,
+48,ML engineer,"AI/ML - Machine Learning Scientist, Siri Understanding","Apple
+4.1","Posted: May 2, 2020
+Role Number:
+200018211
+Play a part in the next revolution in human-computer interaction. Supply to a product that is redefining mobile computing. Create groundbreaking technology for large-scale systems, spoken language, big data, and artificial intelligence. And work with the people who created the intelligent assistant that helps millions of people get things done — just by asking. Join the Siri Speech team at Apple. The Siri team is looking for exceptionally skilled and creative Engineers/Scientists eager to get Involved in hands-on work improving the Siri experience by applying deep machine learning.
+Key Qualifications
+Strong machine learning background in speech, computer vision, multi modal interaction
+In-depth hands-on experience in deep learning
+Strong software engineering abilities, ideally C++ and/or Python
+Passion for applied machine learning to Apple products
+Experience in deep machine learning and related toolkits, e.g. Tensorflow, PyTorch etc. a big plus
+Curious about new technologies and passionate about exploring new use cases
+Description
+The Siri Understanding team is looking for exceptional individuals to extend the core technology that let Siri interact and understand. You will be part of a cross-functional team consisting of software engineers as well as machine learning engineers/scientists and having a large impact on the Siri product. This is a unique opportunity to apply machine learning and deep learning techniques at the intersection of various areas such as speech recognition, visual understanding, natural language processing, multi-modal, TTS and dialogue management. You should be creative, proactive, and ready to communicate and collaborate with multiple teams.
+Education & Experience
+B.S. or M.S. or Ph.D. degree in Computer Science, or equivalent experience",,,,,,,,,,
+49,ML engineer,"Scientist/Machine Learning Engineer, Applied Science","Amobee
+3.8","The Scientist/Senior Scientist/Lead Scientist - (Machine Learning Engineers) will work with the rest of the team to research, invent, and implement the next generation prediction, optimization, and analytics technology. You are a brilliant, motivated self-starter and an extremely fast learner with top notch problem solving, and analytical skills. You have a deep sense of curiosity and innate desire to dig deep into terabytes of data and love to play with the innards of complex algorithms, mathematical constructs and code.
+
+Responsibilities
+Research, design and/or implement solutions to challenging problems in real-time bidding domain, such as all kinds of optimization problems, audience understanding, etc.
+Research and improve features and machine learning models for production pipeline.
+Provide insights and suggestions on customer campaign optimization problems and product/platform optimization problems through statistical data analysis when needed.
+Drive innovation by identifying and formulating new problems, publishing papers, filing patents, etc.
+Required Qualifications
+PhD degree in a closely related field (e.g.: computer science/engineering, optimization) with publications in the area is strongly preferred
+Or Masters with significant experience in advertising and Machine Learning
+Experience in one or more of the following areas: machine learning, data mining, statistical modeling, optimization, algorithms, big-data, game theory
+Proficiency with one or more programming languages - ability to write/debug production code.
+Excellent communication skills – ability to present and communicate complex ideas in simple terms
+Strong statistical/math/analytical abilities; Exceptional problem solving skills
+Desired Qualifications
+Previous experience in the advertising industry
+Strong programming experience with Java, C/C++, Python and/or Scala
+Excellent knowledge in algorithms and data structures
+#LI-KM1
+
+About Amobee
+The world’s leading independent advertising platform, Amobee unifies all advertising channels—including TV, programmatic and social—across all formats and devices. We provide marketers with streamlined, advanced media planning capabilities powered by in-depth analytics and proprietary audience data. Our platform and technology, provides the most advanced advertising solutions for the convergence of digital and advanced TV— including linear TV, over the top, connected TV, and premium digital video. Enabling advertisers to plan and activate across more than 150 integrated partners, including Facebook, Instagram, Pinterest, Snapchat and Twitter.
+
+Amobee has been named to Fortune’s Top 10 Best Workplaces in Advertising and Marketing. Amobee’s platforms have been widely recognized amongst our industry winning numerous awards in technology innovation, see all Amobee Awards. We are a wholly owned subsidiary of Singtel, one of the largest telco companies in the world, reaching over 700 million mobile subscribers in 21 countries. Amobee operates across North America, Europe, Middle East, Asia and Australia. For more information, visit amobee.com or follow @amobee
+
+In addition to our great environment, we offer a competitive base salary, employee development programs and other comprehensive benefits. Please send a cover letter along with your resume when applying to the position of interest located at Amobee.com. We are an Equal Opportunity Employer. No phone calls and no recruiting agencies, please.",,,,,,,,,,

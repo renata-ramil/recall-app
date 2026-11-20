@@ -1,7 +1,7 @@
 export type SkillState = 'faded' | 'fadingSoon' | 'solid'
 
 export interface Survey {
-  targetRole: string
+  targetRoles: string[]
   targetRoleOptions: string[]
   finishedMonth: string
   finishedYear: number
@@ -21,13 +21,14 @@ export interface Transcript {
   summary: { read: number; matching: number; averageGrade: number; gradeScaleMax: number }
 }
 
-export interface Topic { id: string; name: string; ticked: boolean; confidence: number | null }
+export interface Topic { id: string; name: string; plain: string; ticked: boolean; confidence: number | null }
 
 //values the forgetting model supplies per skill; the UI never computes recall or half-life itself
 export interface Skill {
   id: string
   name: string
   recall: number
+  //filled in by the api from the user's target roles (job postings), never stored in the mock
   jobWeight: number
   daysUntilFade: number
   halfLifeDays?: number
@@ -94,12 +95,16 @@ export interface Today {
   week: { letter: string; date: number; status: 'done' | 'today' | 'future' }[]
 }
 
+export interface RoleWeights { postings: number; skills: Record<string, { weight: number; share: number }> }
+export interface JobWeights { floor: number; roles: Record<string, RoleWeights> }
+
 export interface MockData {
   user: { firstName: string; survey: Survey }
   transcript: Transcript
   topics: Topic[]
   fadeThreshold: number
-  skills: Skill[]
+  skills: Omit<Skill, 'jobWeight'>[]
+  jobWeights: JobWeights
   today: Today
   questions: Question[]
   verdicts: Verdicts
