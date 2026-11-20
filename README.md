@@ -12,6 +12,8 @@ It runs in any browser. On a phone it fills the screen; on a laptop it sits as a
 
 The main app has sign up and log in, with the terms of use and privacy policy accepted at sign-up, an Account page (change password, download my data, log out, delete account), a Security and data page and a Help page. In this version accounts stay in the browser on the device: passwords are stored only as a salted PBKDF2 hash, and each account keeps its own progress. Data science has the full module; software engineering, business and marketing analytics, and product and UX design each have a starter set of skills and five sample questions.
 
+To look around without signing up, choose "Try the demo" on the first screen, or log in with `demo@recall.app` and password `demo2026`. The demo account opens with a week of practice history.
+
 ## Pilot (Nov 2026)
 
 Pilot app: https://renata-ramil.github.io/recall-app/pilot/?code=YOURCODE. It adds a consent screen with a privacy notice and terms, study codes, a per-person split of skills into a personalized half (review when the estimate falls to the fade line) and a fixed half (1, 3 and 7 days, then one common review for both halves on day 11 and a pause on days 12 to 14), the 40 items and 3 scenarios from the content bank, real recall estimates from each person's answers, a closing check on days 15 and 16, and a row in the project's Google Sheet for every answer. Setup steps: `pilot/PILOT_SETUP.md`. Landing page with a price: https://renata-ramil.github.io/recall-app/landing/

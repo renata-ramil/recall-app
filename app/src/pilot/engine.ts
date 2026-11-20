@@ -297,3 +297,30 @@ export function curveFor(skillId: string) {
   if (!segs.length) segs.push({ fromDay: 0, toDay: days, start: recallNow(skillId), halfLife: halfLifeDays(skillId) })
   return { axisDays: days, todayDay: today - origin, segments: segs, practiceDays: [...new Set(h.map(p => p.day - origin))], projectionFromDay: today - origin }
 }
+
+//main app demo account only: six earlier days of practice, so a visitor sees a lived-in account without setting anything up
+export function seedDemoHistory(skillIds: string[]) {
+  if (PILOT || Object.keys(state.history).length || !skillIds.length) return
+  const today = dayNumber()
+  const history: Record<string, Practice[]> = {}
+  const doneDays: number[] = []
+  let n = 0
+  for (let ago = 6; ago >= 1; ago--) {
+    const day = today - ago
+    doneDays.push(day)
+    for (let k = 0; k < 3; k++) {
+      const skillId = skillIds[(ago * 3 + k) % skillIds.length]
+      const items = itemsFor(skillId)
+      if (!items.length) continue
+      const q = items[n % items.length]
+      const right = n % 4 !== 3
+      const sure = n % 3 === 0 ? 'notSure' : 'sure'
+      const at = Date.now() - ago * DAY_MS - (3 - k) * 60000
+      ;(history[skillId] ??= []).push({ day, at, itemId: q.id, right, dontKnow: false, kind: 'practice', sure })
+      n++
+    }
+  }
+  for (const id of Object.keys(history)) history[id].sort((a, b) => a.at - b.at)
+  state = { ...state, history, doneDays }
+  save()
+}

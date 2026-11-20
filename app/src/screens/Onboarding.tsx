@@ -6,6 +6,8 @@ import { Btn, BottomBar, Check, Note, Opt, StepHeader } from '../components/ui'
 import { PILOT } from '../pilot/config'
 import { assignGroups, setProfile } from '../pilot/engine'
 import { logEvent } from '../pilot/log'
+import { startDemo } from '../auth/demo'
+import { useAuth } from '../auth/AuthContext'
 import { coursesFor, courseSkills, topicGrades } from '../content/courses'
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -13,6 +15,7 @@ const YEARS = [2022, 2023, 2024, 2025, 2026, 2027]
 
 export function Welcome() {
   const nav = useNavigate()
+  const { refresh } = useAuth()
   const { resetAll } = useStore()
   const bars: Array<[number, string]> = [[220, 'sky'], [188, 'sky'], [156, 'sky'], [128, 'sky'], [100, 'sand'], [76, 'ochre'], [56, 'ochre']]
   return (
@@ -33,6 +36,7 @@ export function Welcome() {
           : <>
               <Btn onClick={() => nav('/signup')}>Create account</Btn>
               <Btn className="btn-soft" onClick={() => nav('/login')}>Log in</Btn>
+              <Btn className="btn-soft" style={{ background: 'var(--mist)' }} onClick={async () => { await startDemo(); refresh(); nav('/') }}>Try the demo, no sign-up</Btn>
               <p className="small muted" style={{ textAlign: 'center' }}><a href="#" onClick={e => { e.preventDefault(); nav('/legal/privacy') }}>Privacy</a> · <a href="#" onClick={e => { e.preventDefault(); nav('/legal/terms') }}>Terms</a> · <a href="#" onClick={e => { e.preventDefault(); nav('/help') }}>Help</a></p>
             </>}
       </div>

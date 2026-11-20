@@ -5,6 +5,7 @@ import { ErrorNote, Page, TextField } from '../components/Page'
 import { logIn, passwordProblems, signUp, validEmail } from '../auth/account'
 import { useAuth } from '../auth/AuthContext'
 import { useStore } from '../state/store'
+import { DEMO, startDemo } from '../auth/demo'
 
 export function SignUp() {
   const nav = useNavigate()
@@ -80,6 +81,11 @@ export function LogIn() {
       <ErrorNote text={error} />
       <p className="small muted">New to Recall? <Link to="/signup">Create an account</Link></p>
       <p className="small muted"><Link to="/help">Forgot your password?</Link></p>
+      <div style={{ background: 'var(--mist)', borderRadius: 16, padding: '12px 16px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <p className="small-b">Just looking around?</p>
+        <p className="small">Use the demo account: email <b>{DEMO.email}</b>, password <b>{DEMO.password}</b>. It already has a week of practice.</p>
+        <Btn className="btn-soft" style={{ background: 'var(--paper)' }} onClick={async () => { setBusy(true); try { await startDemo(); refresh(); nav('/') } finally { setBusy(false) } }}>Log in to the demo</Btn>
+      </div>
     </Page>
   )
 }

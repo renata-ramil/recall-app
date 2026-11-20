@@ -83,6 +83,9 @@ function initial(): AppState {
   }
 }
 
+//a fresh setup with the default answers, used for the demo account
+export const freshState = (): AppState => initial()
+
 function load(): AppState {
   try {
     const raw = localStorage.getItem(storeKey())

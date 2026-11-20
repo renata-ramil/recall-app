@@ -45,6 +45,7 @@ export const SECURITY: Section[] = [
 ]
 
 export const HELP: Section[] = [
+  { h: 'Can I try Recall without signing up?', p: ['Yes. Choose "Try the demo" on the first screen, or log in with demo@recall.app and the password demo2026. The demo account already has a week of practice. Like every account in this version, it lives only on your device.'] },
   { h: 'How does Recall pick my skills?', p: ['Each skill gets a priority from how likely you are to have forgotten it and how often job postings for your target roles ask for it. Each session takes the top ones.'] },
   { h: 'What do faded, fading soon and solid mean?', p: ['Solid means you likely still remember it. Fading soon means it will need practice in the next few days. Faded means it is time to practice it now.'] },
   { h: 'What does "I don\'t know" do?', p: ['It counts as a miss without a guess, which gives the forgetting model a cleaner signal than a lucky guess.'] },
